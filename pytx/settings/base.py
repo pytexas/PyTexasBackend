@@ -27,6 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', None)
 
 ALLOWED_HOSTS = [
   'pallas.neutrondrive.com',
+  'pytexas.herokuapp.com',
 ]
 
 
