@@ -17,6 +17,10 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from djzen.urls import zen_url
 
+import conference.views
+
 urlpatterns = [
-    zen_url('admin/', admin.site.urls),
+  zen_url('admin/', admin.site.urls),
+  
+  zen_url('.*', conference.views.frontend),
 ]
