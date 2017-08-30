@@ -139,9 +139,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_DIRS = (
   os.path.join(BASE_DIR, 'frontend'),
-  os.path.join(BASE_DIR, 'frontend', 'node_modules', 'vue', 'dist'),
-  os.path.join(BASE_DIR, 'frontend', 'node_modules', 'vue-router', 'dist'),
-  os.path.join(BASE_DIR, 'frontend', 'node_modules', 'vue-material', 'dist'),
+  os.path.join(BASE_DIR, 'node_modules', 'vue', 'dist'),
+  os.path.join(BASE_DIR, 'node_modules', 'vue-router', 'dist'),
+  os.path.join(BASE_DIR, 'node_modules', 'vue-material', 'dist'),
 )
 
 # Uncomment if using Heroku
