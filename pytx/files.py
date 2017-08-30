@@ -10,12 +10,12 @@ JS = [
   # 'plugins/vue.min.js',
   # 'axios.min.js',
   
-  # 'nac.js',
+  '2017-dist/pytx.js',
 ]
 
 CSS = [
   'vue-material.css',
-  #'nac.css'
+  '2017-dist/pytx.css',
 ]
 
 IMAGES = [
@@ -32,7 +32,7 @@ FONTS = [
 def tpl_files ():
   tpls = []
   
-  base_dir = os.path.join(settings.BASE_DIR, 'static', 'nac')
+  base_dir = os.path.join(settings.BASE_DIR, 'frontend', 'app')
   for root, dirs, files in os.walk(base_dir):
     for file in files:
       if file.endswith('.html'):
