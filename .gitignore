@@ -107,4 +107,4 @@ static-compiled
 # End djzen
 
 node_modules
-
+bin/creds.json
