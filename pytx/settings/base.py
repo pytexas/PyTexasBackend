@@ -142,6 +142,10 @@ STATICFILES_DIRS = (
   os.path.join(BASE_DIR, 'node_modules', 'vue', 'dist'),
   os.path.join(BASE_DIR, 'node_modules', 'vue-router', 'dist'),
   os.path.join(BASE_DIR, 'node_modules', 'vue-material', 'dist'),
+  
+  os.path.join(BASE_DIR, "node_modules", "md-icons"),
+  os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts", "roboto"),
+  os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts", "roboto-slab"),
 )
 
 # Uncomment if using Heroku
