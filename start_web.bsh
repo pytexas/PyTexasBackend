@@ -3,5 +3,3 @@
 ./download_db.bsh
 
 python manage.py prodserver
-
-./upload_db.bsh
