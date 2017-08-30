@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sqlite3 db.sqlite3 ".backup backup/db.sqlite3"
+
 export MYPATH=`pwd`
 echo $GDRIVE | base64 -d > $MYPATH/bin/creds.json
+cd backup
 $MYPATH/bin/gdrive -c $MYPATH/bin --service-account creds.json update 0Bz50SVUX2ay8YlNfOE9Tc2dvODQ db.sqlite3
