@@ -28,35 +28,42 @@ SECRET_KEY = os.environ.get('SECRET_KEY', None)
 ALLOWED_HOSTS = [
   'pallas.neutrondrive.com',
   'pytexas.herokuapp.com',
+  'www.pytexas.org',
+  'pytexas.org',
+  '.pytexas.org',
 ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'djzen',
-    'django_uwsgi',
-    
-    # 'twospaces.profiles',
-    # 'twospaces.conference',
-    # 'twospaces.blog',
+  'flat_responsive',
+  
+  'django.contrib.admin',
+  'django.contrib.auth',
+  'django.contrib.contenttypes',
+  'django.contrib.sessions',
+  'django.contrib.messages',
+  'django.contrib.staticfiles',
+  'djzen',
+  'django_uwsgi',
+  
+  'conference.profiles',
+  'conference.event',
+  # 'twospaces.blog',
+  
+  'raven.contrib.django.raven_compat',
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  'django.middleware.security.SecurityMiddleware',
+  'whitenoise.middleware.WhiteNoiseMiddleware',
+  'django.contrib.sessions.middleware.SessionMiddleware',
+  'django.middleware.common.CommonMiddleware',
+  'django.middleware.csrf.CsrfViewMiddleware',
+  'django.contrib.auth.middleware.AuthenticationMiddleware',
+  'django.contrib.messages.middleware.MessageMiddleware',
+  'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'pytx.urls'
@@ -150,5 +157,7 @@ STATICFILES_DIRS = (
 
 # Uncomment if using Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+AUTH_USER_MODEL = 'profiles.User'
 
 from pytx.settings.logging import *
