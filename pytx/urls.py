@@ -22,5 +22,6 @@ import conference.views
 urlpatterns = [
   zen_url('admin/', admin.site.urls),
   
+  zen_url('favicon.ico', conference.views.favicon),
   zen_url('.*', conference.views.frontend),
 ]

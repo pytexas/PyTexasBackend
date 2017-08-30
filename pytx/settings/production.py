@@ -2,3 +2,5 @@
 DEBUG = False
 
 from pytx.settings.base import *
+
+SECURE_SSL_REDIRECT = True

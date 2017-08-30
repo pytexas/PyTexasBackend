@@ -64,7 +64,9 @@ ROOT_URLCONF = 'pytx.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+          os.path.join(BASE_DIR, 'frontend')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,7 +135,14 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static-compiled")
 
 # Uncomment for forever-cacheable files and compression support
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'frontend'),
+  os.path.join(BASE_DIR, 'frontend', 'node_modules', 'vue', 'dist'),
+  os.path.join(BASE_DIR, 'frontend', 'node_modules', 'vue-router', 'dist'),
+  os.path.join(BASE_DIR, 'frontend', 'node_modules', 'vue-material', 'dist'),
+)
 
 # Uncomment if using Heroku
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
