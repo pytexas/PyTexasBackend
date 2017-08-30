@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export MYPATH=`pwd`
+echo $GDRIVE | base64 -d > $MYPATH/bin/creds.json
+$MYPATH/bin/gdrive -c $MYPATH/bin --service-account creds.json upload -p 0B-GD95vnz4VFZ1ZHeFlwTnRxSEk db.sqlite3
