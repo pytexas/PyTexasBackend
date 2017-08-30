@@ -146,3 +146,5 @@ STATICFILES_DIRS = (
 
 # Uncomment if using Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+from pytx.settings.logging import *
