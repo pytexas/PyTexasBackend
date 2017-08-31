@@ -23,11 +23,10 @@ import conference.views
 from graphene_django.views import GraphQLView
 
 urlpatterns = [
-  zen_url('admin/', admin.site.urls),
-  zen_url('backup', pytx.views.backup),
-  
-  zen_url('data-graph', GraphQLView.as_view(graphiql=True)),
-  
-  zen_url('favicon.ico', conference.views.favicon),
-  zen_url('.*', conference.views.frontend),
+    zen_url('admin/', admin.site.urls),
+    zen_url('backup', pytx.views.backup),
+    zen_url('data-graph', GraphQLView.as_view(graphiql=True)),
+    zen_url('favicon.ico', conference.views.favicon),
+    zen_url('service-worker.js', conference.views.sw),
+    zen_url('.*', conference.views.frontend),
 ]

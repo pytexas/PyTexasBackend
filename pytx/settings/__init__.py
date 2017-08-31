@@ -3,14 +3,13 @@ import os
 ENVIRONMENT = os.environ.get('ENVIRONMENT', '')
 
 if ENVIRONMENT:
-    print("Loading {} Settings".format(ENVIRONMENT.upper()))
-    
+  print("Loading {} Settings".format(ENVIRONMENT.upper()))
+
 else:
-    print("Unknown ENV Loading DEVELOPMENT Settings")
-    
+  print("Unknown ENV Loading DEVELOPMENT Settings")
+
 if ENVIRONMENT == 'production':
-    from pytx.settings.production import *
-    
+  from pytx.settings.production import *
+
 else:
-    from pytx.settings.development import *
-    
+  from pytx.settings.development import *

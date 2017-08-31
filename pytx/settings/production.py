@@ -10,6 +10,6 @@ from pytx.settings.base import *
 SECURE_SSL_REDIRECT = True
 
 RAVEN_CONFIG = {
-  'dsn': os.environ.get('RAVEN_BACKEND', None),
-  'release': RELEASE,
+    'dsn': os.environ.get('RAVEN_BACKEND', None),
+    'release': RELEASE,
 }

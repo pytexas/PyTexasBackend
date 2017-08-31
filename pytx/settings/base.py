@@ -14,10 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(
-    os.path.dirname(
-        os.path.dirname(os.path.abspath(__file__))
-    )
-)
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -26,46 +23,41 @@ BASE_DIR = os.path.dirname(
 SECRET_KEY = os.environ.get('SECRET_KEY', None)
 
 ALLOWED_HOSTS = [
-  'pallas.neutrondrive.com',
-  'pytexas.herokuapp.com',
-  'www.pytexas.org',
-  'pytexas.org',
-  '.pytexas.org',
+    'pallas.neutrondrive.com',
+    'pytexas.herokuapp.com',
+    'www.pytexas.org',
+    'pytexas.org',
+    '.pytexas.org',
 ]
-
 
 # Application definition
 
 INSTALLED_APPS = [
-  'flat_responsive',
-  
-  'django.contrib.admin',
-  'django.contrib.auth',
-  'django.contrib.contenttypes',
-  'django.contrib.sessions',
-  'django.contrib.messages',
-  'django.contrib.staticfiles',
-  'djzen',
-  'django_uwsgi',
-  
-  'conference.profiles',
-  'conference.event',
-  # 'twospaces.blog',
-  
-  'graphene_django',
-  
-  'raven.contrib.django.raven_compat',
+    'flat_responsive',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'djzen',
+    'django_uwsgi',
+    'conference.profiles',
+    'conference.event',
+    # 'twospaces.blog',
+    'graphene_django',
+    'raven.contrib.django.raven_compat',
 ]
 
 MIDDLEWARE = [
-  'django.middleware.security.SecurityMiddleware',
-  'whitenoise.middleware.WhiteNoiseMiddleware',
-  'django.contrib.sessions.middleware.SessionMiddleware',
-  'django.middleware.common.CommonMiddleware',
-  'django.middleware.csrf.CsrfViewMiddleware',
-  'django.contrib.auth.middleware.AuthenticationMiddleware',
-  'django.contrib.messages.middleware.MessageMiddleware',
-  'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'pytx.urls'
@@ -73,9 +65,7 @@ ROOT_URLCONF = 'pytx.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-          os.path.join(BASE_DIR, 'frontend')
-        ],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,7 +80,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pytx.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -101,25 +90,27 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -148,25 +139,23 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static-compiled")
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_DIRS = (
-  os.path.join(BASE_DIR, 'frontend'),
-  os.path.join(BASE_DIR, 'node_modules', 'vue', 'dist'),
-  os.path.join(BASE_DIR, 'node_modules', 'vue-router', 'dist'),
-  os.path.join(BASE_DIR, 'node_modules', 'vue-material', 'dist'),
-  
-  os.path.join(BASE_DIR, "node_modules", "md-icons"),
-  os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts", "roboto"),
-  os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts", "roboto-slab"),
-  os.path.join(BASE_DIR, "node_modules", "axios", "dist"),
-  os.path.join(BASE_DIR, "node_modules", "showdown", "dist"),
-)
+    os.path.join(BASE_DIR, 'frontend'),
+    os.path.join(BASE_DIR, 'node_modules', 'vue', 'dist'),
+    os.path.join(BASE_DIR, 'node_modules', 'vue-router', 'dist'),
+    os.path.join(BASE_DIR, 'node_modules', 'vue-material', 'dist'),
+    os.path.join(BASE_DIR, "node_modules", "md-icons"),
+    os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts",
+                 "roboto"),
+    os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts",
+                 "roboto-slab"),
+    os.path.join(BASE_DIR, "node_modules", "axios", "dist"),
+    os.path.join(BASE_DIR, "node_modules", "showdown", "dist"),)
 
 # Uncomment if using Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 AUTH_USER_MODEL = 'profiles.User'
 
-GRAPHENE = {
-  'SCHEMA': 'pytx.schema.schema'
-}
+GRAPHENE = {'SCHEMA': 'pytx.schema.schema'}
 
 from pytx.settings.logging import *
