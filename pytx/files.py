@@ -20,12 +20,14 @@ CSS = [
 
 IMAGES = [
     'img/banner80.png',
-    # 'img/google.png',
+    'img/icon.svg',
 ]
 
 FONTS = [
     'Roboto-Regular.woff2',
     'Roboto-Bold.woff2',
+    'Roboto-Slab-Regular.woff2',
+    'Roboto-Slab-Bold.woff2',
     'MaterialIcons-Regular.woff2',
 ]
 

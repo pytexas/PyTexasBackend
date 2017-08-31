@@ -158,4 +158,6 @@ AUTH_USER_MODEL = 'profiles.User'
 
 GRAPHENE = {'SCHEMA': 'pytx.schema.schema'}
 
+CURRENT_CONF = '2017'
+
 from pytx.settings.logging import *
