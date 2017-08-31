@@ -52,6 +52,8 @@ INSTALLED_APPS = [
   'conference.event',
   # 'twospaces.blog',
   
+  'graphene_django',
+  
   'raven.contrib.django.raven_compat',
 ]
 
@@ -137,7 +139,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+FRONTEND = '2017-dist'
+STATIC_URL = '/static-2017/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static-compiled")
 
@@ -153,11 +156,17 @@ STATICFILES_DIRS = (
   os.path.join(BASE_DIR, "node_modules", "md-icons"),
   os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts", "roboto"),
   os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts", "roboto-slab"),
+  os.path.join(BASE_DIR, "node_modules", "axios", "dist"),
+  os.path.join(BASE_DIR, "node_modules", "showdown", "dist"),
 )
 
 # Uncomment if using Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 AUTH_USER_MODEL = 'profiles.User'
+
+GRAPHENE = {
+  'SCHEMA': 'pytx.schema.schema'
+}
 
 from pytx.settings.logging import *

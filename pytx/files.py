@@ -8,9 +8,10 @@ JS = [
   'vue-material.js',
   # 'raven.min.js',
   # 'plugins/vue.min.js',
-  # 'axios.min.js',
+  'axios.min.js',
+  'showdown.min.js',
   
-  '2017-dist/pytx.js',
+  settings.FRONTEND + '/pytx.js',
 ]
 
 CSS = [
@@ -29,6 +30,12 @@ FONTS = [
   'MaterialIcons-Regular.woff2',
 ]
 
+MD = []
+MD_PATH = os.path.join(settings.BASE_DIR, 'frontend', 'app', 'md')
+
+for f in os.listdir(MD_PATH):
+  MD.append('{}/md/{}'.format(settings.FRONTEND, f))
+  
 def tpl_files ():
   tpls = []
   
