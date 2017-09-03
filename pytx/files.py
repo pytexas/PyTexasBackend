@@ -19,6 +19,7 @@ CSS = [
 ]
 
 IMAGES = [
+    'img/atx.svg',
     'img/banner80.png',
     'img/icon.svg',
 ]
@@ -33,10 +34,15 @@ FONTS = [
 
 MD = []
 MD_PATH = os.path.join(settings.BASE_DIR, 'frontend', 'app', 'md')
-
-for f in os.listdir(MD_PATH):
-  MD.append('{}/md/{}'.format(settings.FRONTEND, f))
-
+for root, dirs, files in os.walk(MD_PATH):
+  for f in files:
+    path = os.path.join(root, f)
+    path = path.replace(MD_PATH, '')
+    path = path[1:]
+    
+    MD.append(path)
+    
+print(MD)
 
 def tpl_files():
   tpls = []
