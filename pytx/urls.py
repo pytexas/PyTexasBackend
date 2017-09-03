@@ -28,5 +28,6 @@ urlpatterns = [
     zen_url('data-graph', GraphQLView.as_view(graphiql=True)),
     zen_url('favicon.ico', conference.views.favicon),
     zen_url('service-worker.js', conference.views.sw),
+    zen_url('release', conference.views.release),
     zen_url('.*', conference.views.frontend),
 ]
