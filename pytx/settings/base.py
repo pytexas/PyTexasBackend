@@ -149,7 +149,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts",
                  "roboto-slab"),
     os.path.join(BASE_DIR, "node_modules", "axios", "dist"),
-    os.path.join(BASE_DIR, "node_modules", "showdown", "dist"),)
+    os.path.join(BASE_DIR, "node_modules", "showdown", "dist"),
+    os.path.join(BASE_DIR, 'node_modules', 'raven-js', 'dist'),)
 
 # Uncomment if using Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
