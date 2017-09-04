@@ -12,3 +12,5 @@ CACHES = {
 }
 
 SKIP_SW = True
+
+BASE_URL = 'https://pallas.neutrondrive.com'

@@ -9,6 +9,8 @@ from pytx.settings.base import *
 
 SECURE_SSL_REDIRECT = True
 
+BASE_URL = 'https://www.pytexas.org'
+
 RAVEN_CONFIG = {
     'dsn': os.environ.get('RAVEN_BACKEND', None),
     'release': RELEASE,
