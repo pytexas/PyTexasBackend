@@ -11,4 +11,4 @@ CACHES = {
     }
 }
 
-SKIP_SW = False
+SKIP_SW = True
