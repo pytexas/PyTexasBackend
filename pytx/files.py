@@ -39,10 +39,9 @@ for root, dirs, files in os.walk(MD_PATH):
     path = os.path.join(root, f)
     path = path.replace(MD_PATH, '')
     path = path[1:]
-    
+
     MD.append(path)
-    
-print(MD)
+
 
 def tpl_files():
   tpls = []
