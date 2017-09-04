@@ -22,6 +22,11 @@ IMAGES = [
     'img/atx.svg',
     'img/banner80.png',
     'img/icon.svg',
+    'img/icons/about.svg',
+    'img/icons/chat.svg',
+    'img/icons/community.svg',
+    'img/icons/venue.svg',
+    'img/icons/background.png',
 ]
 
 FONTS = [
