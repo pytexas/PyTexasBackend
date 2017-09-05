@@ -20,7 +20,9 @@ $ source env/bin/activate
 Install the devlopment dependencies:
 
 ```
+$ npm install -g pnpm
 $ pip install -r requirements-dev.txt
+$ pnpm install
 ```
 
 Set up a minimum `.env` file:
@@ -36,5 +38,19 @@ $ python manage.py migrate
 
 Run the development server:
 ```
+# backend
 python manage.py runserver
+
+# frontend
+gulp watch
+```
+
+Add a dependency
+
+```
+# Python
+pip-save install some-lib
+
+# Javascript
+pnpm install some-lib --save
 ```
