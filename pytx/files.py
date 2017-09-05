@@ -26,6 +26,7 @@ IMAGES = [
     'img/icons/blog.svg',
     'img/icons/chat.svg',
     'img/icons/community.svg',
+    'img/icons/sponsors.svg',
     'img/icons/venue.svg',
     'img/icons/background.png',
 ]
