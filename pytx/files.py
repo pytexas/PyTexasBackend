@@ -23,6 +23,7 @@ IMAGES = [
     'img/banner80.png',
     'img/icon.svg',
     'img/icons/about.svg',
+    'img/icons/blog.svg',
     'img/icons/chat.svg',
     'img/icons/community.svg',
     'img/icons/venue.svg',
