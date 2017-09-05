@@ -42,9 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'djzen',
     'django_uwsgi',
+    'storages',
+    
     'conference.profiles',
     'conference.event',
-    # 'twospaces.blog',
+    
     'graphene_django',
     'raven.contrib.django.raven_compat',
 ]
@@ -138,7 +140,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static-compiled")
 # Uncomment for forever-cacheable files and compression support
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATICFILES_DIRS = (
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend'),
     os.path.join(BASE_DIR, 'node_modules', 'vue', 'dist'),
     os.path.join(BASE_DIR, 'node_modules', 'vue-router', 'dist'),
@@ -150,7 +152,7 @@ STATICFILES_DIRS = (
                  "roboto-slab"),
     os.path.join(BASE_DIR, "node_modules", "axios", "dist"),
     os.path.join(BASE_DIR, "node_modules", "showdown", "dist"),
-    os.path.join(BASE_DIR, 'node_modules', 'raven-js', 'dist'),)
+    os.path.join(BASE_DIR, 'node_modules', 'raven-js', 'dist'),]
 
 # Uncomment if using Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

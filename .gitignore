@@ -108,3 +108,5 @@ static-compiled
 
 node_modules
 bin/creds.json
+media/
+
