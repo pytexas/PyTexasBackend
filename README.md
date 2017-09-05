@@ -2,6 +2,14 @@
 
 ## Development Quickstart
 
+Clone the repo:
+
+```
+git clone git@github.com:pytexas/PyTexasBackend.git
+git submodule init
+git submodule update
+```
+
 Create a venv and activate it:
 
 ```
