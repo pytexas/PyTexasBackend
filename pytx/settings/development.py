@@ -3,7 +3,7 @@ DEBUG = True
 
 from pytx.settings.base import *
 
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 
 CACHES = {
     'default': {
@@ -19,3 +19,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = STATIC_URL + 'uploads/'
 
 STATICFILES_DIRS.append(MEDIA_ROOT)
+
+SECRET_KEY = "a insecure development secret"
+
+ALLOWED_HOSTS += ['localhost', '127.0.0.1']
