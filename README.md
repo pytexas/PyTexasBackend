@@ -6,8 +6,7 @@ Clone the repo:
 
 ```
 git clone git@github.com:pytexas/PyTexasBackend.git
-git submodule init
-git submodule update
+git submodule update --init
 ```
 
 Create a venv and activate it:
