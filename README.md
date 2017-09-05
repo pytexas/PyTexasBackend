@@ -15,6 +15,11 @@ Install the devlopment dependencies:
 $ pip install -r requirements-dev.txt
 ```
 
+Set up a minimum `.env` file:
+```
+$ echo "SECRET_KEY=an insecure development secret" > .env
+```
+
 Run unapplied migrations:
 
 ```
