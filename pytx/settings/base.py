@@ -43,10 +43,8 @@ INSTALLED_APPS = [
     'djzen',
     'django_uwsgi',
     'storages',
-    
     'conference.profiles',
     'conference.event',
-    
     'graphene_django',
     'raven.contrib.django.raven_compat',
 ]
@@ -152,7 +150,8 @@ STATICFILES_DIRS = [
                  "roboto-slab"),
     os.path.join(BASE_DIR, "node_modules", "axios", "dist"),
     os.path.join(BASE_DIR, "node_modules", "showdown", "dist"),
-    os.path.join(BASE_DIR, 'node_modules', 'raven-js', 'dist'),]
+    os.path.join(BASE_DIR, 'node_modules', 'raven-js', 'dist'),
+]
 
 # Uncomment if using Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
