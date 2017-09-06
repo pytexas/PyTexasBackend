@@ -1,0 +1,4 @@
+#!/bin/bash
+
+prettier --write "frontend/app/**/*.js"
+prettier --write "frontend/**/*.less"
