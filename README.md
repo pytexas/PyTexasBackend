@@ -19,9 +19,8 @@ $ source env/bin/activate
 Install the devlopment dependencies:
 
 ```
-$ npm install -g pnpm
 $ pip install -r requirements-dev.txt
-$ pnpm install
+$ npm install
 ```
 
 Set up a minimum `.env` file:
@@ -49,7 +48,13 @@ Add a dependency
 ```
 # Python
 pip-save install some-lib
+```
 
-# Javascript
-pnpm install some-lib --save
+Developing with a local frontend
+
+```
+# Some where outside the backend
+git clone git@github.com:pytexas/PyTexas2017.git
+
+export FRONTEND_DIR=/path/to/PyTexas2017
 ```
