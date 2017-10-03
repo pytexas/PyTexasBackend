@@ -1,1 +1,23 @@
-frontend/package.json
+{
+  "name": "pytexasbackend",
+  "version": "1.0.0",
+  "description": "## Development Quickstart",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "pytexas": "git+https://github.com/pytexas/PyTexas2017.git"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pytexas/PyTexasBackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pytexas/PyTexasBackend/issues"
+  },
+  "homepage": "https://github.com/pytexas/PyTexasBackend#readme"
+}
