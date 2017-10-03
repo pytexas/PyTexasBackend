@@ -41,7 +41,7 @@ FONTS = [
 ]
 
 MD = []
-MD_PATH = os.path.join(settings.BASE_DIR, 'frontend', 'app', 'md')
+MD_PATH = settings.FRONTEND_MD
 for root, dirs, files in os.walk(MD_PATH):
   for f in files:
     path = os.path.join(root, f)
@@ -54,7 +54,7 @@ for root, dirs, files in os.walk(MD_PATH):
 def tpl_files():
   tpls = []
 
-  base_dir = os.path.join(settings.BASE_DIR, 'frontend', 'app')
+  base_dir = settings.FRONTEND_TEMPLATES
   for root, dirs, files in os.walk(base_dir):
     for file in files:
       if file.endswith('.html'):

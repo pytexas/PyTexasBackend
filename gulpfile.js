@@ -9,9 +9,11 @@ var commonjs = require('rollup-plugin-commonjs');
 
 var build_tasks = ['build-js', 'build-css', 'copy-md'];
 
+var frontdir = process.env.FRONTEND_DIR || './node_modules/pytexas';
+
 gulp.task('build-js', function () {
   return rollup({
-    input: './frontend/app/pytx.js',
+    input: `${frontdir}/app/pytx.js`,
     plugins: [
       resolve({ jsnext: true }),
       commonjs(),
@@ -32,23 +34,23 @@ gulp.task('build-js', function () {
 });
 
 gulp.task('build-css', function () {
-  return gulp.src("frontend/app/**/*.less")
+  return gulp.src(`${frontdir}/app/**/*.less`)
     .pipe(plumber())
-    .pipe(less({paths: ['frontend/less']}))
+    .pipe(less({paths: [`${frontdir}/less`]}))
     .pipe(concat('pytx.css'))
     .pipe(gulp.dest("frontend/2017-dist"));
 });
 
 gulp.task('copy-md', function () {
-  return gulp.src("frontend/app/md/**/*.md")
+  return gulp.src(`${frontdir}/app/md/**/*.md`)
     .pipe(plumber())
     .pipe(gulp.dest("frontend/2017-dist/md"));
 });
 
 gulp.task('watch', build_tasks, function () {
-  gulp.watch("frontend/app/md/**/*.md", ['copy-md']);
-  gulp.watch("frontend/app/**/*.js", ['build-js']);
-  gulp.watch("frontend/**/*.less", ['build-css']);
+  gulp.watch(`${frontdir}/app/md/**/*.md`, ['copy-md']);
+  gulp.watch(`${frontdir}/app/**/*.js`, ['build-js']);
+  gulp.watch(`${frontdir}/**/*.less`, ['build-css']);
 });
 
 gulp.task('default', build_tasks);

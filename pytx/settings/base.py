@@ -43,8 +43,10 @@ INSTALLED_APPS = [
     'djzen',
     'django_uwsgi',
     'storages',
+    
     'conference.profiles',
     'conference.event',
+    
     'graphene_django',
     'raven.contrib.django.raven_compat',
 ]
@@ -65,7 +67,7 @@ ROOT_URLCONF = 'pytx.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'frontend')],
+        'DIRS': [os.path.join(BASE_DIR, 'pytx', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,6 +133,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 FRONTEND = '2017-dist'
+FRONTEND_DIR = os.environ.get('FRONTEND_DIR', os.path.join(BASE_DIR, 'node_modules', 'pytexas'))
+FRONTEND_TEMPLATES = os.path.join(FRONTEND_DIR, 'app')
+FRONTEND_MD = os.path.join(FRONTEND_DIR, 'app', 'md')
+
 STATIC_URL = '/static-2017/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static-compiled")
@@ -139,6 +145,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static-compiled")
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_DIRS = [
+    FRONTEND_DIR,
     os.path.join(BASE_DIR, 'frontend'),
     os.path.join(BASE_DIR, 'node_modules', 'vue', 'dist'),
     os.path.join(BASE_DIR, 'node_modules', 'vue-router', 'dist'),
