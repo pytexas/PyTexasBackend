@@ -180,4 +180,5 @@ EMAIL_HOST_USER = os.environ.get('AWS_ACCESS_KEY', '')
 EMAIL_HOST_PASSWORD = os.environ.get('AWS_SECRET_KEY', '')
 EMAIL_USE_TLS = True
 
+
 from pytx.settings.logging import *
