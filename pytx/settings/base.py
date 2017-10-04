@@ -173,6 +173,7 @@ STRIPE_PUB_KEY = os.environ.get('STRIPE_PUB_KEY', '')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
 
 SERVER_EMAIL = 'conference@pytexas.org'
+DEFAULT_FROM_EMAIL = 'conference@pytexas.org'
 
 EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
 EMAIL_PORT = 587
