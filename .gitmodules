@@ -1,3 +1,0 @@
-[submodule "conference"]
-	path = conference
-	url = https://github.com/pizzapanther/Django-Conference.git
