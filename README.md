@@ -55,7 +55,7 @@ pip-save install some-lib
 ### Developing with a local frontend
 
 ```
-# Some where outside the backend
+# Some where outside the backend directory
 git clone git@github.com:pytexas/PyTexas2017.git
 
 export FRONTEND_DIR=/path/to/PyTexas2017
@@ -64,8 +64,10 @@ export FRONTEND_DIR=/path/to/PyTexas2017
 ### Developing with a local conference app
 
 ```
-# Some where outside the backend
-git clone git@github.com:pizzapanther/Django-Conference.git
+pip uninstall conference
 
-export FRONTEND_DIR=/path/to/PyTexas2017
+# Some where outside the backend directory
+git clone git@github.com:pizzapanther/Django-Conference.git
+cd Django-Conference/
+pip install -e .
 ```
