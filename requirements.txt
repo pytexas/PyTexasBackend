@@ -1,5 +1,4 @@
 boto3==1.4.7
--e git://github.com/pizzapanther/Django-Conference.git@1ea0aab#egg=conference
 django==1.11.4
 django-dotenv==1.4.1
 django-filter==1.0.4
@@ -11,5 +10,7 @@ graphene-django==2.0.dev2017073101
 Pillow==4.2.1
 pip-save==0.2.0
 raven==6.1.0
+stripe==1.66.0
 uwsgi==2.0.15
 whitenoise==3.3.0
+-e git+git://github.com/pizzapanther/Django-Conference.git@e50d865#egg=conference

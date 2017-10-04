@@ -31,5 +31,8 @@ urlpatterns = [
     zen_url('release', conference.views.release),
     zen_url('manifest.json', conference.views.manifest),
     zen_url('browserconfig.xml', conference.views.browserconfig),
+    
+    zen_url('conference/', include('conference.event.urls')),
+    
     zen_url('.*', conference.views.frontend),
 ]

@@ -169,4 +169,15 @@ GRAPHENE = {'SCHEMA': 'pytx.schema.schema'}
 
 CURRENT_CONF = '2017'
 
+STRIPE_PUB_KEY = os.environ.get('STRIPE_PUB_KEY', '')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
+
+SERVER_EMAIL = 'conference@pytexas.org'
+
+EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get('AWS_ACCESS_KEY', '')
+EMAIL_HOST_PASSWORD = os.environ.get('AWS_SECRET_KEY', '')
+EMAIL_USE_TLS = True
+
 from pytx.settings.logging import *
