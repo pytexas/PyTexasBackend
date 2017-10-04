@@ -50,11 +50,22 @@ Add a dependency
 pip-save install some-lib
 ```
 
-Developing with a local frontend
+## Working with Local Packages
+
+### Developing with a local frontend
 
 ```
 # Some where outside the backend
 git clone git@github.com:pytexas/PyTexas2017.git
+
+export FRONTEND_DIR=/path/to/PyTexas2017
+```
+
+### Developing with a local conference app
+
+```
+# Some where outside the backend
+git clone git@github.com:pizzapanther/Django-Conference.git
 
 export FRONTEND_DIR=/path/to/PyTexas2017
 ```
