@@ -61,6 +61,8 @@ git clone git@github.com:pytexas/PyTexas2017.git
 export FRONTEND_DIR=/path/to/PyTexas2017
 ```
 
+After your pull request is accepting on the frontend, update package.json with your git hash to release it.
+
 ### Developing with a local conference app
 
 ```
