@@ -1,5 +1,5 @@
 boto3==1.4.7
--e git://github.com/pizzapanther/Django-Conference.git#egg=conference
+-e git://github.com/pizzapanther/Django-Conference.git@1ea0aab#egg=conference
 django==1.11.4
 django-dotenv==1.4.1
 django-filter==1.0.4

@@ -73,3 +73,5 @@ git clone git@github.com:pizzapanther/Django-Conference.git
 cd Django-Conference/
 pip install -e .
 ```
+
+After your pull request is accepted on the conference app, update requirements.txt with your git hash to release it.
