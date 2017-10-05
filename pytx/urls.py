@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.decorators.csrf import csrf_exempt
+
 from djzen.urls import zen_url
 
 import pytx.views
@@ -25,7 +27,7 @@ from graphene_django.views import GraphQLView
 urlpatterns = [
     zen_url('admin/', admin.site.urls),
     zen_url('backup', pytx.views.backup),
-    zen_url('data-graph', GraphQLView.as_view(graphiql=True)),
+    zen_url('data-graph', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     zen_url('favicon.ico', conference.views.favicon),
     zen_url('service-worker.js', conference.views.sw),
     zen_url('release', conference.views.release),
