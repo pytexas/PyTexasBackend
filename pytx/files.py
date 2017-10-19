@@ -2,6 +2,8 @@ import os
 
 from django.conf import settings
 
+JS_HEAD = []
+
 JS = [
     'vue.min.js',
     'vue-router.min.js',
