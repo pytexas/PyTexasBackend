@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     
     'graphene_django',
     'raven.contrib.django.raven_compat',
+    'zappa_django_utils',
 ]
 
 MIDDLEWARE = [

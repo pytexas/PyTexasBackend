@@ -1,1 +1,1 @@
-web: ./start_web.bsh
+web: python manage.py prodserver

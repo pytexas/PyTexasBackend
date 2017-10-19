@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export MYPATH=`pwd`
-echo $GDRIVE | base64 -d > $MYPATH/bin/creds.json
-$MYPATH/bin/gdrive -c $MYPATH/bin --service-account creds.json download 0Bz50SVUX2ay8YlNfOE9Tc2dvODQ -f 

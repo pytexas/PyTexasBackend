@@ -1,5 +1,0 @@
-#!/bin/bash
-
-./download_db.bsh
-
-python manage.py prodserver
