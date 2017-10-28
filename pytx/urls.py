@@ -25,6 +25,10 @@ import conference.views
 from graphene_django.views import GraphQLView
 
 urlpatterns = [
+    zen_url('2015/', pytx.views.archive),
+    zen_url('2014/', pytx.views.archive),
+    zen_url('2013/', pytx.views.archive),
+    
     zen_url('admin/', admin.site.urls),
     zen_url('data-graph', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     zen_url('favicon.ico', conference.views.favicon),
