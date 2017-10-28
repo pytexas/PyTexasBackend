@@ -26,9 +26,9 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = 'public-read'
 
 DATABASES = {
-  'default': {
-    'ENGINE': 'zappa_django_utils.db.backends.s3sqlite',
-    'NAME': 'db.sqlite3',
-    'BUCKET': 'pytexasdb'
-  }
+    'default': {
+        'ENGINE': 'zappa_django_utils.db.backends.s3sqlite',
+        'NAME': 'db.sqlite3',
+        'BUCKET': 'pytexasdb'
+    }
 }

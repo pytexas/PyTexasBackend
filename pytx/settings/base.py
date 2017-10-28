@@ -43,10 +43,8 @@ INSTALLED_APPS = [
     'djzen',
     'django_uwsgi',
     'storages',
-    
     'conference.profiles',
     'conference.event',
-    
     'graphene_django',
     'raven.contrib.django.raven_compat',
     'zappa_django_utils',
@@ -134,7 +132,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 FRONTEND = '2017-dist'
-FRONTEND_DIR = os.environ.get('FRONTEND_DIR', os.path.join(BASE_DIR, 'node_modules', 'pytexas'))
+FRONTEND_DIR = os.environ.get('FRONTEND_DIR',
+                              os.path.join(BASE_DIR, 'node_modules', 'pytexas'))
 FRONTEND_TEMPLATES = os.path.join(FRONTEND_DIR, 'app')
 FRONTEND_MD = os.path.join(FRONTEND_DIR, 'app', 'md')
 
@@ -168,17 +167,17 @@ SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "sessions"
 
 MEMCACHE = {
-  'BACKEND': 'django_bmemcached.memcached.BMemcached',
-  'LOCATION': os.environ.get('MEMCACHEDCLOUD_SERVERS', '').split(','),
-  'OPTIONS': {
-    'username': os.environ.get('MEMCACHEDCLOUD_USERNAME', ''),
-    'password': os.environ.get('MEMCACHEDCLOUD_PASSWORD', '')
-  }
+    'BACKEND': 'django_bmemcached.memcached.BMemcached',
+    'LOCATION': os.environ.get('MEMCACHEDCLOUD_SERVERS', '').split(','),
+    'OPTIONS': {
+        'username': os.environ.get('MEMCACHEDCLOUD_USERNAME', ''),
+        'password': os.environ.get('MEMCACHEDCLOUD_PASSWORD', '')
+    }
 }
 
 CACHES = {
-  'default': MEMCACHE,
-  'sessions': MEMCACHE
+    'default': MEMCACHE,
+    'sessions': MEMCACHE,
 }
 
 AUTH_USER_MODEL = 'profiles.User'
@@ -198,6 +197,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get('AWS_ACCESS_KEY', '')
 EMAIL_HOST_PASSWORD = os.environ.get('AWS_SECRET_KEY', '')
 EMAIL_USE_TLS = True
-
 
 from pytx.settings.logging import *
