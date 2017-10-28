@@ -164,6 +164,23 @@ STATICFILES_DIRS = [
 # Uncomment if using Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "sessions"
+
+MEMCACHE = {
+  'BACKEND': 'django_bmemcached.memcached.BMemcached',
+  'LOCATION': os.environ.get('MEMCACHEDCLOUD_SERVERS', '').split(','),
+  'OPTIONS': {
+    'username': os.environ.get('MEMCACHEDCLOUD_USERNAME', ''),
+    'password': os.environ.get('MEMCACHEDCLOUD_PASSWORD', '')
+  }
+}
+
+CACHES = {
+  'default': MEMCACHE,
+  'sessions': MEMCACHE
+}
+
 AUTH_USER_MODEL = 'profiles.User'
 
 GRAPHENE = {'SCHEMA': 'pytx.schema.schema'}

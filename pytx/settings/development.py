@@ -8,7 +8,11 @@ SECURE_SSL_REDIRECT = False
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
-    }
+    },
+    'sessions': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': 'django_cache',
+    },
 }
 
 SKIP_SW = True

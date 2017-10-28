@@ -1,5 +1,6 @@
 boto3==1.4.7
 django==1.11.4
+django-bmemcached==0.2.3
 django-dotenv==1.4.1
 django-filter==1.0.4
 django-flat-responsive==1.4.1
@@ -9,6 +10,7 @@ djzen==17.7.1
 graphene-django==2.0.dev2017073101
 Pillow==4.2.1
 pip-save==0.2.0
+python-binary-memcached==0.26.1
 raven==6.1.0
 stripe==1.66.0
 uwsgi==2.0.15
