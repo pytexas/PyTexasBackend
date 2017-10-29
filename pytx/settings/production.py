@@ -7,7 +7,7 @@ DEBUG = False
 
 from pytx.settings.base import *
 
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 
 BASE_URL = 'https://www.pytexas.org'
 
