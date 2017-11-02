@@ -16,4 +16,4 @@ stripe==1.66.0
 uwsgi==2.0.15
 whitenoise==3.3.0
 zappa-django-utils==0.3.0
--e git+git://github.com/pizzapanther/Django-Conference.git@161bf91e801c0f2e0205c8211491f7a6e47e585d#egg=conference
+-e git+git://github.com/pizzapanther/Django-Conference.git@2e2474e8f6a340062eb33a810383b46ccd38e2f4#egg=conference
