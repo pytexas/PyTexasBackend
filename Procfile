@@ -1,1 +1,1 @@
-web: gunicorn pytx.wsgi --preload --worker-class gevent
+web: gunicorn pytx.wsgi --worker-class gevent
