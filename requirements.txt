@@ -7,7 +7,9 @@ django-flat-responsive==1.4.1
 django-storages==1.6.5
 django-uwsgi==0.2.1
 djzen==17.7.1
+gevent==1.2.2
 graphene-django==2.0.dev2017073101
+gunicorn==19.7.1
 Pillow==4.2.1
 pip-save==0.2.0
 python-binary-memcached==0.26.1

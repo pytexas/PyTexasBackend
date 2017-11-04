@@ -1,1 +1,1 @@
-web: python manage.py prodserver
+web: gunicorn pytx.wsgi --preload --worker-class gevent
