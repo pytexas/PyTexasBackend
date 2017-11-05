@@ -28,6 +28,7 @@ urlpatterns = [
     zen_url('2015/', pytx.views.archive),
     zen_url('2014/', pytx.views.archive),
     zen_url('2013/', pytx.views.archive),
+    zen_url('release-stream', pytx.views.release_stream),
     
     zen_url('admin/', admin.site.urls),
     zen_url('data-graph', csrf_exempt(GraphQLView.as_view(graphiql=True))),
