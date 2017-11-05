@@ -6,7 +6,7 @@ DEV = False
 DATA = {'VERSION': 0}
 
 def release_key ():
-  return '{}-{}'.format(RELEASE, DATA['VERSION'])
+  return '{}.{}'.format(RELEASE, DATA['VERSION'])
   
 def update_data_version ():
   DATA['VERSION'] += 1
