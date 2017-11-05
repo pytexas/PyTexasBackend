@@ -1,1 +1,1 @@
-web: gunicorn pytx.wsgi --worker-class gevent
+web: python runtornado.py
