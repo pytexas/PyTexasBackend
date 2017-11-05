@@ -94,7 +94,7 @@
     <script>
       var DEBUG = {% if debug %}true{% else %}false{% endif %};
       var URLS = {
-        main: '{{ request.scheme }}://{{ request.get_host }}',
+        main: 'https://{{ request.get_host }}',
         login: {
           google: '/auth/social/login/google-oauth2/'
         },
