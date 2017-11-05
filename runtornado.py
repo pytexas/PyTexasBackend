@@ -1,12 +1,17 @@
 #!/usr/bin/env python
 
 import os
+import logging
 
+from tornado import gen
 import tornado.httpserver
 import tornado.ioloop
+import tornado.log
 import tornado.web
 import tornado.wsgi
-import tornado.log
+import tornado.websocket
+
+from pytx.release import RELEASE
 
 PORT = int(os.environ.get('PORT', '8000'))
 ENV = os.environ.get('ENVIRONMENT', 'development')
@@ -14,10 +19,28 @@ AUTORELOAD = True
 if ENV == 'production':
   AUTORELOAD = False
   
-class HelloHandler(tornado.web.RequestHandler):
-  def get(self):
-    self.write('Hello from tornado')
-
+class ReleaseWebSocket(tornado.websocket.WebSocketHandler):
+  def open(self):
+    logging.info("WebSocket opened")
+    self.stop = False
+    self.send_release()
+    
+  @gen.coroutine
+  def send_release (self):
+    while True:
+      if self.stop:
+        return
+        
+      self.write_message(RELEASE)
+      yield gen.sleep(55)
+      
+  def on_message(self, message):
+    pass
+    
+  def on_close(self):
+    self.stop = True
+    logging.info("WebSocket closed")
+    
 def main():
   tornado.log.enable_pretty_logging()
   
@@ -25,7 +48,7 @@ def main():
   container = tornado.wsgi.WSGIContainer(application)
   
   tornado_app = tornado.web.Application([
-    ('/hello', HelloHandler),
+    ('/release-stream$', ReleaseWebSocket),
     ('.*', tornado.web.FallbackHandler, dict(fallback=container)),
   ], autoreload=AUTORELOAD)
 
