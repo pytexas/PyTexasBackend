@@ -11,7 +11,7 @@ import tornado.web
 import tornado.wsgi
 import tornado.websocket
 
-from pytx.release import RELEASE
+from pytx.release import RELEASE, DATA, release_key
 
 PORT = int(os.environ.get('PORT', '8000'))
 ENV = os.environ.get('ENVIRONMENT', 'development')
@@ -31,7 +31,7 @@ class ReleaseWebSocket(tornado.websocket.WebSocketHandler):
       if self.stop:
         return
         
-      self.write_message(RELEASE)
+      self.write_message(release_key())
       yield gen.sleep(50)
       
   def on_message(self, message):
