@@ -32,6 +32,14 @@ IMAGES = [
     'img/icons/sponsors.svg',
     'img/icons/venue.svg',
     'img/icons/background.png',
+    
+    'img/social/about.me.png',
+    'img/social/facebook.png',
+    'img/social/github.png',
+    'img/social/google.png',
+    'img/social/linkedin.png',
+    'img/social/twitter.png',
+    'img/social/website.png',
 ]
 
 FONTS = [
