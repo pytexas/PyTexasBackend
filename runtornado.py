@@ -32,7 +32,7 @@ class ReleaseWebSocket(tornado.websocket.WebSocketHandler):
         return
         
       self.write_message(RELEASE)
-      yield gen.sleep(55)
+      yield gen.sleep(50)
       
   def on_message(self, message):
     pass
