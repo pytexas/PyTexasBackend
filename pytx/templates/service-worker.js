@@ -5,6 +5,7 @@ var CONF_HTTP = '{{ base_url }}/{{ conf }}/';
 var HTTP = '{{ base_url }}';
 var CORE_FILES = [
   "/{{ conf }}/",
+  "{% url "conference-data" conf %}",
   {% for css in files.css %}"{% static css %}",
   {% endfor %}{% for js in files.js %}"{% static js %}",
   {% endfor %}{% for f in files.fonts %}"{% static f %}",
