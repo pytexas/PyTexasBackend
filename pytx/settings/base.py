@@ -198,4 +198,8 @@ EMAIL_HOST_USER = os.environ.get('AWS_ACCESS_KEY', '')
 EMAIL_HOST_PASSWORD = os.environ.get('AWS_SECRET_KEY', '')
 EMAIL_USE_TLS = True
 
+EVENTBRITE_API_URL = 'https://www.eventbriteapi.com/v3'
+EVENTBRITE_EVENT_ID = os.environ.get('EVENTBRITE_EVENT_ID', '')
+EVENTBRITE_OAUTH_TOKEN = os.environ.get('EVENTBRITE_OAUTH_TOKEN', '')
+
 from pytx.settings.logging import *
