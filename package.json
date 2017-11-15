@@ -4,7 +4,7 @@
   "description": "## Development Quickstart",
   "main": "gulpfile.js",
   "dependencies": {
-    "pytexas": "git+https://github.com/pytexas/PyTexas2017.git#98d0e5bfd6859a690f428d703e0a84769fd4f8ad"
+    "pytexas": "git+https://github.com/pytexas/PyTexas2017.git#af41ead0b7fa78e8de9666f256f0f0de3ca17c12"
   },
   "devDependencies": {},
   "scripts": {
