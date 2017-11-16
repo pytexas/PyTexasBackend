@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'conference.event',
     'graphene_django',
     'raven.contrib.django.raven_compat',
+    'rest_framework',
     'zappa_django_utils',
 ]
 
