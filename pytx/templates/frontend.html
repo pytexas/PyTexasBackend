@@ -95,6 +95,7 @@
       var DEBUG = {% if debug %}true{% else %}false{% endif %};
       var URLS = {
         main: 'https://{{ request.get_host }}',
+        static: '{% static '' %}',
         login: {
           google: '/auth/social/login/google-oauth2/'
         },
