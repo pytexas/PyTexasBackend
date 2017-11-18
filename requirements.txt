@@ -18,4 +18,4 @@ tornado==4.5.2
 uwsgi==2.0.15
 whitenoise==3.3.0
 zappa-django-utils==0.3.0
--e git+git://github.com/pizzapanther/Django-Conference.git@a62828a77935fc396aef8b4d774e1861940b845b#egg=conference
+-e git+git://github.com/pizzapanther/Django-Conference.git@81d7dc740a8453f93bb051c77b33248b4769e1ac#egg=conference
