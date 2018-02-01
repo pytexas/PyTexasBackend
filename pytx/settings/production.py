@@ -1,5 +1,7 @@
 import os
 
+import dj_database_url
+
 from pytx.release import RELEASE
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -32,3 +34,5 @@ DATABASES = {
         'BUCKET': 'pytexasdb'
     }
 }
+
+DATABASES['backup'] = dj_database_url.config(default='postgres://localhost:5432/pytexas')
