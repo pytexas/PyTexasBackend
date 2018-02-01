@@ -8,6 +8,7 @@ django-flat-responsive==1.4.1
 django-storages==1.6.5
 django-uwsgi==0.2.1
 djangorestframework==3.7.3
+djzen==17.7.1
 graphene-django==2.0.dev2017073101
 Pillow==4.2.1
 pip-save==0.2.0
@@ -15,6 +16,7 @@ python-binary-memcached==0.26.1
 raven==6.1.0
 stripe==1.66.0
 tornado==4.5.2
+uwsgi==2.0.15
 whitenoise==3.3.0
 zappa-django-utils==0.3.0
 -e git+git://github.com/pizzapanther/Django-Conference.git@81d7dc740a8453f93bb051c77b33248b4769e1ac#egg=conference
