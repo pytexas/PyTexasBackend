@@ -17,7 +17,7 @@ JS = [
 
 CSS = [
     'vue-material.css',
-    '2017-dist/pytx.css',
+    '2018-dist/pytx.css',
 ]
 
 IMAGES = [
@@ -32,7 +32,7 @@ IMAGES = [
     'img/icons/sponsors.svg',
     'img/icons/venue.svg',
     'img/icons/background.png',
-    
+
     'img/social/about.me.png',
     'img/social/facebook.png',
     'img/social/github.png',

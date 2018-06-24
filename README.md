@@ -56,9 +56,9 @@ pip-save install some-lib
 
 ```
 # Some where outside the backend directory
-git clone git@github.com:pytexas/PyTexas2017.git
+git clone git@github.com:pytexas/PyTexas2018.git
 
-export FRONTEND_DIR=/path/to/PyTexas2017
+export FRONTEND_DIR=/path/to/PyTexas2018
 ```
 
 After your pull request is accepted on the frontend, update package.json with your git hash to release it.

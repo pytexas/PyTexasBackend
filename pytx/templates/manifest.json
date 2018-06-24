@@ -1,12 +1,12 @@
 {
     {% load static %}
-    "name": "PyTexas 2017",
-    "description": "PyTexas 2017 Conference",
+    "name": "PyTexas 2018",
+    "description": "PyTexas 2018 Conference",
     "developer": {
       "name": "PyTexas",
       "url": "https://www.pytexas.org"
     },
-    "start_url": "/2017/",
+    "start_url": "/2018/",
     "icons": [
         {
             "src": "{% static "img/manifest/android-chrome-192x192.png" %}",

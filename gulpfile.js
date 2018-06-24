@@ -23,7 +23,7 @@ gulp.task('build-js', function () {
   }).then(function (bundle) {
     return bundle.write({
       format: 'iife',
-      file: './frontend/2017-dist/pytx.js',
+      file: './frontend/2018-dist/pytx.js',
       globals: {
         "vue": 'Vue',
         "vue-router": 'VueRouter',
@@ -38,13 +38,13 @@ gulp.task('build-css', function () {
     .pipe(plumber())
     .pipe(less({paths: [`${frontdir}/less`]}))
     .pipe(concat('pytx.css'))
-    .pipe(gulp.dest("frontend/2017-dist"));
+    .pipe(gulp.dest("frontend/2018-dist"));
 });
 
 gulp.task('copy-md', function () {
   return gulp.src(`${frontdir}/app/md/**/*.md`)
     .pipe(plumber())
-    .pipe(gulp.dest("frontend/2017-dist/md"));
+    .pipe(gulp.dest("frontend/2018-dist/md"));
 });
 
 gulp.task('watch', build_tasks, function () {
