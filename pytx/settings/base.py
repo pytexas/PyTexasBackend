@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(
 SECRET_KEY = os.environ.get('SECRET_KEY', None)
 
 ALLOWED_HOSTS = [
-    'pallas.neutrondrive.com',
+    'localhost.neutrondrive.com',
     'pytexas.herokuapp.com',
     'www.pytexas.org',
     'pytexas.org',
@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djzen',
-    'django_uwsgi',
     'storages',
     'conference.profiles',
     'conference.event',

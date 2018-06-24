@@ -16,8 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.decorators.csrf import csrf_exempt
-
-from djzen.urls import zen_url
+from django.urls import path, re_path
 
 import pytx.views
 import conference.views
@@ -25,17 +24,18 @@ import conference.views
 from graphene_django.views import GraphQLView
 
 urlpatterns = [
-    zen_url('2015/', pytx.views.archive),
-    zen_url('2014/', pytx.views.archive),
-    zen_url('2013/', pytx.views.archive),
-    
-    zen_url('admin/', admin.site.urls),
-    zen_url('data-graph', csrf_exempt(GraphQLView.as_view(graphiql=True))),
-    zen_url('favicon.ico', conference.views.favicon),
-    zen_url('service-worker.js', conference.views.sw),
-    zen_url('release', conference.views.release),
-    zen_url('manifest.json', conference.views.manifest),
-    zen_url('browserconfig.xml', conference.views.browserconfig),
-    zen_url('conference/', include('conference.event.urls')),
-    zen_url('.*', conference.views.frontend),
+    path('2017/', pytx.views.redirect, kwargs={'year': '2017'}),
+    path('2015/', pytx.views.archive),
+    path('2014/', pytx.views.archive),
+    path('2013/', pytx.views.archive),
+
+    path('admin/', admin.site.urls),
+    path('data-graph', csrf_exempt(GraphQLView.as_view(graphiql=True))),
+    path('favicon.ico', conference.views.favicon),
+    path('service-worker.js', conference.views.sw),
+    path('release', conference.views.release),
+    path('manifest.json', conference.views.manifest),
+    path('browserconfig.xml', conference.views.browserconfig),
+    path('conference/', include('conference.event.urls')),
+    re_path(r'.*', conference.views.frontend),
 ]
