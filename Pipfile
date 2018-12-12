@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+djzen = "*"
+dj-database-url = "*"
+django-bmemcached = "*"
+django-flat-responsive = "*"
+djangorestframework = "*"
+python-binary-memcached = "*"
+"psycopg2-binary" = "*"
+raven = "*"
+stripe = "*"
+tornado = "*"
+graphene-django = "==2.0.dev2017073101"
+conference = {git = "https://github.com/pizzapanther/Django-Conference.git",ref = "4e91abaed61cd753a038a4721463e7b3b6f9f037"}
+django-filter = "==1.0.4"
+ipython = "*"
+graphene = "==2.1.2"
+django = "==2.0.9"
+pillow = "*"
+
+[dev-packages]
+begins = "*"
+yapf = "*"
+
+[requires]
+python_version = "3.6"

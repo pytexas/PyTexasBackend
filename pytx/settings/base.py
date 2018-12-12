@@ -23,7 +23,8 @@ BASE_DIR = os.path.dirname(
 SECRET_KEY = os.environ.get('SECRET_KEY', None)
 
 ALLOWED_HOSTS = [
-    'localhost.neutrondrive.com',
+    'localhost',
+    'shiny-term-1751.graviton.ninja',
     'pytexas.herokuapp.com',
     'www.pytexas.org',
     'pytexas.org',
@@ -41,13 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djzen',
-    'storages',
+    'django_filters',
     'conference.profiles',
     'conference.event',
     'graphene_django',
     'raven.contrib.django.raven_compat',
     'rest_framework',
-    'zappa_django_utils',
 ]
 
 MIDDLEWARE = [
@@ -131,13 +131,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-FRONTEND = '2018-dist'
+FRONTEND = '2019-dist'
 FRONTEND_DIR = os.environ.get('FRONTEND_DIR',
                               os.path.join(BASE_DIR, 'node_modules', 'pytexas'))
 FRONTEND_TEMPLATES = os.path.join(FRONTEND_DIR, 'app')
 FRONTEND_MD = os.path.join(FRONTEND_DIR, 'app', 'md')
 
-STATIC_URL = '/static-2018/'
+STATIC_URL = '/static-2019/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static-compiled")
 
@@ -146,18 +146,17 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_DIRS = [
     FRONTEND_DIR,
-    os.path.join(BASE_DIR, 'frontend'),
-    os.path.join(BASE_DIR, 'node_modules', 'vue', 'dist'),
-    os.path.join(BASE_DIR, 'node_modules', 'vue-router', 'dist'),
-    os.path.join(BASE_DIR, 'node_modules', 'vue-material', 'dist'),
-    os.path.join(BASE_DIR, "node_modules", "md-icons"),
-    os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts",
-                 "roboto"),
-    os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts",
-                 "roboto-slab"),
-    os.path.join(BASE_DIR, "node_modules", "axios", "dist"),
-    os.path.join(BASE_DIR, "node_modules", "showdown", "dist"),
-    os.path.join(BASE_DIR, 'node_modules', 'raven-js', 'dist'),
+    # os.path.join(BASE_DIR, 'node_modules', 'vue', 'dist'),
+    # os.path.join(BASE_DIR, 'node_modules', 'vue-router', 'dist'),
+    # os.path.join(BASE_DIR, 'node_modules', 'vue-material', 'dist'),
+    # os.path.join(BASE_DIR, "node_modules", "md-icons"),
+    # os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts",
+    #              "roboto"),
+    # os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts",
+    #              "roboto-slab"),
+    # os.path.join(BASE_DIR, "node_modules", "axios", "dist"),
+    # os.path.join(BASE_DIR, "node_modules", "showdown", "dist"),
+    # os.path.join(BASE_DIR, 'node_modules', 'raven-js', 'dist'),
 ]
 
 # Uncomment if using Heroku
@@ -184,7 +183,7 @@ AUTH_USER_MODEL = 'profiles.User'
 
 GRAPHENE = {'SCHEMA': 'pytx.schema.schema'}
 
-CURRENT_CONF = '2018'
+CURRENT_CONF = '2019'
 
 STRIPE_PUB_KEY = os.environ.get('STRIPE_PUB_KEY', '')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')

@@ -5,19 +5,19 @@ from django.conf import settings
 JS_HEAD = []
 
 JS = [
-    'vue.min.js',
-    'vue-router.min.js',
-    'vue-material.js',
-    'raven.min.js',
-    'plugins/vue.min.js',
-    'axios.min.js',
-    'showdown.min.js',
-    settings.FRONTEND + '/pytx.js',
+    # 'vue.min.js',
+    # 'vue-router.min.js',
+    # 'vue-material.js',
+    # 'raven.min.js',
+    # 'plugins/vue.min.js',
+    # 'axios.min.js',
+    # 'showdown.min.js',
+    # settings.FRONTEND + '/pytx.js',
 ]
 
 CSS = [
-    'vue-material.css',
-    '2018-dist/pytx.css',
+    # 'vue-material.css',
+    # '2018-dist/pytx.css',
 ]
 
 IMAGES = [

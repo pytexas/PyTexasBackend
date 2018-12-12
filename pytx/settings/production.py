@@ -28,11 +28,11 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = 'public-read'
 
 DATABASES = {
-    'backup': {
-        'ENGINE': 'zappa_django_utils.db.backends.s3sqlite',
-        'NAME': 'db.sqlite3',
-        'BUCKET': 'pytexasdb'
-    }
+    # 'backup': {
+    #     'ENGINE': 'zappa_django_utils.db.backends.s3sqlite',
+    #     'NAME': 'db.sqlite3',
+    #     'BUCKET': 'pytexasdb'
+    # }
 }
 
 DATABASES['default'] = dj_database_url.config(default='postgres://localhost:5432/pytexas')

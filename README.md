@@ -8,17 +8,16 @@ Clone the repo:
 git clone git@github.com:pytexas/PyTexasBackend.git
 ```
 
-Create a venv and activate it:
+Create a venv:
 
 ```
-$ python -m venv env
-$ source env/bin/activate
+$ sudo pip install pipenv
+$ pipenv install --dev
 ```
 
-Install the devlopment dependencies:
+Install the frontend:
 
 ```
-$ pip install -r requirements-dev.txt
 $ npm install
 ```
 
@@ -30,23 +29,16 @@ $ echo "SECRET_KEY=an insecure development secret" > .env
 Run unapplied migrations:
 
 ```
-$ python manage.py migrate
+$ pipenv run python manage.py migrate
 ```
 
 Run the development server:
 ```
 # backend
-python manage.py runserver
+pipenv run python manage.py runserver
 
 # frontend
 gulp watch
-```
-
-Add a dependency
-
-```
-# Python
-pip-save install some-lib
 ```
 
 ## Working with Local Packages
@@ -57,7 +49,7 @@ pip-save install some-lib
 # Some where outside the backend directory
 git clone git@github.com:pytexas/PyTexas2018.git
 
-export FRONTEND_DIR=/path/to/PyTexas2018
+echo FRONTEND_DIR=/path/to/PyTexas2018 >> .env
 ```
 
 After your pull request is accepted on the frontend, update package.json with your git hash to release it.
@@ -65,6 +57,7 @@ After your pull request is accepted on the frontend, update package.json with yo
 ### Developing with a local conference app
 
 ```
+pipenv shell
 pip uninstall conference
 
 # Some where outside the backend directory
@@ -73,4 +66,4 @@ cd Django-Conference/
 pip install -e .
 ```
 
-After your pull request is accepted on the conference app, update requirements.txt with your git hash to release it.
+After your pull request is accepted on the conference app, update the Pipfile with your git hash to release it.

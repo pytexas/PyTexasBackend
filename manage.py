@@ -2,8 +2,6 @@
 import os
 import sys
 
-import dotenv
-
 if __name__ == "__main__":
   os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pytx.settings")
   try:
@@ -22,10 +20,6 @@ if __name__ == "__main__":
     raise
 
   BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-  dotenv_path = os.path.join(BASE_DIR, '.env')
-
-  if os.path.exists(dotenv_path):
-    dotenv.read_dotenv(dotenv_path)
 
   if 'devserver' in sys.argv or 'runserver' in sys.argv:
     os.environ.setdefault("ENVIRONMENT", "development")

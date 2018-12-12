@@ -11,14 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-import dotenv
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-dotenv_path = os.path.join(BASE_DIR, '.env')
-
-if os.path.exists(dotenv_path):
-  dotenv.read_dotenv(dotenv_path)
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pytx.settings")
 

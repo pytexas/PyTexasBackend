@@ -6,6 +6,9 @@ from pytx.release import update_data_version
 def redirect (request, year='2017'):
   return http.HttpResponseRedirect('http://{}.pytexas.org'.format(year))
 
+def redirect_no_conf (request, year='2019'):
+  return http.HttpResponseRedirect('/{}/'.format(year))
+
 def archive (request):
   return http.HttpResponseRedirect('http://archive.pytexas.org' + request.path)
 

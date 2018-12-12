@@ -57,39 +57,9 @@
     {% for js in files.js_head %}
     <script src="{% static js %}"></script>{% endfor %}
   </head>
-  <body class="md-theme-default">
+  <body>
     <div id="splash">
       <img src="{% static "img/banner80.png" %}" alt="{{ site.name }}">
-    </div>
-    <div id="app">
-      <side-nav :report_ref="report_ref"></side-nav>
-      <top-bar :toggle="toggle"></top-bar>
-      <md-progress v-if="loading" class="md-accent main" md-indeterminate></md-progress>
-      <div v-if="update_needed" class="update">
-        New version available:
-        <md-button class="md-raised" @click="do_update()">
-          <md-icon>refresh</md-icon>
-          Update
-        </md-button>
-      </div>
-      <div id="content">
-        <left-nav></left-nav>
-        <div class="main-panel">
-          <sub-nav></sub-nav>
-          <router-view></router-view>
-        </div>
-      </div>
-      <footer>
-        <router-link to="/page/about/privacy">
-          Privacy Policy
-        </router-link>
-         &nbsp;|&nbsp;
-        <router-link to="/page/about/code-of-conduct">
-          Code of Conduct
-        </router-link>
-         &nbsp;|&nbsp;
-        Release: {{ release }}
-      </footer>
     </div>
     <script>
       var DEBUG = {% if debug %}true{% else %}false{% endif %};
