@@ -41,10 +41,6 @@
         width: 128px;
       }
 
-      #app {
-        display: none;
-      }
-
       .main-panel > div > .md-card, .md-card.iconbg {
         background-position: top center;
         background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url({% static "img/icons/background.png" %});
@@ -52,6 +48,8 @@
       }
     </style>
 
+    <!--temp fonts-->
+    <link href='//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
     {% for css in files.css %}
     <link rel="stylesheet" href="{% static css %}">{% endfor %}
     {% for js in files.js_head %}
@@ -61,8 +59,12 @@
     <div id="splash">
       <img src="{% static "img/banner80.png" %}" alt="{{ site.name }}">
     </div>
+    <div id="pytxapp" style="display: none;">
+      <pytx-app></pytx-app>
+    </div>
     <script>
       var DEBUG = {% if debug %}true{% else %}false{% endif %};
+      var YEAR = {{ conf }};
       var URLS = {
         main: 'https://{{ request.get_host }}',
         static: '{{ static_url }}',

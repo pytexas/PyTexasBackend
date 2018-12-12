@@ -133,7 +133,7 @@ USE_TZ = True
 
 FRONTEND = '2019-dist'
 FRONTEND_DIR = os.environ.get('FRONTEND_DIR',
-                              os.path.join(BASE_DIR, 'node_modules', 'pytexas'))
+                              os.path.join(BASE_DIR, 'node_modules', 'pytexas', 'dist'))
 FRONTEND_TEMPLATES = os.path.join(FRONTEND_DIR, 'app')
 FRONTEND_MD = os.path.join(FRONTEND_DIR, 'app', 'md')
 
@@ -144,19 +144,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static-compiled")
 # Uncomment for forever-cacheable files and compression support
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+print(FRONTEND_DIR)
 STATICFILES_DIRS = [
     FRONTEND_DIR,
-    # os.path.join(BASE_DIR, 'node_modules', 'vue', 'dist'),
-    # os.path.join(BASE_DIR, 'node_modules', 'vue-router', 'dist'),
-    # os.path.join(BASE_DIR, 'node_modules', 'vue-material', 'dist'),
-    # os.path.join(BASE_DIR, "node_modules", "md-icons"),
-    # os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts",
-    #              "roboto"),
-    # os.path.join(BASE_DIR, "node_modules", "roboto-fontface", "fonts",
-    #              "roboto-slab"),
-    # os.path.join(BASE_DIR, "node_modules", "axios", "dist"),
-    # os.path.join(BASE_DIR, "node_modules", "showdown", "dist"),
-    # os.path.join(BASE_DIR, 'node_modules', 'raven-js', 'dist'),
 ]
 
 # Uncomment if using Heroku

@@ -1,7 +1,11 @@
 from django import http
+from django.conf import settings
 from django.db.models.signals import post_save, post_delete
 
 from pytx.release import update_data_version
+
+def static_redirect(request):
+  return http.HttpResponseRedirect(settings.STATIC_URL + request.path[1:])
 
 def redirect (request, year='2017'):
   return http.HttpResponseRedirect('http://{}.pytexas.org'.format(year))
