@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'graphene_django',
     'raven.contrib.django.raven_compat',
     'rest_framework',
+    'pytx',
 ]
 
 MIDDLEWARE = [
@@ -66,7 +67,7 @@ ROOT_URLCONF = 'pytx.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'pytx', 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,9 +134,9 @@ USE_TZ = True
 
 FRONTEND = '2019-dist'
 FRONTEND_DIR = os.environ.get('FRONTEND_DIR',
-                              os.path.join(BASE_DIR, 'node_modules', 'pytexas', 'dist'))
+                              os.path.join(BASE_DIR, 'node_modules', 'pytexas2019', 'dist'))
 FRONTEND_TEMPLATES = os.path.join(os.path.dirname(FRONTEND_DIR), 'src')
-FRONTEND_MD = os.path.join(FRONTEND_DIR, 'app', 'md')
+FRONTEND_MD = os.path.join(FRONTEND_DIR, 'md')
 
 STATIC_URL = '/static-2019/'
 

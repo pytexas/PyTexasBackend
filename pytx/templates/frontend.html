@@ -1,4 +1,4 @@
-<!doctype html>{% load static conference %}
+<!doctype html>{% load static conference pytx_tags %}
 <html lang="en">
   <head>
     <!-- Release: {{ release }} -->
@@ -72,7 +72,7 @@
           google: '/auth/social/login/google-oauth2/'
         },
         md: {
-          {% for md in files.md %}'{{ md }}': '{% static md|dist:"md" %}'{% if not forloop.last %},{% endif %}
+          {% for md in files.md %}'{{ md }}': '{% static md|distfolder:"md" %}'{% if not forloop.last %},{% endif %}
           {% endfor %}
         }
       };

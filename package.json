@@ -2,23 +2,21 @@
   "name": "pytexasbackend",
   "version": "1.0.0",
   "description": "## Development Quickstart",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "pytexas": "git+https://github.com/pytexas/PyTexas2018.git#fafb627dd43c9e9124719c7bade2ef501e81d449"
-  },
-  "devDependencies": {},
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "gulp"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pytexas/PyTexasBackend.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Paul Bailey <paul.m.bailey@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/pytexas/PyTexasBackend/issues"
   },
-  "homepage": "https://github.com/pytexas/PyTexasBackend#readme"
+  "homepage": "https://github.com/pytexas/PyTexasBackend#readme",
+  "dependencies": {
+    "pytexas2019": "git+https://github.com/pytexas/PyTexas2019.git#d682903b1445c21f675fb8a1470e32c4285c9c77"
+  }
 }
