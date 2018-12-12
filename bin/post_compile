@@ -3,9 +3,5 @@
 python manage.py collectstatic --noinput -i docs -i components
 python manage.py migrate --noinput
 
-mv node_modules/pytexas pytexas_front
-rm -rf node_modules
-mkdir node_modules
-mv pytexas_front node_modules/pytexas
 rm -rf static-compiled/docs
 rm -rf static-compiled/components
