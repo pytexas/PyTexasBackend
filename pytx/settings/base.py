@@ -134,7 +134,7 @@ USE_TZ = True
 FRONTEND = '2019-dist'
 FRONTEND_DIR = os.environ.get('FRONTEND_DIR',
                               os.path.join(BASE_DIR, 'node_modules', 'pytexas', 'dist'))
-FRONTEND_TEMPLATES = os.path.join(FRONTEND_DIR, 'app')
+FRONTEND_TEMPLATES = os.path.join(os.path.dirname(FRONTEND_DIR), 'src')
 FRONTEND_MD = os.path.join(FRONTEND_DIR, 'app', 'md')
 
 STATIC_URL = '/static-2019/'

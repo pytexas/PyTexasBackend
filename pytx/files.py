@@ -13,7 +13,7 @@ JS = [
 
 CSS = [
     'vuetify.min.css',
-    # '2018-dist/pytx.css',
+    'pytexas.css',
 ]
 
 IMAGES = [
