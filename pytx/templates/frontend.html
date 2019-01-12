@@ -41,15 +41,20 @@
         width: 128px;
       }
 
-      .main-panel > div > .md-card, .md-card.iconbg {
+      .iconbg {
         background-position: top center;
         background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url({% static "img/icons/background.png" %});
         background-size: 100%;
       }
+
+      .svg-group.about .v-list__group__header__prepend-icon i {
+        background-image: url({% static "img/icons/about.svg" %});
+        width: 24px;
+      }
     </style>
 
     <!--temp fonts-->
-    <link href='//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Material+Icons" rel="stylesheet">
     {% for css in files.css %}
     <link rel="stylesheet" href="{% static css %}">{% endfor %}
     {% for js in files.js_head %}
