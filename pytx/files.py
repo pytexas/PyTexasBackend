@@ -23,6 +23,8 @@ IMAGES = [
     'img/icons/about.svg',
     'img/icons/blog.svg',
     'img/icons/chat.svg',
+    'img/icons/external.svg',
+    'img/icons/external-white.svg',
     'img/icons/talks.svg',
     'img/icons/community.svg',
     'img/icons/sponsors.svg',
@@ -37,7 +39,7 @@ IMAGES = [
     'img/social/twitter.png',
     'img/social/website.png',
 
-    'img/ut-complex/dell-gates-exterior.jpg',
+    'img/apl/ncl_location_page_large.jpg',
 ]
 
 FONTS = [
