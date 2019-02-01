@@ -37,7 +37,8 @@ IMAGES = [
     'img/social/twitter.png',
     'img/social/website.png',
 
-    'img/ut-complex/dell-gates-exterior.jpg',
+    'img/apl/library1.png',
+    'img/apl/library2.png',
 ]
 
 FONTS = [
