@@ -13,6 +13,7 @@ JS = [
 
 CSS = [
     'vuetify.min.css',
+    'global.css',
     'pytexas.css',
 ]
 
@@ -27,6 +28,8 @@ IMAGES = [
     'img/icons/community.svg',
     'img/icons/sponsors.svg',
     'img/icons/venue.svg',
+    'img/icons/external.svg',
+    'img/icons/external-white.svg',
     'img/icons/background.png',
 
     'img/social/about.me.png',
