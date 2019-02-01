@@ -134,7 +134,7 @@ USE_TZ = True
 
 FRONTEND = '2019-dist'
 FRONTEND_DIR = os.environ.get('FRONTEND_DIR',
-                              os.path.join(BASE_DIR, 'node_modules', 'pytexas2019', 'dist'))
+                              os.path.join(BASE_DIR, 'node_modules', 'pytexas2019'))
 FRONTEND_TEMPLATES = os.path.join(os.path.dirname(FRONTEND_DIR), 'src')
 FRONTEND_MD = os.path.join(FRONTEND_DIR, 'md')
 
@@ -147,7 +147,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 print(FRONTEND_DIR)
 STATICFILES_DIRS = [
-    FRONTEND_DIR,
+    os.path.join(FRONTEND_DIR, 'dist'),
 ]
 
 # Uncomment if using Heroku
