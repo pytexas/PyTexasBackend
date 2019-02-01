@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/pytexas/PyTexasBackend#readme",
   "dependencies": {
-    "pytexas2019": "git+https://github.com/pytexas/PyTexas2019.git#c7c47614c9f6d374c9588588c0a5f51fe34e3d47"
+    "pytexas2019": "git+https://github.com/pytexas/PyTexas2019.git#e82de3a1cb1fd3ddf74fce860dd5a0f0f05d812c"
   }
 }
