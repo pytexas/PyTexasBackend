@@ -145,7 +145,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static-compiled")
 # Uncomment for forever-cacheable files and compression support
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-print(FRONTEND_DIR)
 STATICFILES_DIRS = [
     os.path.join(FRONTEND_DIR, 'dist'),
 ]

@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/pytexas/PyTexasBackend#readme",
   "dependencies": {
-    "pytexas2019": "git+https://github.com/pytexas/PyTexas2019.git#d1e99b907b0a611ec7b826f086d4be2f5a293d3d"
+    "pytexas2019": "git+https://github.com/pytexas/PyTexas2019.git#090b99c8fabe4a4d6f56b2a8cbd60b649d481251"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
   }
 }
