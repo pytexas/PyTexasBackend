@@ -15,7 +15,7 @@ raven = "*"
 stripe = "*"
 tornado = "*"
 graphene-django = "==2.0.dev2017073101"
-conference = {git = "https://github.com/pizzapanther/Django-Conference.git",ref = "4e91abaed61cd753a038a4721463e7b3b6f9f037"}
+conference = {git = "https://github.com/pizzapanther/Django-Conference.git",ref = "623be4294d53ec75f6699330d6d6ffb9498f5a83"}
 django-filter = "==1.0.4"
 ipython = "*"
 graphene = "==2.1.2"
