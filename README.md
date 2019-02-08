@@ -12,7 +12,7 @@ Create a venv:
 
 ```
 $ sudo pip install pipenv
-$ pipenv install --dev
+$ pipenv install
 ```
 
 Install the frontend:
@@ -67,3 +67,10 @@ pip install -e .
 ```
 
 After your pull request is accepted on the conference app, update the Pipfile with your git hash to release it.
+
+## Deploying
+
+1. Commit and push changes to the frontend master branch
+2. Update the backend package lock `npm install`
+3. Commit changes
+4. `git push heroku`
