@@ -71,6 +71,6 @@ After your pull request is accepted on the conference app, update the Pipfile wi
 ## Deploying
 
 1. Commit and push changes to the frontend master branch
-2. Update the backend package lock `npm update pytexas2019`
+2. Update the backend package lock `npm install pytexas/PyTexas2019.git#master`
 3. Commit changes
 4. `git push heroku`
