@@ -42,6 +42,9 @@ IMAGES = [
 
     'img/apl/library1.png',
     'img/apl/library2.png',
+
+    'img/keynote/emily.jpg',
+    'img/keynote/adrienne.jpg',
 ]
 
 FONTS = [
