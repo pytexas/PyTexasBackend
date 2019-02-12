@@ -39,5 +39,7 @@ urlpatterns = [
     path('manifest.json', conference.views.manifest),
     path('browserconfig.xml', conference.views.browserconfig),
     path('conference/', include('conference.event.urls')),
+    path('robots.txt', pytx.views.robots),
+    path('google442b861f8353f428.html', pytx.views.webmaster_tools),
     re_path(r'.*', conference.views.frontend),
 ]

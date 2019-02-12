@@ -1,8 +1,21 @@
 from django import http
 from django.conf import settings
 from django.db.models.signals import post_save, post_delete
+from django.template.response import TemplateResponse
 
 from pytx.release import update_data_version
+
+ROBOTS = """User-agent: *
+Disallow: /static/
+Disallow: /static-2019/
+"""
+
+
+def robots(request):
+  return http.HttpResponse(ROBOTS, content_type='text/plain')
+
+def webmaster_tools(request):
+  return TemplateResponse(request, 'google442b861f8353f428.html')
 
 def static_redirect(request):
   return http.HttpResponseRedirect(settings.STATIC_URL + request.path[1:])
