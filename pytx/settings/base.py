@@ -147,7 +147,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_DIRS = [
     os.path.join(FRONTEND_DIR, 'dist'),
-    os.path.join(BASE_DIR, 'node_modules/vuetify/dist')
 ]
 
 # Uncomment if using Heroku
