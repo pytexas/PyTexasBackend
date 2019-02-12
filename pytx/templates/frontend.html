@@ -75,6 +75,11 @@
       <pytx-app></pytx-app>
     </div>
     <script>
+      if (typeof Object.assign != 'function' || !Array.from || typeof Object.values != 'function') {
+        document.write('<script src="{% static 'polyfill.js' %}"><\/script>');
+      }
+    </script>
+    <script>
       var DEBUG = {% if debug %}true{% else %}false{% endif %};
       var YEAR = {{ conf }};
       var URLS = {
