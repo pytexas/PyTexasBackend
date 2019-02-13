@@ -76,6 +76,11 @@
     </div>
     <script>
       if (typeof Object.assign != 'function' || !Array.from || typeof Object.values != 'function') {
+        window.addEventListener("error", function (e) {
+          document.write("Error occurred: ");
+          document.write(e.error.message);
+          return false;
+        });
         document.write('<script src="{% static 'polyfill.js' %}"><\/script>');
       }
     </script>
