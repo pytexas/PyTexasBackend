@@ -79,14 +79,12 @@
         window.addEventListener("error", function (e) {
           document.write('<pre style="color: black;">');
           document.write("Error occurred: ");
-          document.write(e.error.toString());
-          document.write(e.error.fileName);
-          document.write(e.error.lineNumber);
+          document.write(e.error.toString() + "\n");
           document.write(e.error.stack);
           document.write("</pre>");
           return false;
         });
-        document.write('<script src="{% static 'polyfill.js' %}"><\/script>');
+        // document.write('<script src="{% static 'polyfill.js' %}"><\/script>');
       }
     </script>
     <script>
