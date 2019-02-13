@@ -80,6 +80,8 @@
           document.write('<pre style="color: black;">');
           document.write("Error occurred: ");
           document.write(e.error.toString());
+          document.write(e.error.fileName);
+          document.write(e.error.lineNumber);
           document.write("</pre>");
           return false;
         });
