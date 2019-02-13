@@ -77,10 +77,10 @@
     <script>
       if (typeof Object.assign != 'function' || !Array.from || typeof Object.values != 'function') {
         window.addEventListener("error", function (e) {
-          document.write('<span style="color: black;">');
+          document.write('<pre style="color: black;">');
           document.write("Error occurred: ");
-          document.write(JSON.stringify(e.error));
-          document.write("</span>");
+          document.write(e.error.toString());
+          document.write("</pre>");
           return false;
         });
         document.write('<script src="{% static 'polyfill.js' %}"><\/script>');
