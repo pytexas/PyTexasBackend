@@ -79,7 +79,7 @@
         window.addEventListener("error", function (e) {
           document.write('<span style="color: black;">');
           document.write("Error occurred: ");
-          document.write(e.error.message);
+          document.write(JSON.stringify(e.error));
           document.write("</span>");
           return false;
         });
