@@ -1,0 +1,70 @@
+@import "breakpoints.less";
+@import "palette.less";
+
+.v-card.padding {
+  padding: 20px;
+}
+
+.tc {
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: @headerFont;
+}
+
+ul, ol {
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+/* Overrides of Vuetify */
+
+html {
+  font-size: 18px;
+}
+
+@media @max {
+  .container {
+    max-width: 1020px;
+  }
+}
+
+@media @small {
+  .container {
+    padding: 5px;
+  }
+}
+
+.v-card.main {
+  margin-bottom: 30px;
+}
+
+.v-card.padding {
+  padding: 20px;
+}
+
+.v-footer {
+  font-size: 80%;
+}
+
+img.ext {
+  height: 12px;
+}
+
+hr {
+  padding: 0;
+  margin: 20px;
+}

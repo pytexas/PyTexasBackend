@@ -1,0 +1,30 @@
+@import "palette.less";
+
+.maintoolbar {
+  .v-toolbar {
+    a {
+      color: @primaryTextColor;
+      text-decoration: none;
+      display: inline-block;
+    }
+  }
+
+  .v-toolbar__title {
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+
+  .v-toolbar__items a {
+    display: flex;
+    height: 36px !important;
+  }
+
+  .v-list__tile__action img {
+    width: 24px;
+  }
+
+  .v-list__tile--active img {
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg);
+  }
+}
