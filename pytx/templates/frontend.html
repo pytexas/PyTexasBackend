@@ -68,7 +68,7 @@
     <script src="{% static js %}"></script>{% endfor %}
   </head>
   <body>
-    <div id="splash" style="display: none;">
+    <div id="splash">
       <img src="{% static "img/banner80.png" %}" alt="{{ site.name }}">
     </div>
     <div id="pytxapp" style="display: none;">
@@ -76,14 +76,6 @@
     </div>
     <script>
       if (typeof Object.assign != 'function' || !Array.from || typeof Object.values != 'function') {
-        window.addEventListener("error", function (e) {
-          document.write('<pre style="color: black;">');
-          document.write("Error occurred: ");
-          document.write(e.error.toString() + "\n");
-          document.write(e.error.stack);
-          document.write("</pre>");
-          return false;
-        });
         document.write('<script src="{% static 'polyfill.js' %}"><\/script>');
       }
     </script>
