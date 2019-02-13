@@ -12,7 +12,6 @@ django-flat-responsive==2.0
 django==2.0.10
 djangorestframework==3.9.1
 djzen==17.12.5
-git+https://github.com/pizzapanther/Django-Conference.git@623be4294d53ec75f6699330d6d6ffb9498f5a83#egg=conference
 graphene-django==2.0.dev2017073101
 graphene==2.1.2
 graphql-core==2.1

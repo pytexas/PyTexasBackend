@@ -111,7 +111,6 @@ bin/creds.json
 media/
 pytx/settings/local.py
 frontend/
-conference/
 django_cache/
 Pipfile
 Pipfile.lock
