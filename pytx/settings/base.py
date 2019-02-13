@@ -133,10 +133,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 FRONTEND = '2019-dist'
-FRONTEND_DIR = os.environ.get('FRONTEND_DIR',
-                              os.path.join(BASE_DIR, 'node_modules', 'pytexas2019'))
-FRONTEND_TEMPLATES = os.path.join(os.path.dirname(FRONTEND_DIR), 'src')
-FRONTEND_MD = os.path.join(FRONTEND_DIR, 'md')
+FRONTEND_TEMPLATES = os.path.join(BASE_DIR, 'pytx/static/src')
+FRONTEND_MD = os.path.join(BASE_DIR, 'pytx/static/md')
 
 STATIC_URL = '/static-2019/'
 
