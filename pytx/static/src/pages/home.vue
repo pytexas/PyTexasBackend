@@ -77,13 +77,15 @@
             <a href="https://twitter.com/adriennefriend/">@adriennefriend</a>
           </h4>
           <p>
-            Adrienne is the Director of Engineering at Juice Analytics
-            and former Director of Advancement for the Django Software
-            Foundation, where she worked on the corporate membership program.
-            She is also an O'Reilly contributor and a technical editor of Head
-            First Python. Adrienne shares thoughts on coding, cooking, and
-            compassionate leadership at her website Coding with Knives. She is
-            based in Nashville, Tennessee.
+            Adrienne is the Director of Engineering at Juice Analytics where
+            she leads Platform and Ops teams building Juicebox, a development
+            platform for creating engaging data storytelling applications. She
+            is the former Director of Advancement of the Django Software
+            Foundation, the non-profit backing Django, where she revamped the
+            corporate membership program. She is also an O’Reilly contributor
+            and technical editor of Head First Python. Adrienne shares thoughts
+            on coding, cooking, and compassionate leadership at her website
+            Coding with Knives. She is based in Nashville, Tennessee.
           </p>
         </div>
       </div>
