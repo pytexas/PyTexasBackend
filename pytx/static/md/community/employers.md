@@ -2,7 +2,7 @@
 
 Python job-seekers might be interested to know which potential employers use Python, and how they use it. This page can be used to take notes about what is known about local employers using Python. This list should be kept in alphabetical order by city and by company name within each city. See also the [Python jobs board](https://www.python.org/jobs/).
 
-To submit your additions and edits to this page, fork the [PyTexas  Repository](https://github.com/pytexas/PyTexas2019) and submit a pull request for the [Employers Page](https://github.com/pytexas/PyTexas2019/blob/master/md/community/employers.md).
+To submit your additions and edits to this page, fork the [PyTexas  Repository](https://github.com/pytexas/PyTexas) and submit a pull request for the [Employers Page](https://github.com/pytexas/PyTexas/blob/master/pytx/static/md/community/employers.md).
 
 ## Austin Area
 

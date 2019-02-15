@@ -2,7 +2,7 @@
 
 Looking to meet Pythonistas in your area? Here is a list of some local Python meetups.
 
-To submit your additions and edits to this page, fork the [PyTexas Repository](https://github.com/pytexas/PyTexas2019) and submit a pull request for the [Meetups Page](https://github.com/pytexas/PyTexas2019/blob/master/md/community/meetups.md).
+To submit your additions and edits to this page, fork the [PyTexas Repository](https://github.com/pytexas/PyTexas) and submit a pull request for the [Meetups Page](https://github.com/pytexas/PyTexas/blob/master/pytx/static/md/community/meetups.md).
 
 ## Austin Area
 
