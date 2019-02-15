@@ -14,10 +14,6 @@
       </h2>
       <div class="tc">
         <br>
-        <v-btn color="primary" href="https://www.papercall.io/pytexas-2019
-" target="_blank">
-          Submit a Talk Proposal&nbsp;<img class="ext" :src="image('img/icons/external-white.svg')" alt="">
-        </v-btn>
         <v-btn color="primary" to="/page/sponsors/prospectus">
           Become A Sponsor
         </v-btn>

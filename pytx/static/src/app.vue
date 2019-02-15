@@ -10,8 +10,8 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-xs-only">
-      <v-btn flat href="https://www.papercall.io/pytexas-2019" target="_blank">
-        Submit a Talk
+      <v-btn flat href="https://ti.to/pytexas/pytexas-2019" target="_blank">
+        Register
       </v-btn>
       <v-btn flat to="/page/sponsors/prospectus">
         Sponsor
@@ -36,13 +36,13 @@
           </v-list-tile-action>
           <v-list-tile-title>Sponsor</v-list-tile-title>
         </v-list-tile>
-        <v-list-tile href="https://www.papercall.io/pytexas-2019
-" target="_blank">
-          <v-list-tile-action>
-            <img :src="image('img/icons/talks.svg')" alt="">
-          </v-list-tile-action>
-          <v-list-tile-title>Submit a Talk</v-list-tile-title>
-        </v-list-tile>
+<!--        <v-list-tile href="https://www.papercall.io/pytexas-2019-->
+<!--" target="_blank">-->
+<!--          <v-list-tile-action>-->
+<!--            <img :src="image('img/icons/talks.svg')" alt="">-->
+<!--          </v-list-tile-action>-->
+<!--          <v-list-tile-title>Submit a Talk</v-list-tile-title>-->
+<!--        </v-list-tile>-->
         <v-list-tile href="https://ti.to/pytexas/pytexas-2019" target="_blank">
           <v-list-tile-action>
             <v-icon>how_to_reg</v-icon>
