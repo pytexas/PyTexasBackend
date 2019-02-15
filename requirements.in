@@ -1,0 +1,16 @@
+djzen
+dj-database-url
+django-bmemcached
+django-flat-responsive
+djangorestframework
+python-binary-memcached
+psycopg2-binary
+raven
+stripe
+tornado
+graphene-django==2.0.dev2017073101
+django-filter==1.0.4
+graphene==2.1.2
+django==2.0.10
+pillow
+pip-tools
