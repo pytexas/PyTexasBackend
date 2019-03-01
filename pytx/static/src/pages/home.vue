@@ -81,7 +81,8 @@
             corporate membership program. She is also an O’Reilly contributor
             and technical editor of Head First Python. Adrienne shares thoughts
             on coding, cooking, and compassionate leadership at her website
-            Coding with Knives. She is based in Nashville, Tennessee.
+            <a href="https://leadingwithspoons.com/">Leading with Spoons</a>.
+            She is based in Nashville, Tennessee.
           </p>
         </div>
       </div>
