@@ -44,7 +44,7 @@
           <div v-for="s in sponsors" :key="s.id">
             <strong><a :href="s.url" target="_blank">{{ s.name }}</a></strong>
             <a :href="s.url" target="_blank">
-              <img :src="resize(s.logoUrl, 150, 64, 'fit=fill')" :alt="s.level">
+              <img :src="resize(s.logoUrl, 135, 64, 'fit=fill')" :alt="s.level">
             </a>
             <span>{{ s.level }}</span>
           </div>
@@ -203,7 +203,7 @@ export default {
   }
 
   .sponsors {
-    font-size: 90%;
+    font-size: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -213,7 +213,7 @@ export default {
     }
 
     img {
-      width: 150px;
+      width: 135px;
       height: 64px;
       object-fit: contain;
       display: block;
