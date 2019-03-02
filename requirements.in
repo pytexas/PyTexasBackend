@@ -1,3 +1,4 @@
+boto3
 djzen
 dj-database-url
 django-bmemcached
