@@ -55,6 +55,3 @@ if settings.DEBUG:
             kwargs={'document_root': settings.MEDIA_ROOT}
         )
     )
-
-print(urlpatterns)
-

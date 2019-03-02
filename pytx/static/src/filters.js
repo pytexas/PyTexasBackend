@@ -21,6 +21,11 @@ export function resize(url, w, h, extra) {
     return url;
   }
 
+  if (url.startsWith('https://pytexas.s3.amazonaws.com/')) {
+    url = url.replace('https://pytexas.s3.amazonaws.com', '');
+    return `https://pytx.imgix.net${url}?w=${w}&h=${h}${extra}`;
+  }
+
   return `https://pytxapp.imgix.net${url}?w=${w}&h=${h}${extra}`;
 }
 
