@@ -34,7 +34,7 @@
           <v-list-tile-action>
             <img :src="image('img/icons/sponsors.svg')" alt="">
           </v-list-tile-action>
-          <v-list-tile-title>Sponsor</v-list-tile-title>
+          <v-list-tile-title>Become A Sponsor</v-list-tile-title>
         </v-list-tile>
 <!--        <v-list-tile href="https://www.papercall.io/pytexas-2019-->
 <!--" target="_blank">-->
@@ -56,6 +56,12 @@
             <img :src="image('img/icons/venue.svg')" alt="">
           </v-list-tile-action>
           <v-list-tile-title>The Venue</v-list-tile-title>
+        </v-list-tile>
+        <v-list-tile to="/sponsors">
+          <v-list-tile-action>
+            <img :src="image('img/icons/sponsors.svg')" alt="">
+          </v-list-tile-action>
+          <v-list-tile-title>Sponsors</v-list-tile-title>
         </v-list-tile>
         <v-list-group prepend-icon="svg" class="svg-group about">
           <v-list-tile slot="activator">

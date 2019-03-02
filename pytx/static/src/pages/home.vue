@@ -44,7 +44,7 @@
           <div v-for="s in sponsors" :key="s.id">
             <strong><a :href="s.url" target="_blank">{{ s.name }}</a></strong>
             <a :href="s.url" target="_blank">
-              <img :src="resize(s.logoUrl, 200, 64, 'fit=fill')" :alt="s.level">
+              <img :src="resize(s.logoUrl, 150, 64, 'fit=fill')" :alt="s.level">
             </a>
             <span>{{ s.level }}</span>
           </div>
@@ -141,7 +141,7 @@ export default {
       } else {
         setTimeout(() => {
           this.get_sponsors();
-        }, 2000);
+        }, 500);
       }
     }
   }
@@ -164,6 +164,7 @@ export default {
       display: block;
       margin: 10px auto;
       border-radius: 10px;
+      max-width: 200px;
     }
 
     > div {
@@ -212,7 +213,7 @@ export default {
     }
 
     img {
-      width: 200px;
+      width: 150px;
       height: 64px;
       object-fit: contain;
       display: block;

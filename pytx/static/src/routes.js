@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 
 import Home from "./pages/home.vue";
 import mdPage from "./pages/md-page.vue";
-// import Sponsors from "./pages/sponsors";
+import Sponsors from "./pages/sponsors.vue";
 // import Program from "./pages/program";
 // import Talk from "./pages/talk";
 // import Speaker from "./pages/speaker";
@@ -22,7 +22,7 @@ function current_schedule(to) {
 
 export var Routes = [
   { path: "/page/:slug(.*)", name: "md-page", component: mdPage, props: true },
-  // { path: "/sponsors", name: "sponsors", component: Sponsors },
+  { path: "/sponsors", name: "sponsors", component: Sponsors },
   // { path: "/program/:day", name: "program", component: Program, props: true },
   // { path: "/program", name: "current-program", redirect: current_schedule },
   // { path: "/speaker/:id", name: "speaker", component: Speaker, props: true },
