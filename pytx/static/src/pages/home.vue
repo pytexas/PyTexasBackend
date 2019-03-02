@@ -208,6 +208,10 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
 
+    a {
+      text-decoration: none;
+    }
+
     > div {
       margin: 10px 8px 10px 8px;
     }
