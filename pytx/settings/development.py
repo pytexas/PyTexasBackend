@@ -20,7 +20,7 @@ SKIP_SW = True
 BASE_URL = 'https://pallas.neutrondrive.com'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = STATIC_URL + 'uploads/'
+MEDIA_URL = '/media/'
 
 STATICFILES_DIRS.append(MEDIA_ROOT)
 

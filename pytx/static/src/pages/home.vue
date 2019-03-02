@@ -39,6 +39,16 @@
             Mailing List: <router-link to="/page/community/mailing-list">Sign Up</router-link>
           </li>
         </ul>
+        <h2>Sponsored By:</h2>
+        <div class="sponsors">
+          <div v-for="s in sponsors" :key="s.id">
+            <strong><a :href="s.url" target="_blank">{{ s.name }}</a></strong>
+            <a :href="s.url" target="_blank">
+              <img :src="resize(s.logoUrl, 200, 64, 'fit=fill')" :alt="s.level">
+            </a>
+            <span>{{ s.level }}</span>
+          </div>
+        </div>
       </div>
     </div>
   </v-card>
@@ -110,6 +120,7 @@
 </template>
 <script>
 import { image, resize } from "../filters";
+import {extract_sponsors} from '../data.js';
 
 export default {
   data: function () {
@@ -119,9 +130,21 @@ export default {
     };
   },
   created: function() {
-
+    this.get_sponsors();
   },
-  methods: { image, resize }
+  methods: {
+    image,
+    resize,
+    get_sponsors() {
+      if (API_DATA) {
+        this.sponsors = extract_sponsors(API_DATA, true);
+      } else {
+        setTimeout(() => {
+          this.get_sponsors();
+        }, 2000);
+      }
+    }
+  }
 };
 </script>
 <style lang="less">
@@ -175,6 +198,24 @@ export default {
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
+    }
+  }
+
+  .sponsors {
+    font-size: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    > div {
+      margin: 10px 8px 10px 8px;
+    }
+
+    img {
+      width: 200px;
+      height: 64px;
+      object-fit: contain;
+      display: block;
     }
   }
 }
