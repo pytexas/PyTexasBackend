@@ -1,16 +1,24 @@
 import axios from 'axios';
 
 export function get_data() {
-  axios
-    .get(`/conference/data/${YEAR}.json`)
-    .then(function(result) {
-      API_DATA = result.data;
-      API_DATA_TS = Date.now();
-    })
-    .catch(function(error) {
-      alert('Error fetching conference data.');
-      console.error(error);
-    });
+  return new Promise(function (resolve, reject) {
+    if (API_DATA) {
+      resolve(JSON.parse(API_DATA));
+    } else {
+      axios
+        .get(`/conference/data/${YEAR}.json`)
+        .then(function(result) {
+          API_DATA = JSON.stringify(result.data);
+          API_DATA_TS = Date.now();
+          resolve(result.data);
+        })
+        .catch(function(error) {
+          alert('Error fetching conference data.');
+          console.error(error);
+          reject(error);
+        });
+    }
+  });
 }
 
 export function extract_nodes(edges) {
