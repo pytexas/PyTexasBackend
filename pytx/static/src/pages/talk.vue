@@ -1,6 +1,6 @@
 <template>
 <div class="talk">
-  <v-card>
+  <v-card class="max">
     <v-card-title primary-title>
       <div class="talk-info">
         <h2>{{ talk.name }}</h2>
