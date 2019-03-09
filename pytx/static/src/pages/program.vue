@@ -1,6 +1,6 @@
 <template>
 <div class="program">
-  <v-card class="padding">
+  <v-card>
     <v-card-title primary-title>
       <h2>Schedule</h2>
     </v-card-title>
@@ -92,6 +92,8 @@ export default {
 };
 </script>
 <style lang="less">
+@import "../breakpoints.less";
+
 .program {
   .sessions {
     max-width: 800px;
@@ -104,6 +106,20 @@ export default {
 
   .v-list__tile__title {
     font-weight: bold;
+  }
+
+  .v-card__title {
+    padding-bottom: 0;
+  }
+
+  @media @small {
+    .v-card__title {
+      padding: 10px 15px 0 15px;
+    }
+
+    .v-card__text {
+      padding: 5px;
+    }
   }
 }
 </style>
