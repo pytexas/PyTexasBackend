@@ -199,7 +199,7 @@ class Session(models.Model):
   video = models.BooleanField('Make recording', default=True)
 
   name = models.CharField('Title of Talk', max_length=100)
-  description = models.TextField()
+  description = models.TextField(blank=True, null=True)
   tags = models.TextField(blank=True, null=True)
   slides = models.URLField('URL To Presentation', blank=True, null=True)
   video_url = models.URLField('URL To Video', blank=True, null=True)

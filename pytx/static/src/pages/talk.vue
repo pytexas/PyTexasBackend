@@ -34,7 +34,7 @@
           Video
         </v-btn>
       </div>
-      <div v-html="html" class="html"></div>
+      <div v-html="html" class="html" v-if="html"></div>
       <div class="speaker" v-if="speaker">
         <v-divider></v-divider>
         <h3>About The Speaker</h3>
@@ -109,8 +109,10 @@ export default {
           this.title = this.talk.name;
           this.$router.set_title(this.title);
 
-          var converter = new showdown.Converter({ tables: true });
-          this.html = converter.makeHtml(this.talk.description);
+          if (this.talk.description) {
+            var converter = new showdown.Converter({ tables: true });
+            this.html = converter.makeHtml(this.talk.description);
+          }
           this.loading = false;
 
           if (this.talk.user && this.talk.user.name) {
