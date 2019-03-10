@@ -20,6 +20,9 @@
         <v-btn color="primary" href="https://ti.to/pytexas/pytexas-2019" target="_blank">
           Register&nbsp;<img class="ext" :src="image('img/icons/external-white.svg')" alt="">
         </v-btn>
+        <v-btn color="primary" to="/program">
+          <v-icon>calendar_today</v-icon>&nbsp;Schedule
+        </v-btn>
         <br><br>
         <h2>Stay Updated</h2>
         <ul>
