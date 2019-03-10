@@ -26,9 +26,8 @@
               <v-list-tile-content>
                 <v-list-tile-title>
                   <router-link :to="'/talk/' + s.id">
+                    <span v-if="s.user && s.user.name">{{ s.user.name }}: </span>
                     <span>{{ s.name }}</span>
-                    <br v-if="s.user && s.user.name">
-                    <span v-if="s.user && s.user.name">{{ s.user.name }}</span>
                   </router-link>
                 </v-list-tile-title>
                 <v-list-tile-sub-title>

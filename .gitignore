@@ -114,3 +114,4 @@ frontend/
 django_cache/
 Pipfile
 Pipfile.lock
+*.swp
