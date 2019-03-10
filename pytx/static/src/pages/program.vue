@@ -26,9 +26,10 @@
               <v-list-tile-content>
                 <v-list-tile-title>
                   <router-link :to="'/talk/' + s.id">
-                    <span v-if="s.user && s.user.name">{{ s.user.name }}: </span>
                     <span>{{ s.name }}</span>
                   </router-link>
+                  <br v-if="s.user && s.user.name">
+                  <span class="name" v-if="s.user && s.user.name">{{ s.user.name }}</span>
                 </v-list-tile-title>
                 <v-list-tile-sub-title>
                   {{ s.startStr }} - {{ s.endStr }}
@@ -102,6 +103,14 @@ export default {
 
   .v-list__tile__title {
     font-weight: bold;
+    height: auto;
+    white-space: normal;
+    text-overflow: unset;
+    overflow: auto;
+
+    .name {
+      font-weight: normal;
+    }
   }
 
   .v-card__title {
