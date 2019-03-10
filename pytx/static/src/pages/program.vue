@@ -34,9 +34,6 @@
                 <v-list-tile-sub-title>
                   {{ s.startStr }} - {{ s.endStr }}
                 </v-list-tile-sub-title>
-                <v-list-tile-sub-title v-if="s.room && !s.allRooms">
-                  {{ s.room.name }}
-                </v-list-tile-sub-title>
               </v-list-tile-content>
               <v-list-tile-action>
                 <v-btn icon ripple :to="'/talk/' + s.id">
