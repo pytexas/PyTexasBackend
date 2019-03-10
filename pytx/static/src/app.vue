@@ -13,6 +13,9 @@
       <v-btn flat href="https://ti.to/pytexas/pytexas-2019" target="_blank">
         Register
       </v-btn>
+      <v-btn flat to="/program">
+        Schedule
+      </v-btn>
       <v-btn flat to="/page/sponsors/prospectus">
         Sponsor
       </v-btn>
@@ -49,6 +52,14 @@
           </v-list-tile-action>
           <v-list-tile-title>
             Register
+          </v-list-tile-title>
+        </v-list-tile>
+        <v-list-tile to="/program">
+          <v-list-tile-action>
+            <v-icon>calendar_today</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-title>
+            Schedule
           </v-list-tile-title>
         </v-list-tile>
         <v-list-tile to="/page/venue">
