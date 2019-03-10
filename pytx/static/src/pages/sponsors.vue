@@ -35,7 +35,7 @@ export default {
     resize,
     get_sponsors() {
       if (API_DATA) {
-        this.sponsors = extract_sponsors(API_DATA, true);
+        this.sponsors = extract_sponsors(JSON.parse(API_DATA), true);
       } else {
         setTimeout(() => {
           this.get_sponsors();
