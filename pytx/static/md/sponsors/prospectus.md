@@ -103,7 +103,7 @@ most of your investment in the Python community.
 
 PyTexas also offers several exclusive sponsor benefits on a first-come, first-served basis:
 
-- T-Shirt Sponsor ($2000)
+- <s>T-Shirt Sponsor ($2000)</s> *Now Unavailable*
     - One sponsorship available
     - Company logo on sleeve of official conference tshirt
     - 10 free t-shirts
