@@ -30,7 +30,7 @@ architects, managers, inventors, entrepreneurs, geographers, meteorologists.
 **Schedule:**
 
 - **Sat, April 13**: Plenary keynote, morning presentations, lunch, afternoon presentations, and lightning talks. Room for sponsor booths & tables, as well as drinks and snacks, will be open all day. Promotional sponsor after party slot available in the evening.
-- **Sun, April 14**: Plenary keynote, morning presentations, lunch, afternoon presentations. Room for sponsor booths & tables, as well as drinks and snacks, will be open all day. 
+- **Sun, April 14**: Plenary keynote, morning presentations, lunch, afternoon presentations. Room for sponsor booths & tables, as well as drinks and snacks, will be open all day.
 
 ## Why Sponsor?
 
@@ -51,7 +51,6 @@ most of your investment in the Python community.
 
 ### Standard Packages
 
-
 - Keystone $10,000
     - Limit: 1
     - Opportunity to speak (5 mins) prior to Day 1 keynote
@@ -61,7 +60,6 @@ most of your investment in the Python community.
     - Promotional items placed on the PyTexas swag table
     - Company name and link thanked in PyTexas Twitter feed
     - 6 free tickets to PyTexas
-
 
 - Diamond $5,000
     - Limit: 3
@@ -103,10 +101,16 @@ most of your investment in the Python community.
 
 PyTexas also offers several exclusive sponsor benefits on a first-come, first-served basis:
 
-- <s>T-Shirt Sponsor ($2000)</s> *Now Unavailable*
+- <s>T-Shirt Sponsor ($2000)</s> *Unavailable*
     - One sponsorship available
     - Company logo on sleeve of official conference tshirt
     - 10 free t-shirts
+- Video Sponsor ($2000)
+    - One sponsorship available
+    - Company logo featured prominently at the beginning and end of every talk recording ([example](https://www.youtube.com/watch?v=68z91dRJCOU))
+- Lanyard Sponsor ($2000)
+    - One sponsorship available
+    - Company logo featured on the conference badge lanyards
 - Coffee Sponsor ($1000)
     - Two sponsorships available
     - Sponsor one day of coffee
