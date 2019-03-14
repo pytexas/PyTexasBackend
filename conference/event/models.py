@@ -165,10 +165,10 @@ class Room(models.Model):
 
 SESSION_TYPES = (
     ('keynote', 'Keynote'),
-    ('lightning', 'Lightning Talk (5 Minutes)'),
-    ('talk-short', 'Short Talk (20 Minutes)'),
-    ('talk-long', 'Talk (50 Minutes)'),
-    ('tutorial', 'Tutorial (3 Hours)'),
+    ('lightning', 'Lightning Talk'),
+    ('talk-short', 'Short Talk'),
+    ('talk-long', 'Talk'),
+    ('tutorial', 'Tutorial'),
     ('non-talk', 'Non Talk'),)
 
 SESSION_LENGTH = {
