@@ -190,4 +190,6 @@ EVENTBRITE_API_URL = 'https://www.eventbriteapi.com/v3'
 EVENTBRITE_EVENT_ID = os.environ.get('EVENTBRITE_EVENT_ID', '')
 EVENTBRITE_OAUTH_TOKEN = os.environ.get('EVENTBRITE_OAUTH_TOKEN', '')
 
+TITO_TOKEN = os.environ.get('TITO_TOKEN', '')
+
 from pytx.settings.logging import *

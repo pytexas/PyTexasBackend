@@ -363,3 +363,16 @@ class Invoice(models.Model):
         fail_silently=False)
     self.sent = timezone.now()
     self.save()
+
+
+class PrizeWinner(models.Model):
+  name = models.CharField(max_length=255)
+  email = models.CharField(max_length=255)
+  ticket_id = models.CharField(max_length=255, unique=True)
+  conference = models.ForeignKey(Conference, on_delete=models.CASCADE)
+  prize = models.CharField(max_length=255, blank=True, null=True)
+  claimed = models.BooleanField(default=False)
+  created = models.DateTimeField(auto_now_add=True)
+
+  def __str__(self):
+    return self.name

@@ -108,20 +108,25 @@ PyTexas also offers several exclusive sponsor benefits on a first-come, first-se
 - Video Sponsor ($2000)
     - One sponsorship available
     - Company logo featured prominently at the beginning and end of every talk recording ([example](https://www.youtube.com/watch?v=68z91dRJCOU))
+    - 3 free tickets to PyTexas
 - Lanyard Sponsor ($2000)
     - One sponsorship available
     - Company logo featured on the conference badge lanyards
+    - 3 free tickets to PyTexas
 - Coffee Sponsor ($1000)
     - Two sponsorships available
     - Sponsor one day of coffee
     - Company logo on coffee table for the day
+    - 2 free tickets to PyTexas
 - Afterparty Sponsor ($1000)
     - Two sponsorships available
     - Promote your organization by speaking at the afterparty
     - Official promotion via website, schedule, and announcements
+    - 2 free tickets to PyTexas
 - Diversity & Inclusion Sponsor ($1000)
     - Unlimited sponsorships available
     - Contribute directly to financial aid
+    - 2 free tickets to PyTexas
 
 Contact the Sponsor Chair for more details.
 
