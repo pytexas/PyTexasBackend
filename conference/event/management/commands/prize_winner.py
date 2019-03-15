@@ -16,26 +16,41 @@ class Command(BaseCommand):
     # parser.add_argument('acct_slug', type=str)
     # parser.add_argument('event_slug', type=str)
     parser.add_argument('conf_slug', type=str)
-    parser.add_argument('csv', type=str)
+    # parser.add_argument('csv', type=str)
+    parser.add_argument(
+        '--clear',
+        action='store_true',
+        dest='clear',
+        help='clear winners',
+    )
+
 
   def get_tickets_api(self, options):
     tickets = []
     emails = {}
+    params = {}
 
-    response = requests.get(
-      'https://api.tito.io/v3/{acct_slug}/{event_slug}/tickets'.format(**options),
-      headers={
-        'Authorization': 'Token token={}'.format(settings.TITO_TOKEN)
-      })
-    data = response.json()
-    print(response.status_code, data.keys())
-    print(data['meta'])
+    while 1:
+      print('Getting page', params.get('page', 1))
+      response = requests.get(
+        'https://api.tito.io/v3/pytexas/pytexas-2019/tickets',
+        params=params,
+        headers={
+          'Authorization': 'Token token={}'.format(settings.TITO_TOKEN),
+          'Accept': 'application/json',
+        })
+      data = response.json()
 
-    # for t in tlist:
-    #   print(t)
-    #   if t['email'] not in emails:
-    #     tickets.append(t)
-    #     emails[t['email']] = True
+      for t in data['tickets']:
+        if t['name'] and t['email'] and t['email'] not in emails:
+          tickets.append(t)
+          emails[t['email']] = True
+
+      if data['meta']['next_page'] and data['meta']['next_page'] != data['meta']['current_page']:
+        params = {'page': data['meta']['next_page']}
+
+      else:
+        break
 
     return tickets
 
@@ -45,7 +60,7 @@ class Command(BaseCommand):
     with open(options['csv'], 'r') as csvfile:
       reader = csv.DictReader(csvfile)
       for row in reader:
-        if row['Order Email'] not in emails:
+        if row['Ticket Email'] not in emails:
           tickets.append(row)
           emails[row['Ticket Email']] = True
 
@@ -53,7 +68,12 @@ class Command(BaseCommand):
 
   def handle(self, *args, **options):
     conf = Conference.objects.get(slug=options['conf_slug'])
-    tickets = self.get_tickets(options)
+    if options['clear']:
+      PrizeWinner.objects.filter(conference=conf).delete()
+      print('Cleared winners for {}'.format(conf))
+      return
+
+    tickets = self.get_tickets_api(options)
     random.shuffle(tickets)
     print('Total Tickets:', len(tickets))
 
@@ -67,18 +87,18 @@ class Command(BaseCommand):
       while 1:
         picked = tickets[i]
         i += 1
-        if not picked['Ticket Email']:
+        if not picked['email']:
           continue
 
-        qs = PrizeWinner.objects.filter(conference=conf, ticket_id=picked['Unique Ticket URL'])
+        qs = PrizeWinner.objects.filter(conference=conf, ticket_id=picked['slug'])
         if qs.count() == 0:
           pw = PrizeWinner(
-            name = picked['Ticket Full Name'],
-            email = picked['Ticket Email'],
-            ticket_id = picked['Unique Ticket URL'],
+            name = picked['name'],
+            email = picked['email'],
+            ticket_id = picked['slug'],
             conference = conf
           )
           pw.save()
-          print('Winner 🎉🐍 {} 🐍🎉'.format(picked['Ticket Full Name']))
+          print('Winner 🎉🐍 {} 🐍🎉'.format(picked['name']))
           break
 
