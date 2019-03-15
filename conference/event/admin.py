@@ -9,7 +9,7 @@ from django.db import models
 from django import http
 from django.contrib.admin.views.main import ChangeList, IGNORED_PARAMS
 
-from conference.event.models import Conference, SponsorshipLevel, Sponsor, Session, Invoice, Room
+from conference.event.models import Conference, SponsorshipLevel, Sponsor, Session, Invoice, Room, PrizeWinner
 from conference.utils import CSVFileGenerator
 
 CSV_IGNORED = [p for p in IGNORED_PARAMS]
@@ -98,6 +98,14 @@ class SessionAdmin(CSVAdminMixin, admin.ModelAdmin):
   date_hierarchy = 'start'
   list_editable = ('room', 'all_rooms', 'video_url', 'status', 'start')
   raw_id_fields = ('user',)
+
+
+@admin.register(PrizeWinner)
+class PrizeAdmin(admin.ModelAdmin):
+  list_display = ('name', 'email', 'prize', 'claimed', 'conference')
+  list_filter = ('conference', 'claimed')
+  search_fields = ('name', 'email', 'prize')
+  list_editable = ('prize', 'claimed')
 
 
 @admin.register(Invoice)
