@@ -105,7 +105,7 @@ PyTexas also offers several exclusive sponsor benefits on a first-come, first-se
     - One sponsorship available
     - Company logo on sleeve of official conference tshirt
     - 10 free t-shirts
-- Video Sponsor ($2000)
+- <s>Video Sponsor ($2000)</s> *Unavailable*
     - One sponsorship available
     - Company logo featured prominently at the beginning and end of every talk recording ([example](https://www.youtube.com/watch?v=68z91dRJCOU))
     - 3 free tickets to PyTexas
