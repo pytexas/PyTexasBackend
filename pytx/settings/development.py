@@ -15,9 +15,9 @@ CACHES = {
     },
 }
 
-SKIP_SW = True
+SKIP_SW = False
 
-BASE_URL = 'https://pallas.neutrondrive.com'
+BASE_URL = 'https://cool-sea-0598.graviton.ninja:9000'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'

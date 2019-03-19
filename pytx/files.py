@@ -42,11 +42,11 @@ IMAGES = [
 ]
 
 FONTS = [
-    'Roboto-Regular.woff2',
-    'Roboto-Bold.woff2',
-    'Roboto-Slab-Regular.woff2',
-    'Roboto-Slab-Bold.woff2',
-    'MaterialIcons-Regular.woff2',
+    # 'Roboto-Regular.woff2',
+    # 'Roboto-Bold.woff2',
+    # 'Roboto-Slab-Regular.woff2',
+    # 'Roboto-Slab-Bold.woff2',
+    # 'MaterialIcons-Regular.woff2',
 ]
 
 MD = []

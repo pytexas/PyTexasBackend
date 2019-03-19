@@ -6,6 +6,7 @@ var HTTP = '{{ base_url }}';
 var CORE_FILES = [
   "/{{ conf }}/",
   "{% url "conference-data" conf %}",
+  "https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Material+Icons",
   {% for css in files.css %}"{% static css %}",
   {% endfor %}{% for js in files.js %}"{% static js %}",
   {% endfor %}{% for f in files.fonts %}"{% static f %}",
@@ -49,10 +50,18 @@ self.addEventListener('activate', function(event) {
 
 function network_fetch (event) {
   var fetchRequest = event.request.clone();
-  
+
   return fetch(fetchRequest).then(function(response) {
     console.log('Response from network:', event.request.url);
-    return response;
+    if (event.request.url.indexOf('https://fonts.gstatic.com/') === 0) {
+      caches.open(CACHE_NAME)
+        .then(function(cache) {
+          console.log('Added to Cache', event.request.url);
+          return cache.put(event.request, response);
+        });
+    }
+
+    return response.clone();
   }).catch(function(error) {
     console.error('Fetching failed:', error);
     throw error;
@@ -67,7 +76,7 @@ self.addEventListener('fetch', function(event) {
           // console.log('Cached Response:', event.request.url);
           return response;
         }
-        
+
         if (event.request.url.indexOf(CONF_HTTP) === 0) {
           return caches.match("/{{ conf }}/")
             .then(function(response) {
@@ -75,39 +84,34 @@ self.addEventListener('fetch', function(event) {
                 console.log('Index Cached Response:', event.request.url);
                 return response;
               }
-              
+
               return network_fetch(event);
             });
         }
-        
+
         return network_fetch(event);
       })
     );
 });
 
-function clear_all_cache (event, newest) {
-  if (newest != RELEASE) {
-    event.waitUntil(
-      caches.keys().then(function(names) {
-        return Promise.all(
-          names.map(function(cname) {
-            if (cname == CACHE_NAME) {
-              console.log('Clearing Cache: ', cname);
-              return caches.delete(cname);
-            }
-          })
-        );
-      })
-    );
-  }
+function clear_all_cache (event) {
+  event.waitUntil(
+    caches.keys().then(function(names) {
+      return Promise.all(
+        names.map(function(cname) {
+          console.log('Clearing Cache: ', cname);
+          return caches.delete(cname);
+        })
+      );
+    })
+  );
 }
 
 self.addEventListener('message', function (event) {
   console.log("SW Received Message: ", event.data);
-  if (event.data.task == 'release') {
-    event.ports[0].postMessage(RELEASE);
-  } else if (event.data.task == 'clear') {
-    clear_all_cache(event, event.data.newest_release);
+
+  if (event.data.task == 'clear') {
+    clear_all_cache(event);
     event.ports[0].postMessage('cleared');
   }
 });
