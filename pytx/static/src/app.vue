@@ -23,6 +23,11 @@
   </v-toolbar>
   <v-content>
     <v-container>
+      <div class="update-btn" v-if="needsUpdate">
+        <v-btn color="accent" @click="do_update">
+          <v-icon>refresh</v-icon> Update!
+        </v-btn>
+      </div>
       <router-view></router-view>
     </v-container>
     <v-navigation-drawer v-model="drawer" fixed temporary>
@@ -133,6 +138,7 @@
 import { image, resize } from "./filters";
 
 export default {
+  props: ['needsUpdate'],
   data: function () {
     return {
       RELEASE, YEAR,
@@ -143,7 +149,53 @@ export default {
     image,
     icon(i) {
       return i + '_svg';
+    },
+    do_update() {
+      console.log("force update");
+      console.log(REGISTRATION);
+      if (REGISTRATION) {
+        // clear cache
+        this.clear_all_cache()
+          .then(() => {
+            return REGISTRATION.unregister();
+          })
+          .then(result => {
+            setTimeout(() => {
+              location.reload();
+            }, 100);
+          })
+          .catch(e => {
+            console.error(e);
+            alert("Error updating app.");
+          });
+      }
+    },
+    clear_all_cache() {
+      return new Promise(function(resolve, reject) {
+        if (
+          "serviceWorker" in navigator &&
+          navigator.serviceWorker.controller &&
+          navigator.serviceWorker.controller.postMessage
+        ) {
+          var msg_chan = new MessageChannel();
+          msg_chan.port1.onmessage = function(event) {
+            console.log("Cache:", event.data);
+            resolve();
+          };
+          navigator.serviceWorker.controller.postMessage({ task: "clear" }, [
+            msg_chan.port2
+          ]);
+        } else {
+          resolve();
+        }
+      });
     }
   }
 };
 </script>
+<style lang="less">
+.update-btn {
+  position: fixed;
+  z-index: 1000;
+}
+</style>

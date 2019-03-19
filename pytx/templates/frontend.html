@@ -72,7 +72,7 @@
       <img src="{% static "img/banner80.png" %}" alt="{{ site.name }}">
     </div>
     <div id="pytxapp" style="display: none;">
-      <pytx-app></pytx-app>
+      <pytx-app :needs-update="needs_update"></pytx-app>
     </div>
     <script>
       if (typeof Object.assign != 'function' || !Array.from || typeof Object.values != 'function') {
@@ -116,5 +116,19 @@
     </script>{% endfor %}
     {% for js in files.js %}
     <script src="{% static js %}"></script>{% endfor %}
+    <script>
+      addEventListener('load', function () {
+        if (!SKIP_SW && 'serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(function (reg) {
+              console.log("ServiceWorker reg successful: ", reg.scope);
+              REGISTRATION = reg;
+            })
+            .catch(function (err) {
+              console.error(err);
+            });
+        }
+      });
+    </script>
   </body>
 </html>

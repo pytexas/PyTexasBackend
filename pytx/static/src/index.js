@@ -38,10 +38,14 @@ var app = new Vue({
   el: '#pytxapp',
   router: router,
   data: function () {
-    return {};
+    return {
+      ws: null,
+      needs_update: false
+    };
   },
   created: function () {
     get_data();
+    this.connect_ws();
   },
   mounted: function () {
     this.$nextTick(() => {
@@ -49,9 +53,38 @@ var app = new Vue({
     });
   },
   methods: {
+    release_msg: function (release) {
+      if (RELEASE != release) {
+        this.needs_update = true;
+      }
+    },
     unflash: function () {
       document.querySelector("#pytxapp").style.display = 'block';
       document.querySelector("#splash").style.display = 'none';
+    },
+    connect_ws: function () {
+      if (
+        REGISTRATION &&
+        "serviceWorker" in navigator &&
+        navigator.serviceWorker.controller &&
+        navigator.serviceWorker.controller.postMessage
+      ) {
+        var url = URLS.main.replace('http', 'ws');
+        url = url + '/release-stream';
+        this.ws = new WebSocket(url);
+        this.ws.onclose = (event) => {
+          setTimeout(() => {
+            this.connect_ws();
+          }, 5000);
+        };
+        this.ws.onmessage = (event) => {
+          this.release_msg(event.data);
+        };
+      } else {
+        setTimeout(() => {
+          this.connect_ws();
+        }, 5000);
+      }
     }
   },
   components: {

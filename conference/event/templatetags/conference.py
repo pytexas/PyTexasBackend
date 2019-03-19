@@ -16,4 +16,4 @@ def json_attr(path):
 
 @register.filter
 def dist(path, d):
-  return os.path.join(settings.FRONTEND, d, path)
+  return os.path.join(d, path)
