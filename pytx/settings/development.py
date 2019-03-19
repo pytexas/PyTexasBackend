@@ -15,7 +15,7 @@ CACHES = {
     },
 }
 
-SKIP_SW = False
+SKIP_SW = True
 
 BASE_URL = 'https://cool-sea-0598.graviton.ninja:9000'
 
