@@ -2,7 +2,7 @@
 
 Report Code of Conduct Issues to:
 
-**Call or Text:** 201-371-1815<br>
+**Call or Text:** <a href="tel:+1-201-371-1815">201-371-1815</a><br>
 **E-Mail:** <a href="mailto:coc@pytexas.org">coc@pytexas.org</a>
 
 <hr>
@@ -25,7 +25,7 @@ refund at the sole discretion of the conference organizers. We prioritize margin
 
 **If you believe an individual has violated this Code of Conduct, please contact us via any of the following methods.**
 
-**Call or Text:** 201-371-1815<br>
+**Call or Text:** <a href="tel:+1-201-371-1815">201-371-1815</a><br>
 **E-Mail:** <a href="mailto:coc@pytexas.org">coc@pytexas.org</a>
 
 Thank you for helping make this a welcoming, friendly event for all.
