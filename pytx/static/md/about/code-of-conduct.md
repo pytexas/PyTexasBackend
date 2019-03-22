@@ -1,5 +1,12 @@
 # Code of Conduct
 
+Report Code of Conduct Issues to:
+
+**Call or Text:** 201-371-1815<br>
+**E-Mail:** <a href="mailto:coc@pytexas.org">coc@pytexas.org</a>
+
+<hr>
+
 PyTexas is dedicated to providing a harassment-free conference experience for
 everyone, regardless of gender, sexual orientation, disability, physical
 appearance, body size, race, or religion. We do not tolerate harassment of
@@ -14,9 +21,11 @@ professionally. Remember that harassment and sexist, racist, or exclusionary
 jokes are not appropriate for PyTexas.
 
 Attendees violating these rules may be asked to leave the conference without a
-refund at the sole discretion of the conference organizers.
+refund at the sole discretion of the conference organizers. We prioritize marginalized people's safety over privileged people's comfort.
 
-**If you believe an individual has violated this Code of Conduct, please email
-conference@pytexas.org or locate any conference Organizer.**
+**If you believe an individual has violated this Code of Conduct, please contact us via any of the following methods.**
+
+**Call or Text:** 201-371-1815<br>
+**E-Mail:** <a href="mailto:coc@pytexas.org">coc@pytexas.org</a>
 
 Thank you for helping make this a welcoming, friendly event for all.
