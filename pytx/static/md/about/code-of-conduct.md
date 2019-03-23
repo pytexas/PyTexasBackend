@@ -5,6 +5,8 @@ Report Code of Conduct Issues to:
 **Call or Text:** <a href="tel:+1-201-371-1815">201-371-1815</a><br>
 **E-Mail:** <a href="mailto:coc@pytexas.org">coc@pytexas.org</a>
 
+*Note: Calls and texts are anonymized*
+
 <hr>
 
 PyTexas is dedicated to providing a harassment-free conference experience for
@@ -27,5 +29,7 @@ refund at the sole discretion of the conference organizers. We prioritize margin
 
 **Call or Text:** <a href="tel:+1-201-371-1815">201-371-1815</a><br>
 **E-Mail:** <a href="mailto:coc@pytexas.org">coc@pytexas.org</a>
+
+*Note: Calls and texts are anonymized*
 
 Thank you for helping make this a welcoming, friendly event for all.
