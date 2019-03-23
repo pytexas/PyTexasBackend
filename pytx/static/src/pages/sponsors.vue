@@ -54,6 +54,10 @@ export default {
 
     > div {
       margin: 15px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     img {
