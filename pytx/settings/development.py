@@ -15,7 +15,8 @@ CACHES = {
     },
 }
 
-SKIP_SW = True
+skip_sw = os.environ.get('SKIP_SW', 'True')
+SKIP_SW = skip_sw == 'True'
 
 BASE_URL = 'https://cool-sea-0598.graviton.ninja:9000'
 
