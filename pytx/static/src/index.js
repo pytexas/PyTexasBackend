@@ -53,9 +53,48 @@ var app = new Vue({
     });
   },
   methods: {
+    clear_all_cache() {
+      return new Promise(function(resolve, reject) {
+        if (
+          "serviceWorker" in navigator &&
+          navigator.serviceWorker.controller &&
+          navigator.serviceWorker.controller.postMessage
+        ) {
+          var msg_chan = new MessageChannel();
+          msg_chan.port1.onmessage = function(event) {
+            console.log("Cache Event:", event.data);
+            resolve();
+          };
+          navigator.serviceWorker.controller.postMessage({ task: "clear" }, [
+            msg_chan.port2
+          ]);
+        } else {
+          resolve();
+        }
+      });
+    },
     release_msg: function (release) {
       if (RELEASE != release) {
-        this.needs_update = true;
+        console.log("trying to clear cache");
+        console.log(REGISTRATION);
+        ROUTE_HREF = true;
+        if (REGISTRATION) {
+          // clear cache
+          this.clear_all_cache()
+            .then(() => {
+              return REGISTRATION.unregister();
+            })
+            .then(result => {
+              this.needs_update = true;
+            })
+            .catch(e => {
+              console.error(e);
+              alert("Error updating app.");
+              this.needs_update = true;
+            });
+        } else {
+          this.needs_update = true;
+        }
       }
     },
     unflash: function () {

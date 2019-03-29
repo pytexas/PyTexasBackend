@@ -69,6 +69,10 @@ router.set_title = to => {
 };
 
 router.afterEach((to, from) => {
+  if (ROUTE_HREF) {
+    location.reload();
+  }
+
   Vue.nextTick(() => {
     router.set_title(to);
   });
