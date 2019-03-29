@@ -151,44 +151,9 @@ export default {
       return i + '_svg';
     },
     do_update() {
-      console.log("force update");
-      console.log(REGISTRATION);
-      if (REGISTRATION) {
-        // clear cache
-        this.clear_all_cache()
-          .then(() => {
-            return REGISTRATION.unregister();
-          })
-          .then(result => {
-            setTimeout(() => {
-              location.reload();
-            }, 100);
-          })
-          .catch(e => {
-            console.error(e);
-            alert("Error updating app.");
-          });
-      }
-    },
-    clear_all_cache() {
-      return new Promise(function(resolve, reject) {
-        if (
-          "serviceWorker" in navigator &&
-          navigator.serviceWorker.controller &&
-          navigator.serviceWorker.controller.postMessage
-        ) {
-          var msg_chan = new MessageChannel();
-          msg_chan.port1.onmessage = function(event) {
-            console.log("Cache:", event.data);
-            resolve();
-          };
-          navigator.serviceWorker.controller.postMessage({ task: "clear" }, [
-            msg_chan.port2
-          ]);
-        } else {
-          resolve();
-        }
-      });
+      setTimeout(() => {
+        location.reload();
+      }, 100);
     }
   }
 };

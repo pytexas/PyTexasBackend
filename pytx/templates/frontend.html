@@ -109,6 +109,7 @@
       var RELEASE = '{{ release }}';
       var UPDATE_NEEDED = false;
       var SKIP_SW = {% if skip_sw %}true{% else %}false{% endif %};
+      var ROUTE_HREF = false;
     </script>
     {% for tpl in files.templates %}
     <script type="text/x-template" id="tpl-{{ tpl.path }}">
