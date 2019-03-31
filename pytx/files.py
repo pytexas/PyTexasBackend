@@ -31,7 +31,6 @@ IMAGES = [
     'img/icons/external.svg',
     'img/icons/external-white.svg',
     'img/icons/background.png',
-
     'img/social/about.me.png',
     'img/social/facebook.png',
     'img/social/github.png',

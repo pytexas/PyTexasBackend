@@ -1,3 +1,4 @@
+import base64
 import datetime
 
 from django.db import models
@@ -109,7 +110,8 @@ class Sponsor(models.Model):
     return self.name
 
   def link(self):
-    return mark_safe('<a href="{}" target="_blank">Webpage &raquo;</a>'.format(self.url))
+    return mark_safe('<a href="{}" target="_blank">Webpage &raquo;</a>'.format(
+        self.url))
 
   def logo_url(self):
     return self.logo.url
@@ -150,7 +152,8 @@ class Room(models.Model):
         start__year=day.year,
         start__month=day.month,
         start__day=day.day,
-        status='accepted',)
+        status='accepted',
+    )
 
   def has_sessions(self, day):
     query = self.session_query(day)
@@ -169,7 +172,8 @@ SESSION_TYPES = (
     ('talk-short', 'Short Talk'),
     ('talk-long', 'Talk'),
     ('tutorial', 'Tutorial'),
-    ('non-talk', 'Non Talk'),)
+    ('non-talk', 'Non Talk'),
+)
 
 SESSION_LENGTH = {
     'lightning': 5,
@@ -182,19 +186,28 @@ SESSION_STATUS = (
     ('submitted', 'Submitted'),
     ('maybe', 'Maybe'),
     ('accepted', 'Accepted'),
-    ('declined', 'Declined'),)
+    ('declined', 'Declined'),
+)
 
 SESSION_LEVELS = (
     ('beginner', 'Beginner'),
     ('intermediate', 'Intermediate'),
-    ('advanced', 'Advanced'),)
+    ('advanced', 'Advanced'),
+)
 
 
 class Session(models.Model):
   user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
+  reviewer = models.ForeignKey(
+      settings.AUTH_USER_MODEL,
+      on_delete=models.PROTECT,
+      blank=True,
+      null=True,
+      related_name='reviewers')
   conference = models.ForeignKey(Conference, on_delete=models.CASCADE)
 
-  room = models.ForeignKey(Room, blank=True, null=True, on_delete=models.PROTECT)
+  room = models.ForeignKey(
+      Room, blank=True, null=True, on_delete=models.PROTECT)
   all_rooms = models.BooleanField(default=False)
   video = models.BooleanField('Make recording', default=True)
 
@@ -218,8 +231,7 @@ class Session(models.Model):
   special_requirements = models.TextField(
       blank=True,
       null=True,
-      help_text=
-      "If you require any special equipment or materials, please let us know here."
+      help_text="If you require any special equipment or materials, please let us know here."
   )
 
   from_import = models.CharField(blank=True, null=True, max_length=75)
@@ -241,9 +253,10 @@ class Session(models.Model):
 
   def send_submitted(self, request, conf):
     subject = "Talk Submission - {} - {}".format(self.user.__str__(), conf)
-    message = render_to_string('conference/email.talk-submission.txt',
-                               {'request': request,
-                                'session': self})
+    message = render_to_string('conference/email.talk-submission.txt', {
+        'request': request,
+        'session': self
+    })
     send_mail(
         subject,
         message,
@@ -259,10 +272,10 @@ class Session(models.Model):
     return '{}://{}/admin/profiles/user/{}/'.format(SITE_PROTOCOL, SITE_DOMAIN,
                                                     self.user.id)
 
-  def start_str (self):
+  def start_str(self):
     return self.start.strftime('%I:%M %p')
 
-  def end_str (self):
+  def end_str(self):
     return self.end().strftime('%I:%M %p')
 
   def end(self):
@@ -287,8 +300,9 @@ class Session(models.Model):
     return 'English'
 
   def url(self):
-    return '{}/{}/talk/{}'.format(settings.BASE_URL, self.conference.slug,
-                                  self.id)
+    eid = 'SessionNode:{}'.format(self.id)
+    eid = base64.b64encode(eid.encode('utf-8')).decode('utf-8')
+    return '{}/{}/talk/{}'.format(settings.BASE_URL, self.conference.slug, eid)
 
   @staticmethod
   def schedule(conference, day):
@@ -297,8 +311,8 @@ class Session(models.Model):
         start__year=day.year,
         start__month=day.month,
         start__day=day.day,
-        status='accepted',).exclude(start__isnull=True).order_by(
-            'start', 'room').select_related()
+        status='accepted',
+    ).exclude(start__isnull=True).order_by('start', 'room').select_related()
 
 
 class Invoice(models.Model):
@@ -329,8 +343,9 @@ class Invoice(models.Model):
     if self.sent:
       return ''
 
-    return mark_safe('<a href="./{}/send/" onclick="return confirm(\'Are you sure you want to send this invoice?\')">Send Invoice</a>'.format(
-        self.id))
+    return mark_safe(
+        '<a href="./{}/send/" onclick="return confirm(\'Are you sure you want to send this invoice?\')">Send Invoice</a>'
+        .format(self.id))
 
   def url(self):
     return reverse('conference-invoice', args=(self.key,))
@@ -339,7 +354,8 @@ class Invoice(models.Model):
     if self.paid_on:
       return 'Paid: {}'.format(self.stripe_charge)
 
-    return mark_safe('<a href="{}" target="_blank">Payment Link</a>'.format(self.url()))
+    return mark_safe('<a href="{}" target="_blank">Payment Link</a>'.format(
+        self.url()))
 
   def cents(self):
     return int(self.amount * 100)

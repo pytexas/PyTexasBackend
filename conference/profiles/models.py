@@ -8,10 +8,12 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
+
 def calculate_gravatar_hash(email):
   enc_email = email.strip().lower().encode("utf-8")
   email_hash = hashlib.md5(enc_email).hexdigest()
   return email_hash
+
 
 def get_gravatar_url(email, size=80, default='retro', rating='g'):
   url_base = 'https://secure.gravatar.com/'
@@ -19,13 +21,14 @@ def get_gravatar_url(email, size=80, default='retro', rating='g'):
   email_hash = calculate_gravatar_hash(email)
 
   query_string = urlencode({
-    's': str(size),
-    'd': default,
-    'r': rating,
+      's': str(size),
+      'd': default,
+      'r': rating,
   })
 
   return '{base}avatar/{hash}.jpg?{qs}'.format(
-    base=url_base, hash=email_hash, qs=query_string)
+      base=url_base, hash=email_hash, qs=query_string)
+
 
 class User(AbstractUser):
   first_name = None
@@ -35,8 +38,7 @@ class User(AbstractUser):
   verified_email = models.EmailField(
       null=True,
       blank=True,
-      help_text=
-      "If doesn't match e-mail field then user is sent a link to verify address."
+      help_text="If doesn't match e-mail field then user is sent a link to verify address."
   )
   title = models.CharField(max_length=100, null=True, blank=True)
   location = models.CharField(max_length=100, null=True, blank=True)
@@ -59,10 +61,11 @@ class User(AbstractUser):
     ) != self.verified_email.lower():
       ev = EmailVerification.create_verify(self)
       subject = "Please verify your address - {}".format(settings.SITE_NAME)
-      message = render_to_string('profiles/email.verification.txt',
-                                 {'ev': ev,
-                                  'request': request,
-                                  'slug': slug})
+      message = render_to_string('profiles/email.verification.txt', {
+          'ev': ev,
+          'request': request,
+          'slug': slug
+      })
       send_mail(
           subject,
           message,
@@ -89,6 +92,15 @@ class User(AbstractUser):
 
     return get_gravatar_url(self.email, size=256)
 
+  @property
+  def twitter_id(self):
+    qs = self.social_handles.filter(site='twitter')
+    if qs.count() > 0:
+      handle = self.social_handles.filter(site='twitter').first()
+      return handle.username
+
+    return None
+
 
 SOCIAL_SITES = (
     ('about.me', 'About.Me'),
@@ -96,21 +108,24 @@ SOCIAL_SITES = (
     ('github', 'Github'),
     ('gplus', 'Google+'),
     ('linkedin', 'LinkedIn'),
-    ('twitter', 'Twitter'),)
+    ('twitter', 'Twitter'),
+)
 
 SOCIAL_INFO = {
-  'about.me': 'about.me/',
-  'facebook': 'facebook.com/',
-  'github': 'github.com/',
-  'gplus': 'plus.google.com/+',
-  'linkedin': 'www.linkedin.com/in/',
-  'twitter': 'twitter.com/',
+    'about.me': 'about.me/',
+    'facebook': 'facebook.com/',
+    'github': 'github.com/',
+    'gplus': 'plus.google.com/+',
+    'linkedin': 'www.linkedin.com/in/',
+    'twitter': 'twitter.com/',
 }
 
 
 class SocialHandle(models.Model):
   user = models.ForeignKey(
-      settings.AUTH_USER_MODEL, related_name='social_handles', on_delete=models.PROTECT)
+      settings.AUTH_USER_MODEL,
+      related_name='social_handles',
+      on_delete=models.PROTECT)
   username = models.CharField(max_length=255)
   site = models.CharField(max_length=25, choices=SOCIAL_SITES)
 
@@ -135,8 +150,8 @@ class EmailVerification(models.Model):
   @classmethod
   def create_verify(cls, user):
     while 1:
-      salt = hashlib.sha256(
-          str(random.random()).encode('utf-8')).hexdigest()[:5]
+      salt = hashlib.sha256(str(
+          random.random()).encode('utf-8')).hexdigest()[:5]
       ck = hashlib.sha256(str(salt + user.email).encode('utf-8')).hexdigest()
       ev = cls(user=user, secret=ck, sent_to=user.email)
 

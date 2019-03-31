@@ -44,14 +44,16 @@ class Command(BaseCommand):
             verified_email=talk['email'],
             biography=talk['bio'],
             website=talk['url'],
-            from_import=istr,)
+            from_import=istr,
+        )
 
       if SocialHandle.objects.filter(user=user, site='twitter').count() == 0:
         if 'twitter' in talk and talk['twitter']:
           SocialHandle.objects.create(
               user=user,
               username=talk['twitter'],
-              site='twitter',)
+              site='twitter',
+          )
 
       status = 'submitted'
       if talk['state'] == 'accepted':

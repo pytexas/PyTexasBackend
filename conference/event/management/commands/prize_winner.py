@@ -24,7 +24,6 @@ class Command(BaseCommand):
         help='clear winners',
     )
 
-
   def get_tickets_api(self, options):
     tickets = []
     emails = {}
@@ -33,12 +32,12 @@ class Command(BaseCommand):
     while 1:
       print('Getting page', params.get('page', 1))
       response = requests.get(
-        'https://api.tito.io/v3/pytexas/pytexas-2019/tickets',
-        params=params,
-        headers={
-          'Authorization': 'Token token={}'.format(settings.TITO_TOKEN),
-          'Accept': 'application/json',
-        })
+          'https://api.tito.io/v3/pytexas/pytexas-2019/tickets',
+          params=params,
+          headers={
+              'Authorization': 'Token token={}'.format(settings.TITO_TOKEN),
+              'Accept': 'application/json',
+          })
       data = response.json()
 
       for t in data['tickets']:
@@ -46,7 +45,8 @@ class Command(BaseCommand):
           tickets.append(t)
           emails[t['email']] = True
 
-      if data['meta']['next_page'] and data['meta']['next_page'] != data['meta']['current_page']:
+      if data['meta']['next_page'] and data['meta']['next_page'] != data[
+          'meta']['current_page']:
         params = {'page': data['meta']['next_page']}
 
       else:
@@ -90,15 +90,14 @@ class Command(BaseCommand):
         if not picked['email']:
           continue
 
-        qs = PrizeWinner.objects.filter(conference=conf, ticket_id=picked['slug'])
+        qs = PrizeWinner.objects.filter(
+            conference=conf, ticket_id=picked['slug'])
         if qs.count() == 0:
           pw = PrizeWinner(
-            name = picked['name'],
-            email = picked['email'],
-            ticket_id = picked['slug'],
-            conference = conf
-          )
+              name=picked['name'],
+              email=picked['email'],
+              ticket_id=picked['slug'],
+              conference=conf)
           pw.save()
           print('Winner 🎉🐍 {} 🐍🎉'.format(picked['name']))
           break
-

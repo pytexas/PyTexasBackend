@@ -122,8 +122,8 @@ class InvoiceAdmin(admin.ModelAdmin):
         m.update(obj.to.encode('utf-8'))
         m.update(obj.text.encode('utf-8'))
         m.update(obj.subject.encode('utf-8'))
-        m.update(datetime.datetime.now().strftime("'%Y-%m-%d %H:%M:%S.%f")
-                 .encode('utf-8'))
+        m.update(datetime.datetime.now().strftime(
+            "'%Y-%m-%d %H:%M:%S.%f").encode('utf-8'))
         m.update(str(random.randint(0, 100000000)).encode('utf-8'))
         key = m.hexdigest()
         if Invoice.objects.filter(key=key).count() == 0:

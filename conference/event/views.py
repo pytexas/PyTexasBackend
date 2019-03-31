@@ -22,7 +22,8 @@ def invoice(request, key):
         currency="usd",
         card=invoice.stripe_token,
         description=invoice.name,
-        receipt_email=invoice.to,)
+        receipt_email=invoice.to,
+    )
     invoice.stripe_charge = charge['id']
     invoice.save()
 

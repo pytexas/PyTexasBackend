@@ -19,38 +19,40 @@ from pytx.files import JS, JS_HEAD, CSS, FONTS, IMAGES, MD, tpl_files
 from pytx.release import RELEASE, DEV, DATA, release_key
 from pytx.schema import schema
 
+
 class CachePage:
-  def __init__ (self, timeout=60 * 5, key_prefix=release_key):
+
+  def __init__(self, timeout=60 * 5, key_prefix=release_key):
     self.timeout = timeout
     self.key_prefix = key_prefix
     self.target = None
-    
-  def __call__ (self, target):
+
+  def __call__(self, target):
     self.target = target
     return self.run
-    
-  def run (self, *args, **kw):
+
+  def run(self, *args, **kw):
     cache_key = self.key_prefix() + args[0].get_full_path()
     cache_key = hashlib.sha1(cache_key.encode('utf-8')).hexdigest()
-    
+
     cached_response = cache.get(cache_key)
     if cached_response:
       cached_response['PageCached'] = 'True'
       return cached_response
-      
+
     response = self.target(*args, **kw)
-    
+
     print('Caching:', args[0].get_full_path())
     if hasattr(response, 'render') and callable(response.render):
-      response.add_post_render_callback(
-        lambda r: cache.set(cache_key, r, self.timeout)
-      )
-      
+      response.add_post_render_callback(lambda r: cache.set(
+          cache_key, r, self.timeout))
+
     else:
       cache.set(cache_key, response, self.timeout)
-      
+
     return response
-    
+
+
 def site_context(context):
   context['site'] = {'name': 'PyTexas'}
 
@@ -127,17 +129,21 @@ def browserconfig(request):
 @api_view(['GET'])
 @permission_classes((AllowAny,))
 def pyvideo(request, slug):
+  key = request.GET.get('key', '')
+  if key != settings.PYVIDEO_KEY:
+    raise http.Http404
+
   conf = get_object_or_404(Conference, slug=slug)
 
   queryset = Session.objects.filter(
-      status='accepted',
-      conference=conf).order_by('start').select_related('room', 'user')
+      status='accepted', conference=conf).order_by('start').select_related(
+          'room', 'user')
 
-  sizzler = SessionPyVideoSizzler(queryset,
-                                  many=True,
-                                  context={'request': request})
+  sizzler = SessionPyVideoSizzler(
+      queryset, many=True, context={'request': request})
   return Response(sizzler.data)
-  
+
+
 QUERY = """
 query {
   allConfs(slug: "{slug}" first: 1) {
@@ -239,7 +245,6 @@ def conference_data(request, slug):
   query = QUERY.replace('{slug}', slug)
   result = schema.execute(query)
   if result.invalid:
-      return http.JsonResponse({
-        'errors': [str(error) for error in result.errors]
-      })
+    return http.JsonResponse(
+        {'errors': [str(error) for error in result.errors]})
   return http.JsonResponse(result.data)

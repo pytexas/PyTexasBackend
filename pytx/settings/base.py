@@ -192,4 +192,6 @@ EVENTBRITE_OAUTH_TOKEN = os.environ.get('EVENTBRITE_OAUTH_TOKEN', '')
 
 TITO_TOKEN = os.environ.get('TITO_TOKEN', '')
 
+PYVIDEO_KEY = os.environ.get('PYVIDEO_KEY', '')
+
 from pytx.settings.logging import *

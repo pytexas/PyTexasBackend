@@ -9,6 +9,7 @@ from graphene.types.datetime import DateTime
 from conference.event.models import Conference, SponsorshipLevel, Sponsor, Room, Session
 from conference.profiles.models import SocialHandle
 
+
 class ConfNode(DjangoObjectType):
 
   class Meta:
@@ -28,13 +29,15 @@ class SponsorshipLevelNode(DjangoObjectType):
 
 
 class SocialNode(DjangoObjectType):
+
   class Meta:
     model = SocialHandle
     interfaces = (relay.Node,)
 
+
 class UserNode(DjangoObjectType):
   image = graphene.String(source='image')
-  
+
   class Meta:
     model = get_user_model()
     filter_fields = ['id']
@@ -64,7 +67,7 @@ class SessionNode(DjangoObjectType):
   end = DateTime(source='end')
   start_str = graphene.String(source='start_str')
   end_str = graphene.String(source='end_str')
-  
+
   class Meta:
     model = Session
     filter_fields = ['conference', 'id', 'status', 'stype']
