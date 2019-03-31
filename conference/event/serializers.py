@@ -5,6 +5,7 @@ from rest_framework import serializers
 from conference.event.models import Room, Session
 from conference.profiles.models import SocialHandle
 
+
 class DynamicFieldsMixin(object):
 
   def __init__(self, *args, **kwargs):
@@ -18,16 +19,20 @@ class DynamicFieldsMixin(object):
         if field_name in exclude:
           self.fields.pop(field_name)
 
+
 class RoomSizzler(serializers.ModelSerializer):
+
   class Meta:
     model = Room
     fields = ('name',)
 
 
 class SocialHandleSizzler(DynamicFieldsMixin, serializers.ModelSerializer):
+
   class Meta:
     model = SocialHandle
     fields = ('username', 'site')
+
 
 class UserSizzler(DynamicFieldsMixin, serializers.ModelSerializer):
   social_handles = SocialHandleSizzler(many=True)
@@ -39,13 +44,12 @@ class UserSizzler(DynamicFieldsMixin, serializers.ModelSerializer):
               'social_handles', 'twitter_id')
     read_only_fields = fields
 
+
 class SessionPyVideoSizzler(DynamicFieldsMixin, serializers.ModelSerializer):
   room = RoomSizzler()
   speaker = UserSizzler(
-      source='user',
-      exclude=('biography', 'website', 'social_handles'))
-  reviewer = UserSizzler(
-      exclude=('biography', 'website', 'social_handles'))
+      source='user', exclude=('biography', 'website', 'social_handles'))
+  reviewer = UserSizzler(exclude=('biography', 'website', 'social_handles'))
   type = serializers.CharField(source='get_stype_display')
   make_recording = serializers.BooleanField(source='video')
   released = serializers.BooleanField()
@@ -54,7 +58,6 @@ class SessionPyVideoSizzler(DynamicFieldsMixin, serializers.ModelSerializer):
 
   class Meta:
     model = Session
-    fields = (
-        'id', 'name', 'description', 'type', 'room', 'start', 'end', 'url',
-        'duration', 'speaker', 'make_recording', 'released', 'license',
-        'language', 'video_url', 'slides_url', 'reviewer')
+    fields = ('id', 'name', 'description', 'type', 'room', 'start', 'end',
+              'url', 'duration', 'speaker', 'make_recording', 'released',
+              'license', 'language', 'video_url', 'slides_url', 'reviewer')

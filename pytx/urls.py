@@ -31,7 +31,6 @@ urlpatterns = [
     path('2015/', pytx.views.archive),
     path('2014/', pytx.views.archive),
     path('2013/', pytx.views.archive),
-
     path('admin/', admin.site.urls),
     path('data-graph', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     path('favicon.ico', conference.views.favicon),
@@ -47,11 +46,9 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
-    urlpatterns.insert(
-        0,
-        path(
-            '{}<path:path>'.format(settings.MEDIA_URL[1:]),
-            serve,
-            kwargs={'document_root': settings.MEDIA_ROOT}
-        )
-    )
+  urlpatterns.insert(
+      0,
+      path(
+          '{}<path:path>'.format(settings.MEDIA_URL[1:]),
+          serve,
+          kwargs={'document_root': settings.MEDIA_ROOT}))

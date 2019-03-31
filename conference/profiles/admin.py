@@ -86,7 +86,8 @@ class User2Admin(UserAdmin):
       }),
       ('Important dates', {
           'fields': ('last_login', 'date_joined', 'from_import')
-      }),)
+      }),
+  )
 
   readonly_fields = ('last_login', 'date_joined', 'from_import')
 
