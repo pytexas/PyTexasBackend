@@ -17,7 +17,7 @@ class DynamicFieldsMixin(object):
       for field_name in existing:
         if field_name in exclude:
           self.fields.pop(field_name)
-          
+
 class RoomSizzler(serializers.ModelSerializer):
   class Meta:
     model = Room
@@ -29,19 +29,22 @@ class SocialHandleSizzler(DynamicFieldsMixin, serializers.ModelSerializer):
     model = SocialHandle
     fields = ('username', 'site')
 
-class UserPublicSizzler(DynamicFieldsMixin, serializers.ModelSerializer):
+class UserSizzler(DynamicFieldsMixin, serializers.ModelSerializer):
   social_handles = SocialHandleSizzler(many=True)
+  twitter_id = serializers.CharField()
 
   class Meta:
     model = get_user_model()
-    fields = ('username', 'name', 'image', 'biography', 'website',
-              'social_handles')
+    fields = ('username', 'email', 'name', 'image', 'biography', 'website',
+              'social_handles', 'twitter_id')
     read_only_fields = fields
-    
+
 class SessionPyVideoSizzler(DynamicFieldsMixin, serializers.ModelSerializer):
   room = RoomSizzler()
-  speaker = UserPublicSizzler(
+  speaker = UserSizzler(
       source='user',
+      exclude=('biography', 'website', 'social_handles'))
+  reviewer = UserSizzler(
       exclude=('biography', 'website', 'social_handles'))
   type = serializers.CharField(source='get_stype_display')
   make_recording = serializers.BooleanField(source='video')
@@ -54,4 +57,4 @@ class SessionPyVideoSizzler(DynamicFieldsMixin, serializers.ModelSerializer):
     fields = (
         'id', 'name', 'description', 'type', 'room', 'start', 'end', 'url',
         'duration', 'speaker', 'make_recording', 'released', 'license',
-        'language', 'video_url', 'slides_url')
+        'language', 'video_url', 'slides_url', 'reviewer')

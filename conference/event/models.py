@@ -1,3 +1,4 @@
+import base64
 import datetime
 
 from django.db import models
@@ -192,6 +193,13 @@ SESSION_LEVELS = (
 
 class Session(models.Model):
   user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
+  reviewer = models.ForeignKey(
+    settings.AUTH_USER_MODEL,
+    on_delete=models.PROTECT,
+    blank=True,
+    null=True,
+    related_name='reviewers'
+  )
   conference = models.ForeignKey(Conference, on_delete=models.CASCADE)
 
   room = models.ForeignKey(Room, blank=True, null=True, on_delete=models.PROTECT)
@@ -287,8 +295,10 @@ class Session(models.Model):
     return 'English'
 
   def url(self):
+    eid = 'SessionNode:{}'.format(self.id)
+    eid = base64.b64encode(eid.encode('utf-8')).decode('utf-8')
     return '{}/{}/talk/{}'.format(settings.BASE_URL, self.conference.slug,
-                                  self.id)
+                                   eid)
 
   @staticmethod
   def schedule(conference, day):

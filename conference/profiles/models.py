@@ -89,6 +89,15 @@ class User(AbstractUser):
 
     return get_gravatar_url(self.email, size=256)
 
+  @property
+  def twitter_id(self):
+    qs = self.social_handles.filter(site='twitter')
+    if qs.count() > 0:
+      handle = self.social_handles.filter(site='twitter').first()
+      return handle.username
+
+    return None
+
 
 SOCIAL_SITES = (
     ('about.me', 'About.Me'),
