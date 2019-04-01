@@ -392,3 +392,11 @@ class PrizeWinner(models.Model):
 
   def __str__(self):
     return self.name
+
+
+class Redirect(models.Model):
+  original_path = models.CharField(max_length=255)
+  redirect_to = models.CharField(max_length=255)
+
+  def __str__(self):
+    return self.original_path

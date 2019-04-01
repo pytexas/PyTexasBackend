@@ -9,7 +9,7 @@ from django.db import models
 from django import http
 from django.contrib.admin.views.main import ChangeList, IGNORED_PARAMS
 
-from conference.event.models import Conference, SponsorshipLevel, Sponsor, Session, Invoice, Room, PrizeWinner
+from conference.event.models import Conference, SponsorshipLevel, Sponsor, Session, Invoice, Room, PrizeWinner, Redirect
 from conference.utils import CSVFileGenerator
 
 CSV_IGNORED = [p for p in IGNORED_PARAMS]
@@ -106,6 +106,12 @@ class PrizeAdmin(admin.ModelAdmin):
   list_filter = ('conference', 'claimed')
   search_fields = ('name', 'email', 'prize')
   list_editable = ('prize', 'claimed')
+
+
+@admin.register(Redirect)
+class RedirectAdmin(admin.ModelAdmin):
+  list_display = ('id', 'original_path', 'redirect_to')
+  list_editable = ('original_path', 'redirect_to')
 
 
 @admin.register(Invoice)
