@@ -12,7 +12,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 
-from conference.event.models import Conference, Session
+from conference.event.models import Conference, Session, Redirect
 from conference.event.serializers import SessionPyVideoSizzler
 
 from pytx.files import JS, JS_HEAD, CSS, FONTS, IMAGES, MD, tpl_files
@@ -87,6 +87,10 @@ def favicon(request):
 def frontend(request):
   if request.path == '/':
     return http.HttpResponseRedirect("/{}/".format(settings.CURRENT_CONF))
+
+  redirect = Redirect.objects.filter(original_path=request.path).first()
+  if redirect:
+    return http.HttpResponseRedirect(redirect.redirect_to)
 
   context = {}
   return TemplateResponse(request, 'frontend.html', site_context(context))
