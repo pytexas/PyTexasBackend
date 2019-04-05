@@ -29,9 +29,13 @@
               <a :href="s.url" target="_blank">
                 <img :src="resize(s.logoUrl, w(s), h(s), 'fit=fill')" :alt="s.level">
               </a>
-              <span>{{ s.level }}</span>
             </div>
-            <div class="break" v-if="index != (sponsors.length - 1) && s.level != sponsors[index + 1].level"></div>
+            <div class="break tc" v-if="index != (sponsors.length - 1) && s.level != sponsors[index + 1].level">
+              {{ s.level }}
+            </div>
+            <div class="break tc" v-if="index == (sponsors.length - 1)">
+              {{ s.level }}
+            </div>
           </template>
         </div>
       </div>
@@ -134,9 +138,25 @@ export default {
     image,
     resize,
     w(s) {
+      if (s.level == 'Diamond Sponsor' || s.level == 'Platinum Sponsor') {
+        return 150;
+      }
+
+      if (s.level == 'T-Shirt Sponsor' || s.level == 'Video Sponsor') {
+        return 135;
+      }
+
       return 120;
     },
     h(s) {
+      if (s.level == 'Diamond Sponsor' || s.level == 'Platinum Sponsor') {
+        return 80;
+      }
+
+      if (s.level == 'T-Shirt Sponsor' || s.level == 'Video Sponsor') {
+        return 64;
+      }
+
       return 54;
     },
     slugify(text) {
