@@ -70,7 +70,10 @@ router.set_title = to => {
 
 router.afterEach((to, from) => {
   if (ROUTE_HREF) {
-    location.reload();
+    setTimeout(() => {
+      console.log('reloading');
+      location.reload();
+    }, 30);
   }
 
   Vue.nextTick(() => {
