@@ -112,7 +112,7 @@ export default {
   .break {
     width: 100%;
     margin-bottom: 40px;
-    margin-top: -3px;
+    margin-top: 3px;
   }
 }
 </style>
