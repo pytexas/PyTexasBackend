@@ -4,13 +4,19 @@
     <div class="">
       <h1>Thanks to All Our Sponsors</h1>
       <div class="sponsors">
-        <div v-for="s in sponsors" :key="s.id" class="tc">
-          <strong><a :href="s.url" target="_blank">{{ s.name }}</a></strong>
-          <a :href="s.url" target="_blank">
-            <img :src="resize(s.logoUrl, 250, 92, 'fit=fill')" :alt="s.level">
-          </a>
-          <span>{{ s.level }}</span>
-        </div>
+        <template v-for="(s, index) in sponsors" :key="s.id">
+          <div :class="slugify(s.level)">
+            <a :href="s.url" target="_blank">
+              <img :src="resize(s.logoUrl, w(s), h(s), 'fit=fill')" :alt="s.level">
+            </a>
+          </div>
+          <div class="break tc" v-if="index != (sponsors.length - 1) && s.level != sponsors[index + 1].level">
+            {{ s.level }}
+          </div>
+          <div class="break tc" v-if="index == (sponsors.length - 1)">
+            {{ s.level }}
+          </div>
+        </template>
       </div>
     </div>
   </v-card>
@@ -33,6 +39,36 @@ export default {
   methods: {
     image,
     resize,
+    w(s) {
+      if (s.level == 'Diamond Sponsor' || s.level == 'Platinum Sponsor') {
+        return 150;
+      }
+
+      if (s.level == 'T-Shirt Sponsor' || s.level == 'Video Sponsor') {
+        return 135;
+      }
+
+      return 250;
+    },
+    h(s) {
+      if (s.level == 'Diamond Sponsor' || s.level == 'Platinum Sponsor') {
+        return 80;
+      }
+
+      if (s.level == 'T-Shirt Sponsor' || s.level == 'Video Sponsor') {
+        return 64;
+      }
+
+      return 92;
+    },
+    slugify(text) {
+      return text.toString().toLowerCase()
+        .replace(/\s+/g, '-')           // Replace spaces with -
+        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+        .replace(/^-+/, '')             // Trim - from start of text
+        .replace(/-+$/, '');            // Trim - from end of text
+    },
     get_sponsors() {
       if (API_DATA) {
         this.sponsors = extract_sponsors(JSON.parse(API_DATA), true);
@@ -47,13 +83,16 @@ export default {
 </script>
 <style lang="less">
 .sponsors-page {
+  h1 {
+    margin-bottom: 20px;
+  }
+
   .sponsors {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
     > div {
-      margin: 15px 10px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -61,11 +100,15 @@ export default {
     }
 
     img {
-      width: 250px;
-      height: 92px;
-      object-fit: contain;
+      max-width: 300px;
       display: block;
     }
+  }
+
+  .break {
+    width: 100%;
+    margin-bottom: 40px;
+    margin-top: -3px;
   }
 }
 </style>
