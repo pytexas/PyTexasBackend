@@ -3,54 +3,36 @@
   <v-card class="main padding iconbg">
     <div class="tc">
       <h1>PyTexas 2019</h1>
-      <h2>
+      <h2 class="norm">
         April 13th &amp; 14th
         <br>
-        Austin, Texas
-        <br>
-        at the <a href="http://library.austintexas.gov/central-library" target="_blank">
+        <a href="http://library.austintexas.gov/central-library" target="_blank">
           Austin Central Public Library
         </a>
       </h2>
       <div class="tc">
         <br>
-        <v-btn color="primary" to="/page/sponsors/prospectus">
-          Become A Sponsor
-        </v-btn>
         <v-btn color="primary" href="https://ti.to/pytexas/pytexas-2019" target="_blank">
           Register&nbsp;<img class="ext" :src="image('img/icons/external-white.svg')" alt="">
         </v-btn>
         <v-btn color="primary" to="/program">
           <v-icon>calendar_today</v-icon>&nbsp;Schedule
         </v-btn>
+        <v-btn to="page/venue" color="primary">
+          <v-icon>map</v-icon>&nbsp;Map and Area Info
+        </v-btn>
         <br><br>
-        <h2>Stay Updated</h2>
-        <ul>
-          <li>
-            Twitter: <a href="https://twitter.com/pytexas" target="_blank">
-              @PyTexas
-            </a>
-          </li>
-          <li>
-            Slack: <a href="https://pytexas.slack.com" target="_blank">
-              PyTexas Slack
-            </a> - <a href="https://pytexas-slack.herokuapp.com/" target="_blank">
-              Request an Invite
-            </a>
-          </li>
-          <li>
-            Mailing List: <router-link to="/page/community/mailing-list">Sign Up</router-link>
-          </li>
-        </ul>
         <h2>Sponsored By:</h2>
         <div class="sponsors">
-          <div v-for="s in sponsors" :key="s.id">
-            <strong><a :href="s.url" target="_blank">{{ s.name }}</a></strong>
-            <a :href="s.url" target="_blank">
-              <img :src="resize(s.logoUrl, 135, 64, 'fit=fill')" :alt="s.level">
-            </a>
-            <span>{{ s.level }}</span>
-          </div>
+          <template v-for="(s, index) in sponsors" :key="s.id">
+            <div :class="slugify(s.level)">
+              <a :href="s.url" target="_blank">
+                <img :src="resize(s.logoUrl, w(s), h(s), 'fit=fill')" :alt="s.level">
+              </a>
+              <span>{{ s.level }}</span>
+            </div>
+            <div class="break" v-if="index != (sponsors.length - 1) && s.level != sponsors[index + 1].level"></div>
+          </template>
         </div>
       </div>
     </div>
@@ -103,20 +85,33 @@
   </v-card>
   <v-card class="main padding venue">
     <div class="tc">
-      <h2>The Venue: Austin Central Public Library</h2>
-      <div class="images">
-        <a :href="image('img/apl/library1.png')">
-          <img :src="resize(image('img/apl/library1.png'), 300, 300, 'fit=crop')" alt="Library photo 1">
-        </a>
-        <a :href="image('img/apl/library2.png')">
-          <img :src="resize(image('img/apl/library2.png'), 300, 300, 'fit=crop')" alt="Library photo 2">
-        </a>
-      </div>
-      <div class="map">
-        <v-btn to="page/venue" color="primary">
-          Map and More Info
-        </v-btn>
-      </div>
+      <h2>Stay Updated</h2>
+      <ul>
+        <li>
+          Twitter: <a href="https://twitter.com/pytexas" target="_blank">
+            @PyTexas
+          </a>
+        </li>
+        <li>
+          Slack: <a href="https://pytexas.slack.com" target="_blank">
+            PyTexas Slack
+          </a> - <a href="https://pytexas-slack.herokuapp.com/" target="_blank">
+            Request an Invite
+          </a>
+        </li>
+        <li>
+          Mailing List: <router-link to="/page/community/mailing-list">Sign Up</router-link>
+        </li>
+      </ul>
+      <!--<h2>The Venue: Austin Central Public Library</h2>-->
+      <!--<div class="images">-->
+      <!--  <a :href="image('img/apl/library1.png')">-->
+      <!--    <img :src="resize(image('img/apl/library1.png'), 300, 300, 'fit=crop')" alt="Library photo 1">-->
+      <!--  </a>-->
+      <!--  <a :href="image('img/apl/library2.png')">-->
+      <!--    <img :src="resize(image('img/apl/library2.png'), 300, 300, 'fit=crop')" alt="Library photo 2">-->
+      <!--  </a>-->
+      <!--</div>-->
     </div>
   </v-card>
 </div>
@@ -138,6 +133,20 @@ export default {
   methods: {
     image,
     resize,
+    w(s) {
+      return 120;
+    },
+    h(s) {
+      return 54;
+    },
+    slugify(text) {
+      return text.toString().toLowerCase()
+        .replace(/\s+/g, '-')           // Replace spaces with -
+        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+        .replace(/^-+/, '')             // Trim - from start of text
+        .replace(/-+$/, '');            // Trim - from end of text
+    },
     get_sponsors() {
       if (API_DATA) {
         this.sponsors = extract_sponsors(JSON.parse(API_DATA), true);
@@ -156,6 +165,10 @@ export default {
 .home-page {
   ul {
     list-style-type: none;
+  }
+
+  h2.norm {
+    font-weight: normal;
   }
 
   .speakers {
@@ -211,6 +224,10 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
 
+    .break {
+      width: 100%;
+    }
+
     a {
       text-decoration: none;
     }
@@ -224,8 +241,8 @@ export default {
     }
 
     img {
-      width: 135px;
-      height: 64px;
+      width: 120px;
+      height: 54px;
       object-fit: contain;
       display: block;
     }
