@@ -246,6 +246,8 @@ export default {
 
     .break {
       width: 100%;
+      margin-bottom: 25px;
+      margin-top: -3px;
     }
 
     a {
@@ -261,9 +263,10 @@ export default {
     }
 
     img {
-      width: 120px;
-      height: 54px;
-      object-fit: contain;
+      max-width: 150px;
+      /*width: 120px;*/
+      /*height: 54px;*/
+      /*object-fit: contain;*/
       display: block;
     }
   }
