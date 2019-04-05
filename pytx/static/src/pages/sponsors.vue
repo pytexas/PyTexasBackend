@@ -5,7 +5,7 @@
       <h1>Thanks to All Our Sponsors</h1>
       <div class="sponsors">
         <template v-for="(s, index) in sponsors" :key="s.id">
-          <div :class="slugify(s.level)">
+          <div :class="[slugify(s.level), 'sblock']">
             <a :href="s.url" target="_blank">
               <img :src="resize(s.logoUrl, w(s), h(s), 'fit=fill')" :alt="s.level">
             </a>
@@ -41,22 +41,22 @@ export default {
     resize,
     w(s) {
       if (s.level == 'Diamond Sponsor' || s.level == 'Platinum Sponsor') {
-        return 150;
+        return 300;
       }
 
       if (s.level == 'T-Shirt Sponsor' || s.level == 'Video Sponsor') {
-        return 135;
+        return 275;
       }
 
       return 250;
     },
     h(s) {
       if (s.level == 'Diamond Sponsor' || s.level == 'Platinum Sponsor') {
-        return 80;
+        return 120;
       }
 
       if (s.level == 'T-Shirt Sponsor' || s.level == 'Video Sponsor') {
-        return 64;
+        return 100;
       }
 
       return 92;
@@ -91,6 +91,10 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    .sblock {
+      margin: 0 10px;
+    }
 
     > div {
       display: flex;
