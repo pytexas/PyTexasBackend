@@ -71,7 +71,7 @@ class SessionNode(DjangoObjectType):
 
   class Meta:
     model = Session
-    filter_fields = ['conference', 'id', 'status', 'stype']
+    filter_fields = ['conference', 'id', 'status', 'stype', 'conference__slug']
     interfaces = (relay.Node,)
 
 
