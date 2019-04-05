@@ -192,6 +192,7 @@ query {
         start
         startStr
         endStr
+        dateStr
         status
         allRooms
         videoUrl
