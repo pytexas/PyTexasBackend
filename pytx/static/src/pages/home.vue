@@ -31,7 +31,7 @@
               </a>
             </div>
             <div class="break tc" v-if="index != (sponsors.length - 1) && s.level != sponsors[index + 1].level">
-              {{ s.level }}
+              {{ s.level }}s
             </div>
             <div class="break tc" v-if="index == (sponsors.length - 1)">
               {{ s.level }}s
