@@ -34,7 +34,7 @@
               {{ s.level }}
             </div>
             <div class="break tc" v-if="index == (sponsors.length - 1)">
-              {{ s.level }}
+              {{ s.level }}s
             </div>
           </template>
         </div>
