@@ -182,7 +182,7 @@ query {
       }
     }
   }
-  allSessions(status: "accepted") {
+  allSessions(status: "accepted" conference_Slug:"{slug}") {
     edges{
       node{
         id
@@ -192,6 +192,7 @@ query {
         start
         startStr
         endStr
+        dateStr
         status
         allRooms
         videoUrl

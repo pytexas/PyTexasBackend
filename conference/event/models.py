@@ -10,6 +10,7 @@ from django.core.mail import send_mail
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.html import mark_safe
+from django.template import defaultfilters
 
 from conference.settings import SPONSOR_NOTIFY, SPEAKER_NOTIFY, SITE_DOMAIN, SITE_PROTOCOL
 
@@ -277,6 +278,9 @@ class Session(models.Model):
 
   def end_str(self):
     return self.end().strftime('%I:%M %p')
+
+  def date_str(self):
+    return defaultfilters.date(self.start, 'l, M jS')
 
   def end(self):
     return self.start + datetime.timedelta(minutes=self.duration)

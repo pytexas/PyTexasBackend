@@ -45,6 +45,12 @@
           </template>
         </v-list>
       </div>
+      <v-btn color="primary" v-if="day == 13" to="/program/14">
+        Go to Sunday 4/14 &raquo;
+      </v-btn>
+      <v-btn color="primary" v-else to="/program/13">
+        &laquo; Go to Saturday 4/13
+      </v-btn>
     </v-card-text>
   </v-card>
 </div>

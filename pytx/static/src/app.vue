@@ -23,11 +23,6 @@
   </v-toolbar>
   <v-content>
     <v-container>
-      <div class="update-btn" v-if="needsUpdate">
-        <v-btn color="accent" @click="do_update">
-          <v-icon>refresh</v-icon> Update!
-        </v-btn>
-      </div>
       <router-view></router-view>
     </v-container>
     <v-navigation-drawer v-model="drawer" fixed temporary>

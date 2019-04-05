@@ -8,6 +8,7 @@
           {{ speaker.name }}
         </h3>
         <h4>
+          {{ talk.dateStr }}<br>
           {{ talk.startStr }} - {{ talk.endStr }}
         </h4>
         <h5 v-if="talk.room && !talk.allRooms">
