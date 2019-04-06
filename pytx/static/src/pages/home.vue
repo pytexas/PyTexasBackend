@@ -139,6 +139,7 @@ export default {
     needs_break(s) {
       var loners = [
         'Diamond Sponsor',
+        'Platinum Sponsor',
         'Video Sponsor',
         'After Party Sponsor'
       ];
@@ -281,18 +282,21 @@ export default {
     }
 
     .break.bottom {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     a {
       text-decoration: none;
+      flex: 1;
+      align-items: center;
+      display: flex;
     }
 
     > div {
       margin: 10px 8px 10px 8px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
     }
 
