@@ -172,7 +172,7 @@ export default {
       }
 
       if (s.level == 'Platinum Sponsor') {
-        return 150;
+        return 200;
       }
 
       if (s.level == 'T-Shirt Sponsor' || s.level == 'Video Sponsor') {
