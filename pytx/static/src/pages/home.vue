@@ -282,7 +282,7 @@ export default {
     }
 
     .break.bottom {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     a {
