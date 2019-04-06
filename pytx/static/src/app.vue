@@ -10,14 +10,14 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-xs-only">
-      <v-btn flat href="https://ti.to/pytexas/pytexas-2019" target="_blank">
-        Register
-      </v-btn>
       <v-btn flat to="/program">
         Schedule
       </v-btn>
-      <v-btn flat to="/page/sponsors/prospectus">
-        Sponsor
+      <v-btn flat target="_blank" href="https://pytexas.slack.com">
+        Chat
+      </v-btn>
+      <v-btn flat target="_blank" href="https://pytexas-slack.herokuapp.com/">
+        Chat Sign Up
       </v-btn>
     </v-toolbar-items>
   </v-toolbar>

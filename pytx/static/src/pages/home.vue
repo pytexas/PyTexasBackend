@@ -29,11 +29,13 @@
               <a :href="s.url" target="_blank">
                 <img :src="resize(s.logoUrl, w(s), h(s), 'fit=fill')" :alt="s.level">
               </a>
+              <br v-if="is_lonely(s)"/>
+              <span v-if="is_lonely(s)">{{ s.level }}</span>
             </div>
-            <div class="break tc" v-if="index != (sponsors.length - 1) && s.level != sponsors[index + 1].level">
+            <div :class="level_label(s)" v-if="!is_lonely(s) && index != (sponsors.length - 1) && s.level != sponsors[index + 1].level">
               {{ s.level }}s
             </div>
-            <div class="break tc" v-if="index == (sponsors.length - 1)">
+            <div :class="level_label(s)" v-if="!is_lonely(s) && index == (sponsors.length - 1)">
               {{ s.level }}s
             </div>
           </template>
@@ -137,8 +139,22 @@ export default {
   methods: {
     image,
     resize,
+    is_lonely(s) {
+      var loners = ['Diamond Sponsor', 'Booth Sponsor', 'Gold Sponsor', 'After Party Sponsor'];
+      if (loners.indexOf(s.level) > -1) {
+        return true;
+      }
+      return false;
+    },
+    level_label(s) {
+      return ['break', 'tc'];
+    },
     w(s) {
-      if (s.level == 'Diamond Sponsor' || s.level == 'Platinum Sponsor') {
+      if (s.level == 'Diamond Sponsor') {
+        return 270;
+      }
+
+      if (s.level == 'Platinum Sponsor') {
         return 150;
       }
 
