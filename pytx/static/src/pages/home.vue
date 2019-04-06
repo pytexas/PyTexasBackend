@@ -25,20 +25,16 @@
         <h2>Sponsored By:</h2>
         <div class="sponsors">
           <template v-for="(s, index) in sponsors" :key="s.id">
+            <div :class="level_label(s)" v-if="!is_lonely(s) && (index == 0 || s.level != sponsors[index - 1].level)">
+              {{ s.level }}s
+            </div>
             <div :class="[slugify(s.level), 'sponsor']">
+              <span v-if="is_lonely(s)">{{ s.level }}</span>
               <a :href="s.url" target="_blank">
                 <img :src="resize(s.logoUrl, w(s), h(s), 'fit=fill')" :alt="s.level">
               </a>
-              <br v-if="is_lonely(s)"/>
-              <span v-if="is_lonely(s)">{{ s.level }}</span>
             </div>
-            <div :class="level_label(s)" v-if="!is_lonely(s) && index != (sponsors.length - 1) && s.level != sponsors[index + 1].level">
-              {{ s.level }}s
-            </div>
-            <div :class="level_label(s)" v-if="!is_lonely(s) && index == (sponsors.length - 1)">
-              {{ s.level }}s
-            </div>
-            <div v-if="needs_break(s)" class="break"></div>
+            <div v-if="needs_break(s)" class="break bottom"></div>
           </template>
         </div>
       </div>
@@ -282,8 +278,10 @@ export default {
 
     .break {
       width: 100%;
+    }
+
+    .break.bottom {
       margin-bottom: 25px;
-      margin-top: -3px;
     }
 
     a {
@@ -299,7 +297,7 @@ export default {
     }
 
     img {
-      max-width: 150px;
+      max-width: 270px;
       /*width: 120px;*/
       /*height: 54px;*/
       /*object-fit: contain;*/
