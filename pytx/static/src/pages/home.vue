@@ -34,7 +34,7 @@
                 <img :src="resize(s.logoUrl, w(s), h(s), 'fit=fill')" :alt="s.level">
               </a>
             </div>
-            <div v-if="needs_break(s)" class="break bottom"></div>
+            <div v-if="needs_break(s) && (index == 0 || s.level != sponsors[index - 1].level)" class="break bottom"></div>
           </template>
         </div>
       </div>
