@@ -25,7 +25,7 @@
         <h2>Sponsored By:</h2>
         <div class="sponsors">
           <template v-for="(s, index) in sponsors" :key="s.id">
-            <div :class="slugify(s.level)">
+            <div :class="[slugify(s.level), 'sponsor']">
               <a :href="s.url" target="_blank">
                 <img :src="resize(s.logoUrl, w(s), h(s), 'fit=fill')" :alt="s.level">
               </a>
@@ -38,6 +38,7 @@
             <div :class="level_label(s)" v-if="!is_lonely(s) && index == (sponsors.length - 1)">
               {{ s.level }}s
             </div>
+            <div v-if="needs_break(s)" class="break"></div>
           </template>
         </div>
       </div>
@@ -139,8 +140,27 @@ export default {
   methods: {
     image,
     resize,
+    needs_break(s) {
+      var loners = [
+        'Diamond Sponsor',
+        'Video Sponsor',
+        'After Party Sponsor'
+      ];
+      if (loners.indexOf(s.level) > -1) {
+        return true;
+      }
+
+      return false;
+    },
     is_lonely(s) {
-      var loners = ['Diamond Sponsor', 'Booth Sponsor', 'Gold Sponsor', 'After Party Sponsor'];
+      var loners = [
+        'Diamond Sponsor',
+        'T-Shirt Sponsor',
+        'Video Sponsor',
+        'Booth Sponsor',
+        'Gold Sponsor',
+        'After Party Sponsor'
+      ];
       if (loners.indexOf(s.level) > -1) {
         return true;
       }
