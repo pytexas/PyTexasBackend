@@ -13,7 +13,7 @@
       <div class="tc">
         <br>
         <v-btn color="primary" href="https://ti.to/pytexas/pytexas-2019" target="_blank">
-          Register&nbsp;<img class="ext" :src="image('img/icons/external-white.svg')" alt="">
+          Register (sold out)
         </v-btn>
         <v-btn color="primary" to="/program">
           <v-icon>calendar_today</v-icon>&nbsp;Schedule
