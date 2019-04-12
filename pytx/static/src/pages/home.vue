@@ -11,15 +11,19 @@
         </a>
       </h2>
       <div class="tc">
+        <strong>Regristration Sold Out</strong>
         <br>
-        <v-btn color="primary" href="https://ti.to/pytexas/pytexas-2019" target="_blank">
-          Register (sold out)
-        </v-btn>
         <v-btn color="primary" to="/program">
           <v-icon>calendar_today</v-icon>&nbsp;Schedule
         </v-btn>
         <v-btn to="page/venue" color="primary">
           <v-icon>map</v-icon>&nbsp;Map and Area Info
+        </v-btn>
+        <v-btn color="primary" href="https://pytexas.slack.com/" target="_blank">
+          <v-icon>chat</v-icon>&nbsp;Chat
+        </v-btn>
+        <v-btn color="primary" href="https://pytexas-slack.herokuapp.com/" target="_blank">
+          <v-icon>edit</v-icon>&nbsp;Chat Sign Up
         </v-btn>
         <br><br>
         <h2>Sponsored By:</h2>
