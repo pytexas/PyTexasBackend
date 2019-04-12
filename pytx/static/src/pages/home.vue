@@ -11,7 +11,7 @@
         </a>
       </h2>
       <div class="tc">
-        <strong>Regristration Sold Out</strong>
+        <strong>Registration Sold Out</strong>
         <br>
         <v-btn color="primary" to="/program">
           <v-icon>calendar_today</v-icon>&nbsp;Schedule
