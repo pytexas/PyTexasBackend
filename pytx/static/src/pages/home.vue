@@ -14,6 +14,21 @@
         <v-btn href="https://photos.app.goo.gl/f8n51dnA2xWYAtKM8" color="primary">
           <v-icon>photo</v-icon>&nbsp;Photos
         </v-btn>
+        <br><br>
+        <h2>Sponsored By:</h2>
+        <div class="sponsors">
+          <template v-for="(s, index) in sponsors" :key="s.id">
+            <div :class="level_label(s)" v-if="!is_lonely(s) && (index == 0 || s.level != sponsors[index - 1].level)">
+              {{ s.level }}s
+            </div>
+            <div :class="[slugify(s.level), 'sponsor']">
+              <span v-if="is_lonely(s)">{{ s.level }}</span>
+              <a :href="s.url" target="_blank">
+                <img :src="resize(s.logoUrl, w(s), h(s), 'fit=fill')" :alt="s.level">
+              </a>
+            </div>
+            <div v-if="needs_break(s) && (index != (sponsors.length - 1) && s.level != sponsors[index + 1].level)" class="break bottom"></div>
+          </template>
       </div>
     </div>
   </v-card>
