@@ -5,42 +5,15 @@
       <h1>PyTexas 2019</h1>
       <h2 class="norm">
         April 13th &amp; 14th
-        <br>
-        <a href="http://library.austintexas.gov/central-library" target="_blank">
-          Austin Central Public Library
-        </a>
       </h2>
       <div class="tc">
-        <strong>Registration Sold Out</strong>
-        <br>
-        <v-btn color="primary" to="/program">
-          <v-icon>calendar_today</v-icon>&nbsp;Schedule
-        </v-btn>
-        <v-btn to="page/venue" color="primary">
-          <v-icon>map</v-icon>&nbsp;Map and Area Info
-        </v-btn>
-        <v-btn color="primary" href="https://pytexas.slack.com/" target="_blank">
-          <v-icon>chat</v-icon>&nbsp;Chat
-        </v-btn>
-        <v-btn color="primary" href="https://pytexas-slack.herokuapp.com/" target="_blank">
-          <v-icon>edit</v-icon>&nbsp;Chat Sign Up
-        </v-btn>
+        <strong>
+          Another great PyTexas see you <a href="/2020/">next year</a>!
+        </strong>
         <br><br>
-        <h2>Sponsored By:</h2>
-        <div class="sponsors">
-          <template v-for="(s, index) in sponsors" :key="s.id">
-            <div :class="level_label(s)" v-if="!is_lonely(s) && (index == 0 || s.level != sponsors[index - 1].level)">
-              {{ s.level }}s
-            </div>
-            <div :class="[slugify(s.level), 'sponsor']">
-              <span v-if="is_lonely(s)">{{ s.level }}</span>
-              <a :href="s.url" target="_blank">
-                <img :src="resize(s.logoUrl, w(s), h(s), 'fit=fill')" :alt="s.level">
-              </a>
-            </div>
-            <div v-if="needs_break(s) && (index != (sponsors.length - 1) && s.level != sponsors[index + 1].level)" class="break bottom"></div>
-          </template>
-        </div>
+        <v-btn href="https://photos.app.goo.gl/f8n51dnA2xWYAtKM8" color="primary">
+          <v-icon>photo</v-icon>&nbsp;Photos
+        </v-btn>
       </div>
     </div>
   </v-card>

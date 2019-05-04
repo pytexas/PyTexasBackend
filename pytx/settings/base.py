@@ -24,7 +24,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', None)
 
 ALLOWED_HOSTS = [
     'localhost',
-    'cool-sea-0598.graviton.ninja',
+    'pytexas.pizzapanther.dev',
     'pytexas.herokuapp.com',
     'www.pytexas.org',
     'pytexas.org',
