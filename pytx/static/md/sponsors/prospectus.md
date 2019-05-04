@@ -1,10 +1,10 @@
 # Sponsor Prospectus
 
-Presenting PyTexas 2019, the 11th Python Community Conference for the Texas Region. The purpose of PyTexas is to share Python-related knowledge and enthusiasm in the form of presentations, coding sprints, "teach me" sessions, and general networking among developers. It is run every year by volunteers from around the region.
+Presenting PyTexas 2020, the 11th Python Community Conference for the Texas Region. The purpose of PyTexas is to share Python-related knowledge and enthusiasm in the form of presentations, coding sprints, "teach me" sessions, and general networking among developers. It is run every year by volunteers from around the region.
 
 In 2012, PyTexas received national recognition from former Python Software Foundation chair Steve Holden as a regional conference that deserves the Python community's support.
 
-Please consider sponsoring PyTexas 2019 through a financial contribution to the non-profit PyTexas Foundation. Your contribution helps the Texas-area Python community build a better conference, while also providing a targeted marketing and community outreach opportunity.
+Please consider sponsoring PyTexas 2020 through a financial contribution to the non-profit PyTexas Foundation. Your contribution helps the Texas-area Python community build a better conference, while also providing a targeted marketing and community outreach opportunity.
 
 We have provided this prospectus for potential sponsors to find out more about
 the conference itself and available sponsorship opportunities. Our contact
@@ -19,9 +19,9 @@ Phone: 512-739-2938
 ## Conference Profile
 
 **Estimated attendance:**
-We expect ~200 attendees for PyTexas 2019.
+We expect ~200 attendees for PyTexas 2020.
 
-**<a href="/2019/page/about/code-of-conduct">Code of Conduct &raquo;</a>**
+**<a href="/2020/page/about/code-of-conduct">Code of Conduct &raquo;</a>**
 
 **Audience Profile:**<br>
 Professional Python developers, data scientists, amateurs, students, software
@@ -41,7 +41,7 @@ As a sponsor, your funding assistance will serve three critical purposes:
     - Drive adoption of your product
     - Simply show your support for the Texas Python community
 1. Build a better PyTexas by enabling organizers to attract attendees with standard conference perks such as printed t-shirts, catering, professional A/V, and more.
-1. Help keep the cost of PyTexas low. PyTexas 2019 attendees will pay a modest registration fee of $85. Your sponsorship helps us keep this price reasonable for everyone involved.
+1. Help keep the cost of PyTexas low. PyTexas 2020 attendees will pay a modest registration fee of $85. Your sponsorship helps us keep this price reasonable for everyone involved.
 
 ## Sponsorship Opportunities
 
@@ -150,5 +150,5 @@ See [http://www.python.org/about/quotes/](http://www.python.org/about/quotes/) t
 
 ## Questions or Comments
 
-The PyTexas 2019 staff appreciate your time in considering this prospectus. If you have any questions or comments, please contact the Sponsor Chair (Above).
+The PyTexas 2020 staff appreciate your time in considering this prospectus. If you have any questions or comments, please contact the Sponsor Chair (Above).
 

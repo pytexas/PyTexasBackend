@@ -4,7 +4,7 @@ Our goal is to ensure that everyone who wants to attend PyTexas can do so, regar
 
 In addition to already subsidized rates for individuals, students and those under the age of eighteen, this grant can be used by those in need to cover registration fees, hotels, and travel. These opportunity grants come directly from the PyTexas budget on a case-by-case basis.
 
-If your company is interested in contributing to our grants budget, consider becoming a [Diversity & Inclusion Sponsor](/2019/page/sponsors/prospectus#exclusivebenefits).
+If your company is interested in contributing to our grants budget, consider becoming a [Diversity & Inclusion Sponsor](/2020/page/sponsors/prospectus#exclusivebenefits).
 
 Currently we have a $1K total grant budget and each individual will be reimbursed a maximum of $250. Reimbursements will be made at the conclusion of the conference.
 

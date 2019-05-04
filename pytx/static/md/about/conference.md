@@ -4,9 +4,9 @@
 
 PyTexas is the annual, regional gathering for the Python community in Texas. 
 PyTexas is organized and run by community volunteers. PyTexas, like most of the 
-Python community, is focused on providing a [diverse](/2019/page/about/diversity-statement) and enjoyable experience 
+Python community, is focused on providing a [diverse](/2020/page/about/diversity-statement) and enjoyable experience 
 for everyone interested in Python. Please help us do that by following the 
-[code of conduct](/2019/page/about/code-of-conduct).
+[code of conduct](/2020/page/about/code-of-conduct).
 
 ## Volunteers
 

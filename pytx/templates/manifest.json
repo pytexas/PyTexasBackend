@@ -1,12 +1,12 @@
 {
     {% load static %}
-    "name": "PyTexas 2019",
-    "description": "PyTexas 2019 Conference",
+    "name": "PyTexas 2020",
+    "description": "PyTexas 2020 Conference",
     "developer": {
       "name": "PyTexas",
       "url": "https://www.pytexas.org"
     },
-    "start_url": "/2019/",
+    "start_url": "/2020/",
     "icons": [
         {
             "src": "{% static "img/manifest/android-chrome-192x192.png" %}",

@@ -3,7 +3,7 @@
 ## What can I do if I can't afford to attend?
 
 PyTexas offers a limited number of opportunity grants for community members that
-would be otherwise unable to attend: [see here for more details](/2019/page/about/grants).
+would be otherwise unable to attend: [see here for more details](/2020/page/about/grants).
 
 ## Can I get a discount for volunteering or speaking?
 We do not currently have the funds to provide discounted or free attendance to volunteers or

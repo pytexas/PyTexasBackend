@@ -7,6 +7,7 @@ from pytx.release import update_data_version
 
 ROBOTS = """User-agent: *
 Disallow: /static/$
+Disallow: /static-2020/$
 Disallow: /static-2019/$
 """
 

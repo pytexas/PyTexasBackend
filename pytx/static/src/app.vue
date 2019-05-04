@@ -10,9 +10,9 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-xs-only">
-      <v-btn flat to="/program">
-        Schedule
-      </v-btn>
+      <!--<v-btn flat to="/program">-->
+      <!--  Schedule-->
+      <!--</v-btn>-->
       <v-btn flat target="_blank" href="https://pytexas.slack.com">
         Chat
       </v-btn>

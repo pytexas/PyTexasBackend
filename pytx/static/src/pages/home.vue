@@ -2,83 +2,78 @@
 <div class="home-page">
   <v-card class="main padding iconbg">
     <div class="tc">
-      <h1>PyTexas 2019</h1>
+      <h1>PyTexas 2020</h1>
       <h2 class="norm">
-        April 13th &amp; 14th
+        May 16<sup>th</sup> &amp; 17<sup>th</sup>
+        <br>
+        Austin Central Library
       </h2>
       <div class="tc">
-        <strong>
-          Another great PyTexas see you <a href="https://www.pytexas.org/2020/">next year</a>!
-        </strong>
         <br><br>
-        <v-btn href="https://photos.app.goo.gl/f8n51dnA2xWYAtKM8" color="primary">
-          <v-icon>photo</v-icon>&nbsp;Photos
-        </v-btn>
-        <br><br>
-        <h2>Sponsored By:</h2>
-        <div class="sponsors">
-          <template v-for="(s, index) in sponsors" :key="s.id">
-            <div :class="level_label(s)" v-if="!is_lonely(s) && (index == 0 || s.level != sponsors[index - 1].level)">
-              {{ s.level }}s
-            </div>
-            <div :class="[slugify(s.level), 'sponsor']">
-              <span v-if="is_lonely(s)">{{ s.level }}</span>
-              <a :href="s.url" target="_blank">
-                <img :src="resize(s.logoUrl, w(s), h(s), 'fit=fill')" :alt="s.level">
-              </a>
-            </div>
-            <div v-if="needs_break(s) && (index != (sponsors.length - 1) && s.level != sponsors[index + 1].level)" class="break bottom"></div>
-          </template>
-        </div>
+        <!--<h2>Sponsored By:</h2>-->
+        <!--<div class="sponsors">-->
+        <!--  <template v-for="(s, index) in sponsors" :key="s.id">-->
+        <!--    <div :class="level_label(s)" v-if="!is_lonely(s) && (index == 0 || s.level != sponsors[index - 1].level)">-->
+        <!--      {{ s.level }}s-->
+        <!--    </div>-->
+        <!--    <div :class="[slugify(s.level), 'sponsor']">-->
+        <!--      <span v-if="is_lonely(s)">{{ s.level }}</span>-->
+        <!--      <a :href="s.url" target="_blank">-->
+        <!--        <img :src="resize(s.logoUrl, w(s), h(s), 'fit=fill')" :alt="s.level">-->
+        <!--      </a>-->
+        <!--    </div>-->
+        <!--    <div v-if="needs_break(s) && (index != (sponsors.length - 1) && s.level != sponsors[index + 1].level)" class="break bottom"></div>-->
+        <!--  </template>-->
+        <!--</div>-->
       </div>
     </div>
   </v-card>
-  <v-card class="main padding keynotes">
-    <div class="tc">
-      <h2>Keynote Speakers</h2>
-      <div class="speakers">
-        <div>
-          <img class="headshot" :src="resize(image('img/keynote/emily.jpg'), 200, 200, 'fit=facearea&facepad=2.5')" alt="Emily Morehouse-Valcarcel">
-          <h3>Emily Morehouse-Valcarcel</h3>
-          <h4 class="inline">
-            <img :src="resize(image('img/social/twitter.png'), 20, 20)">
-            <a href="https://twitter.com/emilyemorehouse/">@emilyemorehouse</a>
-          </h4>
-          <p>
-            Emily is the Director of Engineering at
-            Cuttlesoft, a digital product agency focused on creating
-            beautifully designed software. Her passion is driven by a blend
-            of empathy, strategy, curiosity, and human-centered design.
-            She's a Python Core Developer, avid OSS contributor, and constant
-            learner focused on building tools to automate the mundane and shed
-            light on the complexity of the human experience. Emily holds
-            degrees in Computer Science, Criminology, and Theatre from Florida
-            State University.
-          </p>
-        </div>
-        <div>
-          <img class="headshot" :src="resize(image('img/keynote/adrienne.jpg'), 200, 200, 'fit=facearea&facepad=2.5')" alt="Adrienne Lowe">
-          <h3>Adrienne Lowe</h3>
-          <h4 class="inline">
-            <img :src="resize(image('img/social/twitter.png'), 20, 20)">
-            <a href="https://twitter.com/adriennefriend/">@adriennefriend</a>
-          </h4>
-          <p>
-            Adrienne is the Director of Engineering at Juice Analytics where
-            she leads Platform and Ops teams building Juicebox, a development
-            platform for creating engaging data storytelling applications. She
-            is the former Director of Advancement of the Django Software
-            Foundation, the non-profit backing Django, where she revamped the
-            corporate membership program. She is also an O’Reilly contributor
-            and technical editor of Head First Python. Adrienne shares thoughts
-            on coding, cooking, and compassionate leadership at her website
-            <a href="https://leadingwithspoons.com/">Leading with Spoons</a>.
-            She is based in Nashville, Tennessee.
-          </p>
-        </div>
-      </div>
-    </div>
-  </v-card>
+  <!--<v-card class="main padding keynotes">-->
+  <!--  <div class="tc">-->
+  <!--    <h2>Keynote Speakers</h2>-->
+  <!--    <div class="speakers">-->
+  <!--      <div>-->
+  <!--        <img class="headshot" :src="resize(image('img/keynote/emily.jpg'), 200, 200, 'fit=facearea&facepad=2.5')" alt="Emily Morehouse-Valcarcel">-->
+  <!--        <h3>Emily Morehouse-Valcarcel</h3>-->
+  <!--        <h4 class="inline">-->
+  <!--          <img :src="resize(image('img/social/twitter.png'), 20, 20)">-->
+  <!--          <a href="https://twitter.com/emilyemorehouse/">@emilyemorehouse</a>-->
+  <!--        </h4>-->
+  <!--        <p>-->
+  <!--          Emily is the Director of Engineering at-->
+  <!--          Cuttlesoft, a digital product agency focused on creating-->
+  <!--          beautifully designed software. Her passion is driven by a blend-->
+  <!--          of empathy, strategy, curiosity, and human-centered design.-->
+  <!--          She's a Python Core Developer, avid OSS contributor, and constant-->
+  <!--          learner focused on building tools to automate the mundane and shed-->
+  <!--          light on the complexity of the human experience. Emily holds-->
+  <!--          degrees in Computer Science, Criminology, and Theatre from Florida-->
+  <!--          State University.-->
+  <!--        </p>-->
+  <!--      </div>-->
+  <!--      <div>-->
+  <!--        <img class="headshot" :src="resize(image('img/keynote/adrienne.jpg'), 200, 200, 'fit=facearea&facepad=2.5')" alt="Adrienne Lowe">-->
+  <!--        <h3>Adrienne Lowe</h3>-->
+  <!--        <h4 class="inline">-->
+  <!--          <img :src="resize(image('img/social/twitter.png'), 20, 20)">-->
+  <!--          <a href="https://twitter.com/adriennefriend/">@adriennefriend</a>-->
+  <!--        </h4>-->
+  <!--        <p>-->
+  <!--          Adrienne is the Director of Engineering at Juice Analytics where-->
+  <!--          she leads Platform and Ops teams building Juicebox, a development-->
+  <!--          platform for creating engaging data storytelling applications. She-->
+  <!--          is the former Director of Advancement of the Django Software-->
+  <!--          Foundation, the non-profit backing Django, where she revamped the-->
+  <!--          corporate membership program. She is also an O’Reilly contributor-->
+  <!--          and technical editor of Head First Python. Adrienne shares thoughts-->
+  <!--          on coding, cooking, and compassionate leadership at her website-->
+  <!--          <a href="https://leadingwithspoons.com/">Leading with Spoons</a>.-->
+  <!--          She is based in Nashville, Tennessee.-->
+  <!--        </p>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--</v-card>-->
   <v-card class="main padding venue">
     <div class="tc">
       <h2>Stay Updated</h2>

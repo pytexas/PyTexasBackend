@@ -26,6 +26,7 @@ import conference.views
 from graphene_django.views import GraphQLView
 
 urlpatterns = [
+    path('2019/', pytx.views.redirect, kwargs={'year': '2019'}),
     path('2018/', pytx.views.redirect_no_conf, kwargs={'year': '2019'}),
     path('2017/', pytx.views.redirect, kwargs={'year': '2017'}),
     path('2015/', pytx.views.archive),

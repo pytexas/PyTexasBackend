@@ -132,11 +132,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-FRONTEND = '2019-dist'
+FRONTEND = '2020-dist'
 FRONTEND_TEMPLATES = os.path.join(BASE_DIR, 'pytx/static/src')
 FRONTEND_MD = os.path.join(BASE_DIR, 'pytx/static/md')
 
-STATIC_URL = '/static-2019/'
+STATIC_URL = '/static-2020/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static-compiled")
 
@@ -172,7 +172,7 @@ AUTH_USER_MODEL = 'profiles.User'
 
 GRAPHENE = {'SCHEMA': 'pytx.schema.schema'}
 
-CURRENT_CONF = '2019'
+CURRENT_CONF = '2020'
 
 STRIPE_PUB_KEY = os.environ.get('STRIPE_PUB_KEY', '')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')

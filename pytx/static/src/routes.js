@@ -13,11 +13,11 @@ const NotFound = { template: "<div><h1>404 - Page Not Found</h1></div>" };
 
 function current_schedule(to) {
   var d = new Date();
-  if (d.getDate() == 14 && d.getMonth() == 3 && d.getFullYear() == 2019) {
-    return "/program/14";
+  if (d.getDate() == 17 && d.getMonth() == 4 && d.getFullYear() == 2020) {
+    return "/program/17";
   }
 
-  return "/program/13";
+  return "/program/16";
 }
 
 export var Routes = [
@@ -35,7 +35,7 @@ export var Routes = [
 export var scrolledTo = null;
 
 var router = new VueRouter({
-  base: "/2019",
+  base: "/2020",
   mode: "history",
   routes: Routes,
   scrollBehavior: function(to, from, savedPosition) {

@@ -1,7 +1,7 @@
 # Location
 
 ## Map
-PyTexas 2019 is being held at the [Austin Central Public Library](http://library.austintexas.gov/central-library) in Austin, TX:
+PyTexas 2020 is being held at the [Austin Central Public Library](http://library.austintexas.gov/central-library) in Austin, TX:
 
 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1JAGPKFWy3HOqnpDSHqREiBHFmBnSVl8Y" width="640" height="480"></iframe>
 
