@@ -9,10 +9,10 @@ psycopg2-binary
 raven
 stripe
 tornado
-graphene-django==2.0.dev2017073101
-django-filter==1.0.4
-graphene==2.1.2
+graphene-django
+django-filter
+graphene
 django-storages
-django==2.0.10
+django
 pillow
 pip-tools
