@@ -8,7 +8,7 @@
       </h2>
       <div class="tc">
         <strong>
-          Another great PyTexas see you <a href="/2020/">next year</a>!
+          Another great PyTexas see you <a href="https://www.pytexas.org/2020/">next year</a>!
         </strong>
         <br><br>
         <v-btn href="https://photos.app.goo.gl/f8n51dnA2xWYAtKM8" color="primary">
