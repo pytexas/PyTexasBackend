@@ -29,6 +29,7 @@
             </div>
             <div v-if="needs_break(s) && (index != (sponsors.length - 1) && s.level != sponsors[index + 1].level)" class="break bottom"></div>
           </template>
+        </div>
       </div>
     </div>
   </v-card>
