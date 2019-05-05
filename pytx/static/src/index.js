@@ -3,13 +3,19 @@ import Vuetify from 'vuetify';
 import VueRouter from "vue-router";
 
 import * as Sentry from '@sentry/browser';
+import * as Integrations from '@sentry/integrations';
 
 import {get_data} from './data.js';
 
 if (!DEBUG) {
   Sentry.init({
     dsn: 'https://48afdd6633574781814c36e6c0d2a69f@sentry.io/212458',
-    integrations: [new Sentry.Integrations.Vue({ Vue })]
+    integrations: [
+      new Integrations.Vue({
+        Vue,
+        attachProps: true,
+      }),
+    ],
   });
 }
 

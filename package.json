@@ -22,7 +22,8 @@
   "homepage": "https://github.com/pytexas/PyTexasBackend#readme",
   "devDependencies": {},
   "dependencies": {
-    "@sentry/browser": "^4.6.6",
+    "@sentry/browser": "^5.1.2",
+    "@sentry/integrations": "^5.1.2",
     "@vue/component-compiler-utils": "^2.6.0",
     "axios": "^0.18.0",
     "graphql.js": "^0.6.1",
@@ -30,6 +31,8 @@
     "gulp-concat": "^2.6.1",
     "gulp-less": "^4.0.1",
     "gulp-plumber": "^1.2.1",
+    "install": "^0.12.2",
+    "npm": "^6.9.0",
     "parcel-bundler": "^1.12.3",
     "showdown": "^1.9.0",
     "vue": "^2.6.10",
