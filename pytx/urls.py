@@ -35,7 +35,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('data-graph', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     path('favicon.ico', conference.views.favicon),
-    path('pytexas.map', pytx.views.static_redirect),
+    path('pytexas.js.map', pytx.views.static_redirect),
     path('service-worker.js', conference.views.sw),
     path('release', conference.views.release),
     path('manifest.json', conference.views.manifest),
