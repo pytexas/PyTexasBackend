@@ -6,11 +6,11 @@
     </v-card-title>
     <v-card-text>
       <v-tabs class="nav-tabs">
-        <v-tab key="tab0" to="/program/13">
-          Saturday 4/13
+        <v-tab key="tab0" to="/program/16">
+          Saturday 5/16
         </v-tab>
-        <v-tab key="tab1" to="/program/14">
-          Sunday 4/14
+        <v-tab key="tab1" to="/program/17">
+          Sunday 5/17
         </v-tab>
       </v-tabs>
       <div class="sessions">
@@ -76,9 +76,9 @@ export default {
       this.loading = true;
 
       if (this.day == 13) {
-        this.title = "Saturday 4/13";
+        this.title = "Saturday 5/16";
       } else {
-        this.title = "Sunday 4/14";
+        this.title = "Sunday 5/17";
       }
 
       get_data()
