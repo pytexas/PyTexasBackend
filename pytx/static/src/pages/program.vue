@@ -49,7 +49,7 @@
         Go to Sunday 5/17 &raquo;
       </v-btn>
       <v-btn color="primary" v-else to="/program/16">
-        &laquo; Go to Saturday 5/17
+        &laquo; Go to Saturday 5/16
       </v-btn>
     </v-card-text>
   </v-card>
